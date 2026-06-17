@@ -250,291 +250,149 @@
 <div class="page index-page">
   <div style="height:100%;display:flex;">
 
-    <!-- 왼쪽: 타이틀 영역 -->
-    <div style="width:72mm;background:rgba(0,0,0,0.18);display:flex;flex-direction:column;
-      justify-content:space-between;padding:10mm 8mm 9mm 10mm;flex-shrink:0;">
+    <!-- 왼쪽: 브랜드 타이틀 패널 -->
+    <div style="width:78mm;background:rgba(0,0,0,0.22);flex-shrink:0;
+      display:flex;flex-direction:column;justify-content:space-between;
+      padding:10mm 9mm 10mm 11mm;">
 
+      <!-- 상단 -->
       <div>
-        <div style="font-size:7.5pt;color:#a0dfc8;letter-spacing:2.5px;margin-bottom:5mm;
-          font-weight:500;">AGAPAO MISSION 2026</div>
-        <div style="width:8mm;height:1.5px;background:#c96a3a;margin-bottom:5mm;"></div>
-        <div style="font-size:22pt;font-weight:900;color:white;line-height:1.2;margin-bottom:3mm;">
-          찬양<br>송리스트<br>가사<br>가이드북
+        <div style="width:10mm;height:2px;background:#c96a3a;border-radius:1px;margin-bottom:6mm;"></div>
+        <div style="font-size:22pt;font-weight:900;color:white;line-height:1.2;margin-bottom:4mm;">
+          현지찬양가사<br>가이드북
         </div>
-        <div style="font-size:8.5pt;color:#f0c080;font-weight:500;line-height:1.6;">
-          Сборник Песен<br>Поклонения
+        <div style="font-size:9pt;color:#f0c080;font-weight:500;line-height:1.7;">
+          Сборник<br>Песен Поклонения
         </div>
       </div>
 
+      <!-- 하단 정보 -->
       <div>
-        <div style="width:100%;height:1px;background:rgba(255,255,255,0.15);margin-bottom:4mm;"></div>
-        <div style="font-size:7pt;color:rgba(255,255,255,0.45);line-height:1.8;">
-          총 17곡<br>
-          러시아어 원문<br>
-          한글 발음 · 번역<br>
-          카자흐스탄 코나예프
-        </div>
-        <div style="margin-top:4mm;font-size:8.5pt;color:#f0c080;font-weight:700;">
-          7월 7일 — 7월 14일
+        <div style="height:1px;background:rgba(255,255,255,0.12);margin-bottom:4mm;"></div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5mm 3mm;align-items:center;margin-bottom:5mm;">
+          <div style="color:#80cfb0;font-size:7pt;">🎵</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:7.5pt;">총 16곡</div>
+          <div style="color:#80cfb0;font-size:7pt;">🇷🇺</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:7.5pt;">러시아어 · 한글 발음 · 번역</div>
         </div>
       </div>
     </div>
 
-    <!-- 오른쪽: 목차 영역 -->
-    <div style="flex:1;padding:8mm 10mm 8mm 9mm;display:flex;flex-direction:column;">
+    <!-- 오른쪽: 목차 패널 -->
+    <div style="flex:1;padding:9mm 11mm 9mm 10mm;display:flex;flex-direction:column;">
 
-      <div style="display:flex;align-items:center;gap:3mm;margin-bottom:5mm;padding-bottom:3.5mm;
-        border-bottom:1.5px solid rgba(255,255,255,0.2);">
-        <div style="font-size:10pt;color:#a0dfc8;font-weight:800;letter-spacing:1px;">📋 목 차</div>
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.1);"></div>
-        <div style="font-size:7pt;color:rgba(255,255,255,0.35);">Contents</div>
+      <!-- 목차 헤더 -->
+      <div style="display:flex;align-items:center;gap:3mm;margin-bottom:6mm;
+        padding-bottom:3mm;border-bottom:1.5px solid rgba(255,255,255,0.18);">
+        <span style="font-size:10.5pt;color:#a0dfc8;font-weight:800;letter-spacing:1px;">📋 목 차</span>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.08);"></div>
+        <span style="font-size:6.5pt;color:rgba(255,255,255,0.3);">Contents</span>
       </div>
 
-      <!-- 목차 그리드: 페이지번호 | 아이콘 | 내용 -->
-      <div style="display:grid;grid-template-columns:12mm 10mm 1fr;
-        gap:0 0;row-gap:0;align-items:start;">
-        <div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.1</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">📖</div><div style="font-size:9.5pt;font-weight:700;color:#a8e6ce;line-height:1.5;">러시아어 핵심 단어 30개</div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.2</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">01  Радуйтесь <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 기뻐하고 또 기뻐하라</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">02  Буду жить всегда <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 나이-나이</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.3</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">03  사랑해요 주님 <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 카작어</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">04  Слава Богу <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 하나님께 영광</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.4</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">05  Твой огонь <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 주의 불</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">06  Иисус, Ты мой <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 예수님 당신은</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.5</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">07  Возвышается <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 높임 받으소서</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">08  내 모든 삶의 행동 <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— + 승리하였네</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.6</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">09  Дух Святой <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 성령이여</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">10  내 맘의 눈을 여소서</div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.7</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">11  Иисус, имя Твоё <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 예수 주의 이름</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">12  Этот день <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 오늘은 주님이 만드신 날</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.8</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">13  Высота <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 높은 곳에</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">14  Surrounded <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 이것이 싸우는 방식</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.9</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">15  Благ Господь <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— 좋으신 하나님</span></div><div></div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">16  Будем петь <span style="color:rgba(255,255,255,0.5);font-size:8pt;font-weight:400;">— Sing Sing Sing</span></div><div style="color:#f0c080;font-size:9pt;font-weight:900;white-space:nowrap;padding-top:0.5mm;">p.10</div><div style="font-size:10pt;line-height:1;padding-top:1mm;">🎵</div><div style="font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.5;">17  마지막 찬양</div>
+      <!-- 목차 리스트 -->
+      <div style="display:flex;flex-direction:column;gap:1mm;flex:1;">
+
+        <!-- 단어장 -->
+        <div style="display:flex;align-items:center;gap:3mm;padding:2mm 3mm;
+          background:rgba(160,223,200,0.1);border-radius:2mm;border-left:2px solid #80cfb0;">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.1</span>
+          <span style="font-size:9pt;">📖</span>
+          <span style="color:#a0dfc8;font-size:9pt;font-weight:700;">러시아어 핵심 단어 30개</span>
+        </div>
+
+        <!-- 구분선 -->
+        <div style="height:1px;background:rgba(255,255,255,0.08);margin:2mm 0;"></div>
+
+<!-- 찬양 목록 -->
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.2</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">01</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">기뻐하고 또 기뻐하라</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">02</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주의 사랑 안에 영원히 (나이-나이-나이)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.3</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">03</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">사랑해요 주님 (카자흐어)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">04</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">송축해 내 영혼 (10,000 Reasons)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.4</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">05</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주 품에 (Hillsong — Still)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">06</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">온 땅들아 여호와를 찬양하라</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.5</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">07</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">What A Beautiful Name 그 이름 아름답도다</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">08</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">내 모든 삶의 행동 주안에</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.6</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">09</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">야훼</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.7</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">10</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">내 맘의 눈을 여소서</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.8</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">11</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Deep Down in My Heart</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">12</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">이 날은 주가 지으신 날</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.9</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">13</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주 사랑합니다 + Beautiful Day</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">14</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Surrounded</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
+          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.10</span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">15</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Sing Sing Sing</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
+          <span style="min-width:8mm;"></span>
+          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">16</span>
+          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">좋으신 하나님 (You are Good)</span>
+        </div>
+
       </div>
+
     </div>
 
   </div>
-</div>
-<div class="page" style="display:flex;flex-direction:column;">
-  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 9mm 3mm 9mm;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;
-      padding-bottom:3mm;border-bottom:3px solid #1a5e4e;margin-bottom:4mm;flex-shrink:0;">
-      <div>
-        <span style="font-size:13pt;font-weight:900;color:#1a5e4e;">📖 찬양에 자주 나오는 러시아어</span>
-        <span style="font-size:8pt;color:#888;margin-left:4mm;">핵심 30단어</span>
-      </div>
-      <div style="font-size:7.5pt;color:#c96a3a;font-weight:700;">
-        발음(주황·굵게) · 의미(검정)
-      </div>
-    </div>
-    <div style="flex:1;min-height:0;display:grid;
-      grid-template-columns:repeat(5,1fr);
-      grid-template-rows:repeat(6,1fr);
-      gap:2.5mm;">
-      <div data-speak-ru="Господь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Господь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">고스빠뎨</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">주님</div>
-</div><div data-speak-ru="Господи" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Господи</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">고스빠지</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">주님이여!</div>
-</div><div data-speak-ru="Иисус" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Иисус / Иса</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">이수스 / 이사</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">예수님</div>
-</div><div data-speak-ru="Дух Святой" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Дух Святой</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">두흐 스뱌또이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">성령님</div>
-</div><div data-speak-ru="Авва" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Авва / Отец</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">아바 / 아쩨츠</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">아버지</div>
-</div><div data-speak-ru="В Господе" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">В Господе</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">브 고스빠데</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">주 안에서</div>
-</div><div data-speak-ru="Хвала" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Хвала</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">흐발라</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">찬양</div>
-</div><div data-speak-ru="Слава" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Слава</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">슬라바</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">영광</div>
-</div><div data-speak-ru="Аллилуйя" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Аллилуйя</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">알릴루이야</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">할렐루야</div>
-</div><div data-speak-ru="Возвышайся" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Возвышайся</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">바즈붸샤이샤</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">높임 받으소서</div>
-</div><div data-speak-ru="Поклоняюсь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Поклоняюсь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">빠끌라냐유시</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">경배해요</div>
-</div><div data-speak-ru="Торжествуй" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Торжествуй</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">토르제스트부이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">기뻐 뛰며 찬양하라</div>
-</div><div data-speak-ru="Радуйтесь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Радуйтесь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">라두이쩨시</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">기뻐하라!</div>
-</div><div data-speak-ru="Ликуй" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Ликуй</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">리쿠이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">기뻐 외쳐라!</div>
-</div><div data-speak-ru="Любовь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Любовь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">류봅</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">사랑</div>
-</div><div data-speak-ru="Люблю Тебя" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Люблю Тебя</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">류블류 찌뱌</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">사랑해요</div>
-</div><div data-speak-ru="Достоин" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Достоин</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">다스토인</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">합당하신</div>
-</div><div data-speak-ru="Верю" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Верю</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">볘류</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">믿어요</div>
-</div><div data-speak-ru="Святой" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Святой</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">스뱌또이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">거룩하신</div>
-</div><div data-speak-ru="Благ" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Благ / Благой</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">블락 / 블라고이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">선하시도다</div>
-</div><div data-speak-ru="Вовеки" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Вовеки</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">바베끼</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">영원히</div>
-</div><div data-speak-ru="Всегда" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Всегда</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">브셰그다</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">언제나</div>
-</div><div data-speak-ru="Верный" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Верный</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">볘르늬</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">신실하신</div>
-</div><div data-speak-ru="Великий" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Великий</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">볘리끼</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">위대하신</div>
-</div><div data-speak-ru="Приди" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Приди</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">쁘리디</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">오소서</div>
-</div><div data-speak-ru="Наполняй нас" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Наполняй нас</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">나뽈냐이 나스</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">채우소서</div>
-</div><div data-speak-ru="Сдаюсь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Сдаюсь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">스다유시</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">순복합니다</div>
-</div><div data-speak-ru="Победа" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Победа</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">빠볘다</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">승리</div>
-</div><div data-speak-ru="Аминь" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Аминь</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">아민</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">아멘</div>
-</div><div data-speak-ru="Құдай" style="background:white;border-radius:3mm;padding:3mm 3.5mm;
-      box-shadow:0 1px 5px rgba(0,0,0,0.08);
-      display:flex;flex-direction:column;justify-content:center;
-      border-left:4px solid #1a5e4e;">
-  <div style="font-size:8.5pt;font-weight:900;color:#1a5e4e;line-height:1.3;margin-bottom:1.2mm;">Құдай</div>
-  <div style="font-size:10.5pt;font-weight:800;color:#b85520;line-height:1.3;margin-bottom:1.2mm;">쿠다이</div>
-  <div style="font-size:8pt;font-weight:600;color:#333;line-height:1.3;">하나님 (카작어)</div>
-</div>
-    </div>
-  </div>
-  <div class="page-footer">
-    <span class="ft-left">✝️ 2026 AGAPAO 코나예프 현지찬양 가사가이드북</span>
-    <span class="ft-right">📖 러시아어 핵심 단어 30개</span>
-  </div>
-</div>
 
-<div class="page">
+</div>
+  <div class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -548,7 +406,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Радуйтесь и ликуйте,</div>
             <div class="pron">라두이쩨 이 리꾸이쩨</div>
@@ -607,7 +465,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Я буду жить всегда в Твоей любви</div>
             <div class="pron">야 부두 짓 브셰그다 브 뜨바예이 류브비</div>
@@ -630,7 +488,7 @@
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 후렴 (허밍)</span>
+          <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
             <div class="ru">Най-най-най-на-на-най-най-най</div>
             <div class="pron">나이-나이-나이-나-나-나이-나이-나이</div>
@@ -660,7 +518,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-kazakh">🎵 1절 (카자흐어)</span>
+          <span class="section-tag tag-kazakh">🎵 본절</span>
           <div class="lyric-line kazakh-line">
             <div class="ru">Мені бірінші сүйдің</div>
             <div class="pron">메느브른쉬 - 샤크르든</div>
@@ -719,7 +577,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Слaвь, душa, Гocпoдa, Слaвь, душa,</div>
             <div class="pron">슬라브 두샤 고스빠다 슬라브 두샤</div>
@@ -767,7 +625,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Скрой меня Своим крылом</div>
             <div class="pron">스크로이 몌냐 스바임 크륄롬</div>
@@ -873,13 +731,13 @@
       <div class="slot-num">07</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Твоё Имя прекрасно, Бог</div>
-        <div class="slot-title-ko">그 이름 아름답도다</div>
+        <div class="slot-title-ko">What A Beautiful Name 그 이름 아름답도다</div>
       </div>
     </div>
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Иса, в начале Ты был Словом,</div>
             <div class="pron">이사, 브 나찰레 뜨이 븰 슬로봄</div>
@@ -932,7 +790,7 @@
       <div class="slot-num">08</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Каждое движение в Тебе</div>
-        <div class="slot-title-ko">주 안에서 — La La La</div>
+        <div class="slot-title-ko">내 모든 삶의 행동 주안에</div>
       </div>
     </div>
     <div class="slot-key"></div>
@@ -988,124 +846,168 @@
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 07 + 08</span></div>
 </div>
 <div class="page">
-  <div class="song-row">
-    <div class="song-slot">
-  <div class="slot-hdr">
-    <div class="slot-hdr-left">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
       <div class="slot-num">09</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Яхве, славу нам являй!</div>
-        <div class="slot-title-ko">야훼, 라파 — 하나님의 이름들</div>
+        <div class="slot-title-ko">야훼</div>
       </div>
     </div>
-    <div class="slot-key"></div>
-  </div>
-  <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 후렴</span>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Яхве, Рафа, Элохим, Эль Шаддай,</div>
-            <div class="pron">야흐베 라파 엘로힘 엘 샷다이</div>
-            <div class="ko">야훼, 라파, 엘로힘, 엘 샷다이</div>
-          </div>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Ирэ, Адонай, Бог, славу нам являй!</div>
-            <div class="pron">이레, 아도나이, 복, 슬라부 남 얍랴이!</div>
-            <div class="ko">이레, 아도나이, 주님 나타나시네!</div>
-          </div>
-        </div>
+    <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
         <div class="lyrics-section">
           <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
-            <div class="ru">Ты рядом, мы чувствуем, Бог, Тебя.</div>
-            <div class="pron">뜨이 랴돔, 믜 추스트부옘, 복, 찌뱌</div>
+            <div class="ru">Рядом мы чувствуем, Бог, Тебя</div>
+            <div class="pron">트랴담 므.추st부-옘 복- 찌뱌</div>
             <div class="ko">주 영광 이곳에 가득해</div>
           </div>
           <div class="lyric-line verse-line">
             <div class="ru">Являешь нам Свои чудеса</div>
-            <div class="pron">얍랴예쉬 남 스바이 추데사</div>
+            <div class="pron">야블랴에쉬 남 스바-이 추데사</div>
             <div class="ko">주님 여기 계시네</div>
           </div>
           <div class="lyric-line verse-line">
-            <div class="ru">Здесь сила сверхъестественная!</div>
-            <div class="pron">즈데스 실라 스베르흐예스쩨스뜨벤나야!</div>
+            <div class="ru">Здесь сила сверхъестественная</div>
+            <div class="pron">Z데스 실라 스베르 예s 톄st 베.나야</div>
             <div class="ko">위대한 일 일어나네!</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Яхве, Рафа, Элохим, Эль Шаддай</div>
+            <div class="pron">야훼, 라fㅏ, 엘로힘, 엘샤다이</div>
+            <div class="ko">야훼, 라파, 엘로힘, 엘 샷다이</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ире, Адонай, Бог, славу нам являй</div>
+            <div class="pron">이레, 아도나이, 봉. 슬라부 남 야v랴이</div>
+            <div class="ko">이레, 아도나이, 주의 영광 나타내소서!</div>
           </div>
         </div>
         <div class="lyrics-section">
           <span class="section-tag tag-bridge">🎵 브릿지</span>
           <div class="lyric-line bridge-line">
-            <div class="ru">В поклоненьи, Ты являешь славу нам,</div>
-            <div class="pron">브 빠끌라네니, 뜨이 얍랴예쉬 슬라부 남</div>
-            <div class="ko">경배할 때 주님 여기 계시네</div>
+            <div class="ru">В поклонении Ты являешь славу нам</div>
+            <div class="pron">바글러네니/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">경배할 때 주의 영광 나타내소서</div>
           </div>
           <div class="lyric-line bridge-line">
-            <div class="ru">Когда ищем / Мы взываем,</div>
-            <div class="pron">까그다 이쉼 / 므이 브즤바옘</div>
-            <div class="ko">주 부를 때 / 주 찾을 때</div>
+            <div class="ru">Когда ищем Ты являешь славу нам</div>
+            <div class="pron">가그다 이솀/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">주 찾을 때 주의 영광 나타내소서</div>
           </div>
-        </div></div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Мы зовем Ты являешь славу нам</div>
+            <div class="pron">므이 즈바옘/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">주 부를 때 주의 영광 나타내소서</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지 2</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Яхве являешь славу нам</div>
+            <div class="pron">야훼 야블랴에쉬 슬라부 남</div>
+            <div class="ko">야훼 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Ире являешь славу нам</div>
+            <div class="pron">이레 야블랴에쉬 슬라부 남</div>
+            <div class="ko">이레 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Рафа являешь славу нам</div>
+            <div class="pron">라파 야블랴에쉬 슬라부 남</div>
+            <div class="ko">라파 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Являешь славу нам</div>
+            <div class="pron">야블랴에쉬 슬라부 남</div>
+            <div class="ko">주의 영광 나타내소서</div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 09</span></div>
 </div>
-    <div class="v-div"></div>
-    <div class="song-slot">
-  <div class="slot-hdr">
-    <div class="slot-hdr-left">
+<div class="page">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
       <div class="slot-num">10</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Очи сердца открой, Бог</div>
-        <div class="slot-title-ko">내 맘의 눈을 열어서</div>
+        <div class="slot-title-ko">내 맘의 눈을 여소서</div>
       </div>
     </div>
-    <div class="slot-key"></div>
-  </div>
-  <div class="slot-body"><div class="lyrics-section">
+    <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
+        <div class="lyrics-section">
           <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
-            <div class="ru">Очи сердца открой, Бог.</div>
-            <div class="pron">보줴앗 꼼니 글라짜 / 보줴앗 꼼니 글라짜</div>
-            <div class="ko">내 맘의 눈을 열어 주세요, 주님</div>
+            <div class="ru">Oчи cepдцa oткpoй, Бoг.</div>
+            <div class="pron">어치 세르차 아뜨크로이, 복.</div>
+            <div class="ko">내 맘의 눈을 여소서</div>
           </div>
           <div class="lyric-line verse-line">
-            <div class="ru">Видеть Тебя хочу, видеть Тебя хочу</div>
-            <div class="pron">야 하츄 비졧츠 찌뱌바 슬라볘</div>
-            <div class="ko">주님을 보고 싶어요, 주님을 보고 싶어요</div>
+            <div class="ru">Oчи cepдцa oткpoй</div>
+            <div class="pron">어치 세르차 아뜨크로이</div>
+            <div class="ko">내 맘의 눈을 여소서</div>
           </div>
           <div class="lyric-line verse-line">
-            <div class="ru">Видеть, что Ты превознесён,</div>
-            <div class="pron">Vl젯 볘취나바 짜-랴 / 씌야니 예씌-례 이슬랴볘</div>
-            <div class="ko">주님께서 높이 올려지심을 보고 싶어요</div>
-          </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Славою Своею сияешь,</div>
-            <div class="pron">밀라스찌 이-륩비 즈바야</div>
-            <div class="ko">주님의 영광으로 빛나시네</div>
-          </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Нам Свою любовь открой,</div>
-            <div class="pron">남 스바유 류보프 아뜨크로이</div>
-            <div class="ko">우리에게 주님의 사랑을 열어주세요</div>
-          </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Мы поём: «Святый, Святый, Святый»</div>
-            <div class="pron">스뱌띠 — 스뱌띠 — 스뱌띠</div>
-            <div class="ko">우리가 노래해요: "거룩, 거룩, 거룩"</div>
+            <div class="ru">Видeть Teбя xoчу, видeть Teбя xoчу</div>
+            <div class="pron">비젯 찌뱌 하추, 비젯 찌뱌 하추</div>
+            <div class="ko">주 보기 원해 주 보기 원해</div>
           </div>
         </div>
         <div class="lyrics-section">
           <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
-            <div class="ru">Святый, Святый, Святый</div>
-            <div class="pron">스뱌띠 — 스뱌띠 — 스뱌띠</div>
-            <div class="ko">거룩, 거룩, 거룩</div>
+            <div class="ru">Видeть, что Tы пpeвoзнeceн,</div>
+            <div class="pron">비젯, 슈또 뜨이 프리바즈네센,</div>
+            <div class="ko">주께서 높이 들리심을</div>
           </div>
           <div class="lyric-line chorus-line">
-            <div class="ru">Видеть Тебя хочу</div>
-            <div class="pron">야 하츄 비졧츠 찌뱌바 슬라볘</div>
-            <div class="ko">주님을 보고 싶어요</div>
+            <div class="ru">Слaвoю Свoeю cияeшь,</div>
+            <div class="pron">슬라바유 스바예유 시야예쉬,</div>
+            <div class="ko">영광의 빛 비추시며</div>
           </div>
-        </div></div>
-</div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Нaм Свoю любoвь oткpoй,</div>
+            <div class="pron">남 스바유 류보프 아뜨크로이,</div>
+            <div class="ko">권능과 사랑 부으소서</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мы пoeм: «Святый, Святый, Святый»</div>
+            <div class="pron">므이 빠욤: "스뱌뜨이, 스뱌뜨이, 스뱌뜨이"</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Видeть Teбя xoчу</div>
+            <div class="pron">비젯 찌뱌 하추</div>
+            <div class="ko">주 보기 원해</div>
+          </div>
+        </div>
+    </div>
   </div>
-  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 09 + 10</span></div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 10</span></div>
 </div>
 <div class="page">
   <div class="song-row">
@@ -1115,13 +1017,13 @@
       <div class="slot-num">11</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Да, да, Масиха я люблю</div>
-        <div class="slot-title-ko">Deep Deep — 네 네 메시야 사랑해요</div>
+        <div class="slot-title-ko">Deep Down in My Heart</div>
       </div>
     </div>
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 러시아어 파트</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Да, да, Масиха я люблю</div>
             <div class="pron">다 다 마시하 야 류블류</div>
@@ -1144,7 +1046,7 @@
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 영어 파트</span>
+          <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
             <div class="ru">Deep, deep, o, deep down, down.</div>
             <div class="pron">딥, 딥, 오, 딥 다운, 다운</div>
@@ -1172,7 +1074,7 @@
       <div class="slot-num">12</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Этот день сотворил Господь</div>
-        <div class="slot-title-ko">오늘은 주님이 만드신 날 (시편 118:24)</div>
+        <div class="slot-title-ko">이 날은 주가 지으신 날</div>
       </div>
     </div>
     <div class="slot-key"></div>
@@ -1227,7 +1129,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절</span>
+          <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Бог Я Тебя люблю</div>
             <div class="pron">보흐 야 찌뱌 류블류</div>
@@ -1255,7 +1157,7 @@
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 후렴 — Beautiful Day</span>
+          <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
             <div class="ru">Спасибо за солнце / за дождь</div>
             <div class="pron">스파시바 짜 손체 / 짜 도즈찌</div>
@@ -1280,7 +1182,7 @@
       <div class="slot-num">14</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Surrounded — Я верю, что Ты победил</div>
-        <div class="slot-title-ko">Surrounded — 에워싸여도</div>
+        <div class="slot-title-ko">Surrounded</div>
       </div>
     </div>
     <div class="slot-key"></div>
@@ -1337,56 +1239,63 @@
     <div class="slot-hdr-left">
       <div class="slot-num">15</div>
       <div class="slot-titles">
-        <div class="slot-title-ru">Благ наш Господь</div>
-        <div class="slot-title-ko">좋으신 하나님 (Good Good Father)</div>
+        <div class="slot-title-ru">Будем петь, петь, петь</div>
+        <div class="slot-title-ko">Sing Sing Sing</div>
       </div>
     </div>
     <div class="slot-key"></div>
   </div>
-  <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
-          <div class="lyric-line verse-line">
-            <div class="ru">Благ наш Господь ибо милость Его вовеки</div>
-            <div class="pron">블라나쉬 가스보쥐-바 / 밀라스티보 / 바베끼</div>
-            <div class="ko">우리 주님은 선하시도다, 그분의 인자하심이 영원하네</div>
-          </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Пусть все народы и все племена</div>
-            <div class="pron">뿌이쉐 나로듸 이셰쁠리 미옌나</div>
-            <div class="ko">모든 백성들과 모든 민족들이</div>
-          </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Придут и прославят Царя и Творца</div>
-            <div class="pron">쁘리둣 이쁘라쓸랴뱟 쟈랴 잇트-빨쨔</div>
-            <div class="ko">왕이시요 창조자 되시는 분을 찬양하러 오리로다</div>
-          </div>
-        </div>
+  <div class="slot-body">
         <div class="lyrics-section">
           <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
-            <div class="ru">Хвала Тебе Аллилуйя ×2</div>
-            <div class="pron">흐발라 브찌볘 / 알렐루야 알렐루야</div>
-            <div class="ko">주를 찬양해요 할렐루야!</div>
+            <div class="ru">Будем петь, петь, петь с благодарными сердцами</div>
+            <div class="pron">부 쨈 볘츠-볘츠-볘츠 S블라가 달느미 쎌짜미</div>
+            <div class="ko">sing sing sing 천국에 울리는 노래</div>
           </div>
           <div class="lyric-line chorus-line">
-            <div class="ru">Хвала Тебе за то, что Ты есть!</div>
-            <div class="pron">흐발라 브찌볘 / 자-또쉬또 띠예스트</div>
-            <div class="ko">주님이 계시기에 주를 찬양해요!</div>
+            <div class="ru">Будем петь, петь, петь вместе с небесами</div>
+            <div class="pron">부 찜 볘츠-볘츠-볘츠 Vㅖ스때스 녜Vㅖ싸미</div>
+            <div class="ko">we will sing sing sing 주님 들으시네 감사드리며</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Воспевать хвалу и славить Мессию</div>
+            <div class="pron">바스볘 바츠H발루 이슬라-빗 매스하</div>
+            <div class="ko">예수 이름 높이세</div>
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-bridge">🎵 브릿지</span>
-          <div class="lyric-line bridge-line">
-            <div class="ru">О Масих — Ты так благ</div>
-            <div class="pron">오 이쑤스 띠 딱블락 띠 딱블략 들라민냐</div>
-            <div class="ko">오 그리스도 — 주님은 정말 선하세요</div>
+          <span class="section-tag tag-verse">🎵 본절 1</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Великий и прекрасный, народы все и царства</div>
+            <div class="pron">빌리끼 이-쁠리 끄라스늬 / 나로-듸 세이 잘-쓰바</div>
+            <div class="ko">사랑스러운 주님 땅과 하늘 찬양해</div>
           </div>
-          <div class="lyric-line bridge-line">
-            <div class="ru">Ты так благ для меня</div>
-            <div class="pron">You are good / All the time</div>
-            <div class="ko">나에게 정말 선하세요</div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Пред Тобой склонятся / Боже мой, вся жизнь моя</div>
+            <div class="pron">볘레따 보이 S글라-니아짜 / 보-이 G 씐리 뜨랴-찌뱌</div>
+            <div class="ko">열방이 경배해 예수님 당신은 유일하신 삶의 이유</div>
           </div>
-        </div></div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Лишь для Тебя вся жизнь моя</div>
+            <div class="pron">(리쉬)들랴찌뱌 싸쥐스마야</div>
+            <div class="ko">유일하신 삶의 이유</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 본절 2</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ты нас освобождаешь, любовью наполняешь</div>
+            <div class="pron">띠나쉬 아스Vㅏ바(SH)다 예쉬 / 쓸뵤뷰-나플라 Vㅑ 예쉬</div>
+            <div class="ko">자유케 하는 사람 타오르는 불처럼</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Огонь в нас зажигаешь / Боже мой, вся жизнь моя</div>
+            <div class="pron">아-곤 나Z자 쥐가 예쉬 / 보이-G 씐리 뜨랴-찌뱌</div>
+            <div class="ko">인도하시는 빛 예수님 당신은 주 유일하신 삶의 이유</div>
+          </div>
+        </div>
+      </div>
 </div>
     <div class="v-div"></div>
     <div class="song-slot">
@@ -1394,262 +1303,54 @@
     <div class="slot-hdr-left">
       <div class="slot-num">16</div>
       <div class="slot-titles">
-        <div class="slot-title-ru">Будем петь, петь, петь</div>
-        <div class="slot-title-ko">Sing Sing Sing — 함께 노래해요</div>
+        <div class="slot-title-ru">Благ наш Господь</div>
+        <div class="slot-title-ko">좋으신 하나님 (You are Good)</div>
       </div>
     </div>
     <div class="slot-key"></div>
   </div>
-  <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 후렴</span>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Будем петь, петь, петь с благодарными сердцами</div>
-            <div class="pron">부쨈 볘츠-볘츠-볘츠 스블라가달느미 쎌짜미</div>
-            <div class="ko">감사한 마음으로 노래해요, 노래해요, 노래해요</div>
-          </div>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Будем петь, петь, петь вместе с небесами</div>
-            <div class="pron">부찜 볘츠-볘츠-볘츠 브예스때스 녜브예싸미</div>
-            <div class="ko">하늘과 함께 노래해요, 노래해요, 노래해요</div>
-          </div>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Воспевать хвалу и славить Масиха!</div>
-            <div class="pron">바스볘바츠 흐발루 이슬라-빗 매스하</div>
-            <div class="ko">메시야를 높이며 찬양해요!</div>
-          </div>
-        </div>
+  <div class="slot-body">
         <div class="lyrics-section">
           <span class="section-tag tag-verse">🎵 본절</span>
           <div class="lyric-line verse-line">
-            <div class="ru">Великий и Прекрасный — Народы все склонятся</div>
-            <div class="pron">빌리끼 이-쁠리끄라스늬 / 나로-듸세이 잘-쓰바</div>
-            <div class="ko">크고 아름다우신 분 — 모든 민족이 경배하리</div>
+            <div class="ru">Благ наш Господь ибо милость Его вовеки</div>
+            <div class="pron">블라나SH 가스 보쥐-바 / 밀라ST이보 / 바베끼</div>
+            <div class="ko">좋으신 하나님 인자와 자비 영원히</div>
           </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Ты нас освобождаешь С любовью направляешь</div>
-            <div class="pron">볘레따보이 스글라-니아짜 / 보이-그씐리 뜨랴-찌뱌</div>
-            <div class="ko">우리를 자유케 하시고 사랑으로 인도하시네</div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Пусть все народы и племена / Придут и прославят</div>
+            <div class="pron">뿌이쉐 나로듸 이셰쁠리 미옌 나 / 쁘리 둣 (이)쁘RA쓸랴뱟 쟈랴 잇트-빨쨔</div>
+            <div class="ko">각 나라 족속과 백성 방언 세상 모든 세대 영원토록</div>
           </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Огонь в нас зажигаешь</div>
-            <div class="pron">리쉬들랴찌뱌 싸쥐스마야</div>
-            <div class="ko">우리 안에 불을 붙이시네</div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Хвала Тебе Аллилуйя ×2</div>
+            <div class="pron">흐발라 V찌볘 / 알렐루야 알렐루야</div>
+            <div class="ko">주 경배해 할렐루야 할렐루야</div>
           </div>
-          <div class="lyric-line verse-line">
-            <div class="ru">Лишь для Тебя вся жизнь моя</div>
-            <div class="pron">띠나쉬 아스브아바다예쉬 / 쓸뵤뷰-나플라브야예쉬</div>
-            <div class="ko">오직 주님을 위해 내 삶 전부를</div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Хвала Тебе за то, что Ты есть!</div>
+            <div class="pron">흐발라 V찌볘 / 자-또SH또 띠예ST</div>
+            <div class="ko">주 경배해 주 하나님</div>
           </div>
-        </div></div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지 2</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">О Масих — Ты так благ / Ты так благ для меня</div>
+            <div class="pron">오 이쑤스 띠 딱블락 띠 딱블략 들라민냐</div>
+            <div class="ko">You are good / All the time</div>
+          </div>
+        </div>
+      </div>
 </div>
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15 + 16</span></div>
 </div>
-<div class="page">
-  <div class="song-row">
-    <div class="song-slot">
-  <div class="slot-hdr">
-    <div class="slot-hdr-left">
-      <div class="slot-num">17</div>
-      <div class="slot-titles">
-        <div class="slot-title-ru">Боже / Иисус / Дух Святой, я люблю Тебя</div>
-        <div class="slot-title-ko">하나님 / 예수님 / 성령님 사랑해요 — 찬양 선언</div>
-      </div>
-    </div>
-    <div class="slot-key"></div>
-  </div>
-  <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 1절 — 하나님 아버지</span>
-          <div class="lyric-line verse-line">
-            <div class="ru">Боже, я люблю Тебя</div>
-            <div class="pron">보줴, 야 류블류 찌뱌</div>
-            <div class="ko">하나님, 나는 주님을 사랑해요</div>
-          </div>
-        </div>
-        <div class="lyrics-section">
-          <span class="section-tag tag-chorus">🎵 2절 — 예수님</span>
-          <div class="lyric-line chorus-line">
-            <div class="ru">Иисус, я люблю Тебя</div>
-            <div class="pron">이쑤스, 야 류블류 찌뱌</div>
-            <div class="ko">예수님, 나는 주님을 사랑해요</div>
-          </div>
-        </div>
-        <div class="lyrics-section">
-          <span class="section-tag tag-bridge">🎵 3절 — 성령님</span>
-          <div class="lyric-line bridge-line">
-            <div class="ru">Дух Святой, я люблю Тебя</div>
-            <div class="pron">두흐 스뱌또이, 야 류블류 찌뱌</div>
-            <div class="ko">성령님, 나는 주님을 사랑해요</div>
-          </div>
-        </div>
-
-        <div style="margin-top:5mm;background:#1e6b58;border-radius:3mm;padding:5mm;text-align:center;">
-          <div style="font-size:9pt;color:#f0c080;font-weight:700;margin-bottom:3mm;">🎵 삼위일체 선언 찬양</div>
-          <div style="font-size:9pt;color:white;line-height:2.5;">
-            🎶 <strong>Боже</strong>, я люблю Тебя<br>
-            <span style="color:#a0dfc8;font-size:8pt;font-style:italic;">보줴, 야 류블류 찌뱌</span><br>
-            🎶 <strong>Иисус</strong>, я люблю Тебя<br>
-            <span style="color:#a0dfc8;font-size:8pt;font-style:italic;">이쑤스, 야 류블류 찌뱌</span><br>
-            🎶 <strong>Дух Святой</strong>, я люблю Тебя<br>
-            <span style="color:#a0dfc8;font-size:8pt;font-style:italic;">두흐 스뱌또이, 야 류블류 찌뱌</span>
-          </div>
-        </div></div>
-</div>
-    <div class="v-div"></div>
-    <div class="song-slot" style="align-items:center;justify-content:center;opacity:0.12;">
-  <div style="font-size:30pt;text-align:center;">🎵</div>
-</div>
-  </div>
-  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 17</span></div>
-</div>
-
-<div id="tts-status-bar">
-  <span id="tts-status-text">🔊 재생 중...</span>
-  <button id="tts-stop-btn" onclick="stopAll()">■ 멈춤</button>
-</div>
-
-<script>
-// ══════════════════════════════════════════
-//  현지찬양 가이드북 — 러시아어 TTS 엔진
-// ══════════════════════════════════════════
-
-const synth = window.speechSynthesis;
-let ruVoice = null;
-let currentPlaying = null;
-
-// 러시아어 음성 찾기
-function initVoice() {
-  const voices = synth.getVoices();
-  // 러시아어 음성 우선순위: ru-RU 네이티브 → ru → 기타
-  ruVoice = voices.find(v => v.lang === 'ru-RU' && v.localService) ||
-            voices.find(v => v.lang === 'ru-RU') ||
-            voices.find(v => v.lang.startsWith('ru')) ||
-            null;
-  console.log('🇷🇺 TTS 음성:', ruVoice ? ruVoice.name : '기본값 사용');
-}
-synth.addEventListener('voiceschanged', initVoice);
-initVoice();
-
-// 상태 바
-function showStatus(text) {
-  document.getElementById('tts-status-text').textContent = '🔊 ' + text;
-  document.getElementById('tts-status-bar').classList.add('visible');
-}
-function hideStatus() {
-  document.getElementById('tts-status-bar').classList.remove('visible');
-}
-
-// 재생 중인 버튼 해제
-function clearPlaying() {
-  document.querySelectorAll('.playing').forEach(el => el.classList.remove('playing'));
-}
-
-// 전체 멈춤
-function stopAll() {
-  synth.cancel();
-  clearPlaying();
-  hideStatus();
-  currentPlaying = null;
-}
-
-// 단일 텍스트 발음
-function speak(text, btn, label) {
-  stopAll();
-  if (!text.trim()) return;
-
-  currentPlaying = btn;
-  if (btn) btn.classList.add('playing');
-  showStatus(label || text.slice(0, 30));
-
-  const utt = new SpeechSynthesisUtterance(text.trim());
-  utt.lang = 'ru-RU';
-  utt.rate = 0.82;    // 약간 천천히 — 학습용
-  utt.pitch = 1.0;
-  utt.volume = 1.0;
-  if (ruVoice) utt.voice = ruVoice;
-
-  utt.onend = () => { clearPlaying(); hideStatus(); currentPlaying = null; };
-  utt.onerror = () => { clearPlaying(); hideStatus(); };
-
-  synth.speak(utt);
-}
-
-// 여러 문장 순서대로 재생 (곡 전체)
-function speakSequence(texts, songBtn, songTitle) {
-  stopAll();
-  if (!texts.length) return;
-
-  let idx = 0;
-  songBtn.classList.add('playing');
-  showStatus('▶ ' + songTitle + ' — 전체 재생');
-
-  function playNext() {
-    if (idx >= texts.length) {
-      clearPlaying(); hideStatus(); return;
-    }
-    const utt = new SpeechSynthesisUtterance(texts[idx].trim());
-    utt.lang = 'ru-RU';
-    utt.rate = 0.82;
-    utt.pitch = 1.0;
-    if (ruVoice) utt.voice = ruVoice;
-    utt.onend = () => { idx++; setTimeout(playNext, 350); };
-    utt.onerror = () => { idx++; setTimeout(playNext, 350); };
-    synth.speak(utt);
-  }
-  playNext();
-}
-
-// ── DOM 준비 후 버튼 주입 ──
-document.addEventListener('DOMContentLoaded', function() {
-
-  // 1. 각 .ru 줄에 스피커 버튼 추가
-  document.querySelectorAll('.ru').forEach(el => {
-    const text = el.textContent.trim();
-    if (!text) return;
-    const btn = document.createElement('button');
-    btn.className = 'speak-btn';
-    btn.title = '러시아어 발음 듣기';
-    btn.textContent = '🔊';
-    btn.onclick = (e) => { e.stopPropagation(); speak(text, btn, text); };
-    el.appendChild(btn);
-  });
-
-  // 2. 각 곡 헤더에 "전체 재생" 버튼 추가
-  document.querySelectorAll('.slot-hdr').forEach(hdr => {
-    const slot = hdr.closest('.song-slot');
-    if (!slot) return;
-    const ruEls = slot.querySelectorAll('.ru');
-    if (!ruEls.length) return;
-    const titleEl = slot.querySelector('.slot-title-ru');
-    const songTitle = titleEl ? titleEl.textContent.trim().slice(0, 25) : '';
-    const texts = Array.from(ruEls).map(el => {
-      // 버튼 텍스트 제외하고 순수 텍스트만
-      return el.childNodes[0] ? el.childNodes[0].textContent.trim() : el.textContent.trim();
-    }).filter(t => t);
-
-    const btn = document.createElement('button');
-    btn.className = 'speak-song-btn';
-    btn.innerHTML = '▶ 전체듣기';
-    btn.title = '곡 전체 러시아어 순서대로 재생';
-    btn.onclick = () => {
-      if (btn.classList.contains('playing')) { stopAll(); return; }
-      speakSequence(texts, btn, songTitle);
-    };
-    hdr.appendChild(btn);
-  });
-
-  // 3. 단어장 카드 클릭 시 발음
-  document.querySelectorAll('[data-speak-ru]').forEach(card => {
-    const ruText = card.getAttribute('data-speak-ru');
-    card.classList.add('vocab-speak-card');
-    card.title = '클릭하여 발음 듣기';
-    card.onclick = () => {
-      if (card.classList.contains('playing')) { stopAll(); return; }
-      speak(ruText, card, ruText);
-    };
-  });
-
-});
-</script>
 </body>
 </html>
