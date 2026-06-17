@@ -5,29 +5,37 @@
   <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    @page { size: A4 landscape; margin: 0; }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:"Noto Sans KR", sans-serif; background:#c0b8b0; }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+    @page { size: A4 portrait; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* ── BASE PAGE ── */
-    .page {
-      width: 297mm;
-      height: 210mm;
-      background: #fdfaf6;
-      position: relative;
-      overflow: hidden;
-      page-break-after: always;
-      break-after: page;
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: #f0ede8;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 6mm;
+      padding: 6mm;
     }
 
-    /* ── INDEX ── */
-    .index-page {
-      background: linear-gradient(135deg, #1a5e4e 0%, #2d8a72 45%, #236858 100%);
+    /* ══ A4 세로 페이지 ══ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.08);
+      border-radius: 1.5mm;
     }
 
-    /* ══ SONG PAIR LAYOUT ══ */
+    /* ══ 표지/목차 페이지 ══ */
+    .index-page { background: #ffffff; }
+
+    /* ══ 곡 2단 레이아웃 ══ */
     .song-row {
       flex: 1;
       display: flex;
@@ -41,8 +49,7 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      /* 상단/좌우 여백 줄여서 공간 확보 */
-      padding: 4mm 5.5mm 2mm 5.5mm;
+      padding: 5mm 5.5mm 2mm 5.5mm;
       overflow: hidden;
     }
 
@@ -53,7 +60,7 @@
       align-items: center;
       justify-content: space-between;
       padding-bottom: 2.5mm;
-      border-bottom: 2.5px solid #c96a3a;
+      border-bottom: 2px solid #1a5e4e;
       margin-bottom: 3mm;
       gap: 2mm;
     }
@@ -61,28 +68,28 @@
     .slot-num {
       flex-shrink: 0;
       width: 9mm; height: 9mm;
-      background: #c96a3a; color: white;
+      background: #1a5e4e; color: white;
       border-radius: 50%;
       font-size: 9.5pt; font-weight: 900;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 5px rgba(201,106,58,0.3);
+      box-shadow: 0 2px 8px rgba(26,94,78,0.25);
     }
     .slot-titles { min-width: 0; }
     .slot-title-ru {
-      font-size: 11pt; font-weight: 900; color: #1a5e4e;
+      font-size: 11pt; font-weight: 900; color: #111;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       line-height: 1.2;
     }
     .slot-title-ko {
-      font-size: 7.5pt; color: #c96a3a; font-weight: 700;
+      font-size: 7.5pt; color: #1a5e4e; font-weight: 700;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       line-height: 1.35; margin-top: 0.8mm;
     }
     .slot-key {
       flex-shrink: 0;
-      font-size: 6.5pt; color: #1a5e4e; background: #d8f0e8;
+      font-size: 6.5pt; color: #1a5e4e; background: #eaf5ef;
       padding: 1.2mm 2.5mm; border-radius: 2mm; font-weight: 700;
-      white-space: nowrap; border: 1px solid #b0d8c0;
+      white-space: nowrap; border: 1px solid #b8d8c8;
     }
 
     /* 가사 바디 */
@@ -92,62 +99,65 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 2.5mm;           /* ← 섹션 간 여백 최적화 */
+      gap: 2.5mm;
     }
 
-    /* 섹션 블록 (1절/코러스/브릿지) */
+    /* 섹션 블록 */
     .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
 
     .section-tag {
       display: inline-block;
-      font-size: 7pt; font-weight: 800;
-      padding: 0.8mm 2.5mm; border-radius: 1.8mm;
-      margin-bottom: 2mm; flex-shrink: 0;
-      letter-spacing: 0.2px;
+      font-size: 6.5pt; font-weight: 800;
+      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
+      margin-bottom: 1.8mm; flex-shrink: 0;
     }
-    .tag-verse  { background: #d0ede0; color: #1a5e4e; }
-    .tag-chorus { background: #fdddc8; color: #aa4818; }
-    .tag-bridge { background: #e8e0f4; color: #5a3e90; }
-    .tag-kazakh { background: #daeeff; color: #1a4090; }
-    .tag-repeat { background: #eeeeee; color: #666; }
-    .tag-pre    { background: #e8f4d8; color: #3a7020; }
+    .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
+    .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
+    .tag-bridge { background: #f7f0fc; color: #6a3a90; border: 1px solid #d8c8ee; }
+    .tag-kazakh { background: #fff8e8; color: #7a5800; border: 1px solid #e8d898; }
+    .tag-repeat { background: #f4f4f4; color: #666; border: 1px solid #ddd; }
 
-    /* 가사 라인 블록 */
+    /* 가사 라인 */
     .lyric-line {
-      padding: 2mm 3mm;       /* ← 상하 여백 최적화 */
-      border-radius: 1.8mm;
-      margin-bottom: 1.5mm;  /* ← 라인 간 여백 최적화 */
+      padding: 1.8mm 2.5mm;
+      border-radius: 1.5mm;
+      margin-bottom: 1.2mm;
+      border-left: 2.5px solid transparent;
+      background: #fafafa;
+      cursor: pointer;
+      transition: filter 0.12s;
     }
-    .verse-line  { background: #edf8f2; border-left: 3px solid #1e6b58; }
-    .chorus-line { background: #fef0e8; border-left: 3px solid #c96a3a; }
-    .bridge-line { background: #f4effc; border-left: 3px solid #8b5cf6; }
-    .kazakh-line { background: #eaf2ff; border-left: 3px solid #3b82f6; }
+    .lyric-line:hover { filter: brightness(0.97); }
+    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
+    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
+    .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
 
     /* ─── 텍스트 3단계 ─── */
-    /* 러시아어 원문: 얇고 작게 */
-    .ru   {
-      font-size: 7.5pt; color: #3a8070;
+    .ru {
+      font-size: 7pt; color: #999;
       font-weight: 400; line-height: 1.4;
       font-style: italic;
     }
-    /* 한글 발음: 가장 크고 굵게 — 핵심! */
     .pron {
-      font-size: 11pt; color: #aa4818;
+      font-size: 10.5pt; color: #1a5e4e;
       font-weight: 800; line-height: 1.45;
       letter-spacing: 0.1px;
     }
-    /* 한국어 번역: 중간 크기 */
-    .ko   {
-      font-size: 7.5pt; color: #444;
+    .ko {
+      font-size: 7.5pt; color: #333;
       font-weight: 500; line-height: 1.4;
+      border-left: 1.5px solid rgba(26,94,78,0.12);
+      padding-left: 1.5mm;
+      margin-top: 0.3mm;
     }
 
     /* 세로 구분선 */
     .v-div {
       flex-shrink: 0;
-      width: 1px;
+      width: 0.5px;
       background: linear-gradient(to bottom,
-        transparent 0%, #c0b8ae 10%, #c0b8ae 90%, transparent 100%);
+        transparent 0%, #d0ccc8 10%, #d0ccc8 90%, transparent 100%);
     }
 
     /* ── 풋터 ── */
@@ -160,87 +170,76 @@
       justify-content: space-between;
       padding: 0 10mm;
     }
-    .ft-left  { color: rgba(255,255,255,0.75); font-size: 7pt; }
-    .ft-right { color: #f0c080; font-size: 7.5pt; font-weight: 700; }
+    .ft-left  { color: rgba(255,255,255,0.7); font-size: 6.5pt; }
+    .ft-right { color: #f0d070; font-size: 7.5pt; font-weight: 700; }
 
     /* ── 단어 페이지 ── */
     .vocab-grid {
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:2.5mm; margin-bottom:3mm;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 2.5mm; margin-bottom: 3mm;
     }
     .vocab-card {
-      background:white; border-radius:2.5mm; padding:3mm;
-      box-shadow:0 1px 4px rgba(0,0,0,0.08);
+      background: #fafafa;
+      border: 1px solid #e8e4e0;
+      border-radius: 2.5mm; padding: 3mm;
     }
-    .vc-ru   { font-size:8.5pt; font-weight:900; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
-    .vc-pron { font-size:9pt;   font-weight:700; color:#c96a3a; margin-bottom:1mm; line-height:1.3; }
+    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
+    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
     .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
-    .vc-en   { font-size:6pt;   color:#999; line-height:1.4; }
+    .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
     .cat-lbl {
       font-size:7pt; font-weight:700; padding:1.5mm 3mm;
       border-radius:2mm; display:inline-block; margin-bottom:2mm;
     }
 
-
-    /* ── TTS SPEAK BUTTONS (화면 전용, 인쇄 시 숨김) ── */
-    .speak-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 5mm; height: 5mm; border-radius: 50%;
-      background: none; border: none; cursor: pointer;
-      font-size: 7pt; opacity: 0.4; margin-left: 1.5mm;
-      vertical-align: middle; transition: opacity 0.15s, transform 0.15s;
+    /* ── 발음 클릭 기능 ── */
+    .pron-highlight {
+      background: rgba(26,94,78,0.12) !important;
+      border-radius: 3px;
+      font-weight: 900 !important;
+      color: #0d4030 !important;
+      padding: 0.5mm 1mm;
+      transition: all 0.2s;
+    }
+    .lyric-line .ru:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(26,94,78,0.35);
+      text-underline-offset: 2px;
+    }
+    .slot-hdr::after {
+      content: "🔊 클릭 시 발음 재생";
+      font-size: 5.5pt;
+      color: rgba(26,94,78,0.35);
+      font-weight: 500;
+      align-self: flex-end;
+      padding-bottom: 1mm;
       flex-shrink: 0;
     }
-    .speak-btn:hover { opacity: 1; transform: scale(1.2); }
-    .speak-btn.playing { opacity: 1; animation: pulse-btn 0.8s infinite; }
 
-    .speak-song-btn {
-      display: inline-flex; align-items: center; gap: 1mm;
-      background: #e8f4f1; border: 1px solid #b0d8c0; border-radius: 2mm;
-      color: #1a5e4e; font-size: 6pt; font-weight: 700;
-      padding: 1mm 2mm; cursor: pointer; transition: all 0.15s;
-      white-space: nowrap; font-family: "Noto Sans KR", sans-serif;
-    }
-    .speak-song-btn:hover { background: #1a5e4e; color: white; }
-    .speak-song-btn.playing { background: #c96a3a; color: white; border-color: #c96a3a; }
-
-    /* 단어장 카드 — 클릭 가능 표시 */
-    .vocab-speak-card {
-      cursor: pointer; transition: box-shadow 0.15s, transform 0.12s;
-    }
-    .vocab-speak-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.15); transform: translateY(-0.5mm); }
-    .vocab-speak-card.playing { box-shadow: 0 0 0 2px #c96a3a; }
-
-    /* 재생 중 상태 표시 바 */
+    /* ── TTS 상태바 ── */
     #tts-status-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       background: #1a5e4e; color: white;
       padding: 3mm 8mm; font-size: 8pt; font-weight: 600;
       display: none; align-items: center; justify-content: space-between;
       font-family: "Noto Sans KR", sans-serif;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
     }
     #tts-status-bar.visible { display: flex; }
     #tts-stop-btn {
-      background: #c96a3a; border: none; color: white;
+      background: white; border: none; color: #1a5e4e;
       padding: 1.5mm 4mm; border-radius: 2mm; cursor: pointer;
       font-size: 7.5pt; font-weight: 700; font-family: inherit;
     }
 
-    @keyframes pulse-btn {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
+    /* 인쇄 설정 */
     @media print {
-      .speak-btn, .speak-song-btn, #tts-status-bar { display: none !important; }
-      .vocab-speak-card { cursor: default; }
-    }
-
-    @media print {
-      body { background: white; }
-      .page { page-break-after: always; break-after: page; }
+      body { background: white; gap: 0; padding: 0; align-items: stretch; }
+      .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
+      .slot-hdr::after { display: none !important; }
+      #tts-status-bar { display: none !important; }
+      .lyric-line { cursor: default; }
     }
   </style>
 </head>
@@ -248,151 +247,132 @@
 
 
 <div class="page index-page">
-  <div style="height:100%;display:flex;">
+  <div style="display:flex;flex-direction:column;height:100%;">
 
-    <!-- 왼쪽: 브랜드 타이틀 패널 -->
-    <div style="width:78mm;background:rgba(0,0,0,0.22);flex-shrink:0;
-      display:flex;flex-direction:column;justify-content:space-between;
-      padding:10mm 9mm 10mm 11mm;">
-
-      <!-- 상단 -->
-      <div>
-        <div style="width:10mm;height:2px;background:#c96a3a;border-radius:1px;margin-bottom:6mm;"></div>
-        <div style="font-size:22pt;font-weight:900;color:white;line-height:1.2;margin-bottom:4mm;">
-          현지찬양가사<br>가이드북
+    <!-- 상단 배너 -->
+    <div style="background:#1a5e4e;padding:10mm 12mm 8mm 12mm;flex-shrink:0;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+        <div>
+          <div style="font-size:7pt;color:rgba(255,255,255,0.55);letter-spacing:2px;margin-bottom:3mm;font-weight:500;">✝️ 2026 AGAPAO MISSION — КОНАЕВ</div>
+          <div style="font-size:24pt;font-weight:900;color:#ffffff;line-height:1.1;">현지찬양가사<br>가이드북</div>
+          <div style="margin-top:3mm;font-size:8.5pt;color:rgba(255,255,255,0.6);font-weight:400;">Сборник Песен Поклонения</div>
         </div>
-        <div style="font-size:9pt;color:#f0c080;font-weight:500;line-height:1.7;">
-          Сборник<br>Песен Поклонения
-        </div>
-      </div>
-
-      <!-- 하단 정보 -->
-      <div>
-        <div style="height:1px;background:rgba(255,255,255,0.12);margin-bottom:4mm;"></div>
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5mm 3mm;align-items:center;margin-bottom:5mm;">
-          <div style="color:#80cfb0;font-size:7pt;">🎵</div>
-          <div style="color:rgba(255,255,255,0.6);font-size:7.5pt;">총 16곡</div>
-          <div style="color:#80cfb0;font-size:7pt;">🇷🇺</div>
-          <div style="color:rgba(255,255,255,0.6);font-size:7.5pt;">러시아어 · 한글 발음 · 번역</div>
+        <div style="text-align:right;padding-bottom:2mm;">
+          <div style="font-size:26pt;opacity:0.12;line-height:1;">🎵</div>
+          <div style="font-size:7pt;color:rgba(255,255,255,0.45);margin-top:2mm;">총 16곡<br>러시아어 · 한글 발음</div>
         </div>
       </div>
     </div>
 
-    <!-- 오른쪽: 목차 패널 -->
-    <div style="flex:1;padding:9mm 11mm 9mm 10mm;display:flex;flex-direction:column;">
+    <!-- 목차 본문 -->
+    <div style="flex:1;padding:7mm 12mm 2mm 12mm;display:flex;flex-direction:column;">
 
-      <!-- 목차 헤더 -->
-      <div style="display:flex;align-items:center;gap:3mm;margin-bottom:6mm;
-        padding-bottom:3mm;border-bottom:1.5px solid rgba(255,255,255,0.18);">
-        <span style="font-size:10.5pt;color:#a0dfc8;font-weight:800;letter-spacing:1px;">📋 목 차</span>
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.08);"></div>
-        <span style="font-size:6.5pt;color:rgba(255,255,255,0.3);">Contents</span>
+      <div style="display:flex;align-items:center;gap:3mm;margin-bottom:5mm;padding-bottom:3mm;border-bottom:2px solid #1a5e4e;">
+        <span style="font-size:10pt;color:#1a5e4e;font-weight:900;letter-spacing:1px;">📋 목 차</span>
+        <div style="flex:1;height:1px;background:#e8e4e0;"></div>
+        <span style="font-size:7pt;color:#bbb;">Contents</span>
       </div>
 
-      <!-- 목차 리스트 -->
-      <div style="display:flex;flex-direction:column;gap:1mm;flex:1;">
-
-        <!-- 단어장 -->
-        <div style="display:flex;align-items:center;gap:3mm;padding:2mm 3mm;
-          background:rgba(160,223,200,0.1);border-radius:2mm;border-left:2px solid #80cfb0;">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.1</span>
-          <span style="font-size:9pt;">📖</span>
-          <span style="color:#a0dfc8;font-size:9pt;font-weight:700;">러시아어 핵심 단어 30개</span>
-        </div>
-
-        <!-- 구분선 -->
-        <div style="height:1px;background:rgba(255,255,255,0.08);margin:2mm 0;"></div>
-
-<!-- 찬양 목록 -->
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.2</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">01</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">기뻐하고 또 기뻐하라</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">02</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주의 사랑 안에 영원히 (나이-나이-나이)</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.3</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">03</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">사랑해요 주님 (카자흐어)</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">04</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">송축해 내 영혼 (10,000 Reasons)</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.4</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">05</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주 품에 (Hillsong — Still)</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">06</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">온 땅들아 여호와를 찬양하라</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.5</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">07</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">What A Beautiful Name 그 이름 아름답도다</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">08</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">내 모든 삶의 행동 주안에</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.6</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">09</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">야훼</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.7</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">10</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">내 맘의 눈을 여소서</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.8</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">11</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Deep Down in My Heart</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">12</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">이 날은 주가 지으신 날</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.9</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">13</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">주 사랑합니다 + Beautiful Day</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">14</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Surrounded</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:rgba(255,255,255,0.05);border-radius:1.5mm;border-left:1.5px solid rgba(255,255,255,0.2);">
-          <span style="color:#f0c080;font-size:8.5pt;font-weight:900;min-width:8mm;">p.10</span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">15</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">Sing Sing Sing</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:3mm;padding:1.5mm 3mm;background:transparent;border-radius:1.5mm;border-left:1.5px solid transparent;">
-          <span style="min-width:8mm;"></span>
-          <span style="color:rgba(255,255,255,0.35);font-size:7.5pt;min-width:6mm;font-weight:600;">16</span>
-          <span style="color:rgba(255,255,255,0.88);font-size:8.5pt;font-weight:600;">좋으신 하나님 (You are Good)</span>
-        </div>
-
+      <!-- 단어장 -->
+      <div style="display:flex;align-items:center;gap:3mm;padding:2.5mm 4mm;background:#eaf5ef;border-radius:2mm;border-left:3px solid #1a5e4e;margin-bottom:3mm;">
+        <span style="color:#1a5e4e;font-size:8pt;font-weight:900;min-width:10mm;">p.1</span>
+        <span style="font-size:9pt;">📖</span>
+        <span style="color:#1a5e4e;font-size:9pt;font-weight:800;">러시아어 핵심 단어 30개</span>
       </div>
 
+      <!-- 2열 곡 목록 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 8mm;">
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.2</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">01</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">기뻐하고 또 기뻐하라</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">02</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주의 사랑 안에 영원히</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.3</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">03</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">사랑해요 주님 (카자흐어)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">04</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">송축해 내 영혼 (10,000 Reasons)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.4</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">05</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주 품에 (Hillsong — Still)</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">06</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">온 땅들아 여호와를 찬양하라</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.5</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">07</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">What A Beautiful Name</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">08</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">내 모든 삶의 행동 주안에</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.6</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">09</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">야훼</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.7</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">10</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">내 맘의 눈을 여소서</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.8</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">11</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Deep Down in My Heart</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">12</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">이 날은 주가 지으신 날</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.9</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">13</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주 사랑합니다 + Beautiful Day</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">14</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Surrounded</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.10</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">15</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Sing Sing Sing</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">16</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">좋으신 하나님 (You are Good)</span>
+        </div>
+      </div>
     </div>
 
+    
+    <div class="page-footer">
+      <span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span>
+      <span class="ft-right">📋 목 차</span>
+    </div>
   </div>
-
 </div>
-  <div class="page">
+<div class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -1352,5 +1332,94 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15 + 16</span></div>
 </div>
+
+  <script>
+  // ── 발음 기능: 러시아어 줄 클릭 시 TTS로 읽어주기 ──
+  (function() {
+    const synth = window.speechSynthesis;
+
+    function getRuVoice() {
+      const voices = synth.getVoices();
+      return voices.find(v => v.lang.startsWith('ru')) || voices[0] || null;
+    }
+
+    function speak(text) {
+      if (!synth) return;
+      synth.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'ru-RU';
+      utter.rate = 0.85;
+      utter.pitch = 1;
+      const voice = getRuVoice();
+      if (voice) utter.voice = voice;
+      synth.speak(utter);
+    }
+
+    function initPron() {
+      // RU lines: click → TTS
+      document.querySelectorAll('.lyric-line .ru').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 러시아어 발음을 들을 수 있어요';
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const text = this.textContent.replace(/[/|—–]/g, ' ').trim();
+          // Flash effect
+          this.style.transition = 'background 0.15s';
+          this.style.background = 'rgba(201,106,58,0.18)';
+          this.style.borderRadius = '3px';
+          setTimeout(() => this.style.background = '', 600);
+          speak(text);
+        });
+      });
+
+      // PRON lines: click → highlight toggle
+      document.querySelectorAll('.lyric-line .pron').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 발음 기호를 강조합니다';
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          this.classList.toggle('pron-highlight');
+        });
+      });
+
+      // Lyric lines: click entire line → read RU
+      document.querySelectorAll('.lyric-line').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function() {
+          const ru = this.querySelector('.ru');
+          if (ru) {
+            const text = ru.textContent.replace(/[/|—–]/g, ' ').trim();
+            ru.style.transition = 'background 0.15s';
+            ru.style.background = 'rgba(201,106,58,0.18)';
+            ru.style.borderRadius = '3px';
+            setTimeout(() => ru.style.background = '', 600);
+            speak(text);
+          }
+        });
+      });
+
+      // Vocab words: click → read
+      document.querySelectorAll('[data-speak-ru]').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 발음을 들을 수 있어요';
+        el.addEventListener('click', function() {
+          speak(this.dataset.speakRu);
+          this.style.transition = 'transform 0.1s';
+          this.style.transform = 'scale(1.08)';
+          setTimeout(() => this.style.transform = '', 200);
+        });
+      });
+    }
+
+    // Init after voices load
+    if (synth.getVoices().length > 0) {
+      initPron();
+    } else {
+      synth.addEventListener('voiceschanged', initPron, { once: true });
+      setTimeout(initPron, 800);
+    }
+  })();
+  </script>
+
 </body>
 </html>
