@@ -297,6 +297,105 @@
     }
 
     /* ══════════════════════════════════════
+       데스크탑 발음 편집 플로팅 툴바
+    ══════════════════════════════════════ */
+    #det-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9100;
+      background: #1a5e4e;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      padding: 9px 16px;
+      font-size: 9pt;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.18s;
+      letter-spacing: 0.3px;
+    }
+    #det-toggle:hover { background: #145040; }
+
+    #desktop-edit-toolbar {
+      position: fixed;
+      bottom: 70px;
+      right: 24px;
+      z-index: 9100;
+      background: #ffffff;
+      border: 1.5px solid #d4e8e0;
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+      padding: 14px 16px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 200px;
+      animation: detFadeIn 0.18s ease;
+    }
+    @keyframes detFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #desktop-edit-toolbar.open { display: flex; }
+
+    .det-title {
+      font-size: 7.5pt;
+      color: #1a5e4e;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid #e0f0ea;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .det-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 12px;
+      border-radius: 9px;
+      border: none;
+      font-size: 8.5pt;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      width: 100%;
+    }
+    .det-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .det-btn:active { transform: translateY(0); }
+    .det-btn-reset {
+      background: #f5f5f5;
+      color: #333;
+      border: 1.5px solid #ddd;
+    }
+    .det-btn-restore {
+      background: #1a5e4e;
+      color: #fff;
+    }
+    .det-hint {
+      font-size: 6.5pt;
+      color: #999;
+      text-align: center;
+      line-height: 1.6;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+    .det-hint strong { color: #1a5e4e; }
+    @media (max-width: 768px) {
+      #det-toggle, #desktop-edit-toolbar { display: none !important; }
+    }
+    @media print {
+      #det-toggle, #desktop-edit-toolbar { display: none !important; }
+    }
+
+    /* ══════════════════════════════════════
        모바일 반응형 스타일 (완전 재정비)
     ══════════════════════════════════════ */
 
@@ -2586,10 +2685,13 @@
     }
 
     function updateRestoreBtn() {
-      const btn = document.getElementById('restore-pron-btn');
-      if (!btn) return;
       const hasBackup = !!localStorage.getItem(STORAGE_KEY_BACKUP);
-      btn.style.display = hasBackup ? 'flex' : 'none';
+      // 모바일 TOC 버튼
+      const mBtn = document.getElementById('restore-pron-btn');
+      if (mBtn) mBtn.style.display = hasBackup ? 'flex' : 'none';
+      // 데스크탑 플로팅 버튼
+      const dBtn = document.getElementById('det-restore-btn');
+      if (dBtn) dBtn.style.display = hasBackup ? 'flex' : 'none';
     }
 
         function openMobileToc() {
@@ -2644,6 +2746,40 @@
     });
 
   </script>
+
+<!-- ── 데스크탑 발음 편집 플로팅 툴바 ── -->
+<button id="det-toggle" onclick="toggleDetToolbar()" title="발음 편집 도구">
+  ✏️ 발음편집
+</button>
+
+<div id="desktop-edit-toolbar">
+  <div class="det-title">✏️ 발음 직접 편집</div>
+  <button class="det-btn det-btn-reset" onclick="resetPronEdits()">
+    ↺ &nbsp;발음 초기화
+  </button>
+  <button id="det-restore-btn" class="det-btn det-btn-restore" onclick="restorePronBackup()" style="display:none">
+    ↩ &nbsp;이전 발음 복원
+  </button>
+  <div class="det-hint">
+    발음 텍스트를 <strong>클릭</strong>하여 직접 수정<br>
+    수정 후 <strong>Enter</strong> 또는 외부 클릭 → 자동 저장
+  </div>
+</div>
+
+<script>
+  function toggleDetToolbar() {
+    const panel = document.getElementById('desktop-edit-toolbar');
+    panel.classList.toggle('open');
+  }
+  // 패널 외부 클릭 시 닫기
+  document.addEventListener('click', function(e) {
+    const panel = document.getElementById('desktop-edit-toolbar');
+    const btn   = document.getElementById('det-toggle');
+    if (panel && btn && !panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+    }
+  });
+</script>
 
 </body>
 </html>
