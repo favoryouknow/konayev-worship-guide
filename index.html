@@ -618,8 +618,838 @@
 
 
   <div id="mobile-nav">
-    <span class="nav-title">✝️ 코나예프 찬양가이드북</span>
-    <button id="mobile-toc-btn" onclick="toggleMobileToc()">목차 ☰</button>
+    <div class="nav-left">
+      <div class="nav-cross">✝</div>
+      <div class="nav-text">
+        <div class="nav-title">코나예프 찬양가이드북</div>
+        <div class="nav-sub">2026 AGAPAO · 총 16곡</div>
+      </div>
+    </div>
+    <button id="mobile-toc-btn" onclick="toggleMobileToc()" aria-label="목차 열기">
+      <span id="toc-btn-icon">☰</span>
+      <span>목차</span>
+    </button>
+  </div>
+  <div id="mobile-toc-menu">
+
+    <!-- 메뉴 헤더 -->
+    <div class="toc-menu-header">
+      <span class="toc-menu-title">목차</span>
+      <button class="toc-close-btn" onclick="toggleMobileToc()">✕</button>
+    </div>
+
+    <!-- 단어장 -->
+    <div class="toc-section-label">단어장</div>
+    <div class="mobile-toc-item toc-vocab" onclick="goToPage('page-vocab');toggleMobileToc()">
+      <span class="toc-num toc-num-vocab">★</span>
+      <div class="toc-info">
+        <span class="toc-name">러시아어 핵심 단어 30</span>
+        <span class="toc-sub">Ключевые слова</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <!-- 찬양 곡 목록 -->
+    <div class="toc-section-label">찬양 곡 목록</div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">1</span>
+      <div class="toc-info">
+        <span class="toc-name">기뻐하고 또 기뻐하라</span>
+        <span class="toc-sub">Радуйтесь и ликуйте</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">2</span>
+      <div class="toc-info">
+        <span class="toc-name">주님의 사랑 안에 영원히</span>
+        <span class="toc-sub">Буду жить в Твоей любви</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">3</span>
+      <div class="toc-info">
+        <span class="toc-name">사랑해요 주님 (카자흐어)</span>
+        <span class="toc-sub">Сені сүйемін Құдай</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">4</span>
+      <div class="toc-info">
+        <span class="toc-name">송축해 내 영혼</span>
+        <span class="toc-sub">Славь, душа, Господа</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">5</span>
+      <div class="toc-info">
+        <span class="toc-name">주 품에 (Still)</span>
+        <span class="toc-sub">Скрой меня Своим крылом</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">6</span>
+      <div class="toc-info">
+        <span class="toc-name">온 땅들아 여호와를 찬양하라</span>
+        <span class="toc-sub">Славьте Господа все народы</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">7</span>
+      <div class="toc-info">
+        <span class="toc-name">What A Beautiful Name</span>
+        <span class="toc-sub">Святый</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">8</span>
+      <div class="toc-info">
+        <span class="toc-name">내 모든 삶의 행동 주안에</span>
+        <span class="toc-sub">Всей своей жизнью</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-09');toggleMobileToc()">
+      <span class="toc-num">9</span>
+      <div class="toc-info">
+        <span class="toc-name">야훼</span>
+        <span class="toc-sub">Яхве</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-10');toggleMobileToc()">
+      <span class="toc-num">10</span>
+      <div class="toc-info">
+        <span class="toc-name">내 맘의 눈을 여소서</span>
+        <span class="toc-sub">Open the Eyes of My Heart</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">11</span>
+      <div class="toc-info">
+        <span class="toc-name">Deep Down in My Heart</span>
+        <span class="toc-sub">В глубине моего сердца</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">12</span>
+      <div class="toc-info">
+        <span class="toc-name">이 날은 주가 지으신 날</span>
+        <span class="toc-sub">Это день, который создал Господь</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">13</span>
+      <div class="toc-info">
+        <span class="toc-name">주 사랑합니다 + Beautiful Day</span>
+        <span class="toc-sub">Господь, я люблю Тебя</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">14</span>
+      <div class="toc-info">
+        <span class="toc-name">Surrounded</span>
+        <span class="toc-sub">Окружён</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">15</span>
+      <div class="toc-info">
+        <span class="toc-name">Sing Sing Sing</span>
+        <span class="toc-sub">Пой, пой, пой</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">16</span>
+      <div class="toc-info">
+        <span class="toc-name">좋으신 하나님 (You are Good)</span>
+        <span class="toc-sub">Бог, Ты благ</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <!-- 도구 영역 -->
+    <div class="toc-section-label">발음 관리</div>
+
+    <div id="restore-pron-btn" class="mobile-toc-item toc-tool-item" onclick="restorePronBackup()" style="display:none;">
+      <span class="toc-num toc-num-restore">↩</span>
+      <div class="toc-info">
+        <span class="toc-name" style="color:#2d7a5f;">이전 발음으로 복원</span>
+        <span class="toc-sub">백업된 발음 불러오기</span>
+      </div>
+      <span class="toc-arrow" style="color:#2d7a5f;">›</span>
+    </div>
+
+    <div id="reset-pron-btn" class="mobile-toc-item toc-tool-item" onclick="resetPronEdits()">
+      <span class="toc-num toc-num-reset">↺</span>
+      <div class="toc-info">
+        <span class="toc-name" style="color:#c0392b;">발음 편집 초기화</span>
+        <span class="toc-sub">현재 편집 내용 지우기</span>
+      </div>
+      <span class="toc-arrow" style="color:#c0392b;">›</span>
+    </div>
+
+    <div style="height:env(safe-area-inset-bottom, 12px);"></div>
+  </div>
+PE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+    @page { size: A4 portrait; margin: 0; }
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: #f0ede8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6mm;
+      padding: 6mm;
+    }
+
+    /* ══ A4 세로 페이지 ══ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.08);
+      border-radius: 1.5mm;
+    }
+
+    /* ══ 표지/목차 페이지 ══ */
+    .index-page { background: #ffffff; }
+
+    /* ══ 곡 2단 레이아웃 ══ */
+    .song-row {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* 각 곡 슬롯 */
+    .song-slot {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 5mm 5.5mm 2mm 5.5mm;
+      overflow: hidden;
+    }
+
+    /* 슬롯 헤더 */
+    .slot-hdr {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2.5mm;
+      border-bottom: 2px solid #1a5e4e;
+      margin-bottom: 3mm;
+      gap: 2mm;
+    }
+    .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
+    .slot-num {
+      flex-shrink: 0;
+      width: 9mm; height: 9mm;
+      background: #1a5e4e; color: white;
+      border-radius: 50%;
+      font-size: 9.5pt; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(26,94,78,0.25);
+    }
+    .slot-titles { min-width: 0; }
+    .slot-title-ru {
+      font-size: 11pt; font-weight: 900; color: #111;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .slot-title-ko {
+      font-size: 7.5pt; color: #1a5e4e; font-weight: 700;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.35; margin-top: 0.8mm;
+    }
+    .slot-key {
+      flex-shrink: 0;
+      font-size: 6.5pt; color: #1a5e4e; background: #eaf5ef;
+      padding: 1.2mm 2.5mm; border-radius: 2mm; font-weight: 700;
+      white-space: nowrap; border: 1px solid #b8d8c8;
+    }
+
+    /* 가사 바디 */
+    .slot-body {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5mm;
+    }
+
+    /* 섹션 블록 */
+    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 6.5pt; font-weight: 800;
+      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
+      margin-bottom: 1.8mm; flex-shrink: 0;
+    }
+    .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
+    .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
+    .tag-bridge { background: #f7f0fc; color: #6a3a90; border: 1px solid #d8c8ee; }
+    .tag-kazakh { background: #fff8e8; color: #7a5800; border: 1px solid #e8d898; }
+    .tag-repeat { background: #f4f4f4; color: #666; border: 1px solid #ddd; }
+
+    /* 가사 라인 */
+    .lyric-line {
+      padding: 1.8mm 2.5mm;
+      border-radius: 1.5mm;
+      margin-bottom: 1.2mm;
+      border-left: 2.5px solid transparent;
+      background: #fafafa;
+      cursor: pointer;
+      transition: filter 0.12s;
+    }
+    .lyric-line:hover { filter: brightness(0.97); }
+    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
+    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
+    .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
+
+    /* ─── 텍스트 3단계 ─── */
+    .ru {
+      font-size: 7pt; color: #999;
+      font-weight: 400; line-height: 1.4;
+      font-style: italic;
+    }
+    .pron {
+      font-size: 10.5pt; color: #1a5e4e;
+      font-weight: 800; line-height: 1.45;
+      letter-spacing: 0.1px;
+    }
+    .ko {
+      font-size: 7.5pt; color: #333;
+      font-weight: 500; line-height: 1.4;
+      border-left: 1.5px solid rgba(26,94,78,0.12);
+      padding-left: 1.5mm;
+      margin-top: 0.3mm;
+    }
+
+    /* 세로 구분선 */
+    .v-div {
+      flex-shrink: 0;
+      width: 0.5px;
+      background: linear-gradient(to bottom,
+        transparent 0%, #d0ccc8 10%, #d0ccc8 90%, transparent 100%);
+    }
+
+    /* ── 풋터 ── */
+    .page-footer {
+      flex-shrink: 0;
+      height: 8mm;
+      background: #1a5e4e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10mm;
+    }
+    .ft-left  { color: rgba(255,255,255,0.7); font-size: 6.5pt; }
+    .ft-right { color: #f0d070; font-size: 7.5pt; font-weight: 700; }
+
+    /* ── 단어 페이지 ── */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 2.5mm; margin-bottom: 3mm;
+    }
+    .vocab-card {
+      background: #fafafa;
+      border: 1px solid #e8e4e0;
+      border-radius: 2.5mm; padding: 3mm;
+    }
+    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
+    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
+    .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
+    .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
+    .cat-lbl {
+      font-size:7pt; font-weight:700; padding:1.5mm 3mm;
+      border-radius:2mm; display:inline-block; margin-bottom:2mm;
+    }
+
+    /* ── 발음 클릭 기능 ── */
+    .pron-highlight {
+      background: rgba(26,94,78,0.12) !important;
+      border-radius: 3px;
+      font-weight: 900 !important;
+      color: #0d4030 !important;
+      padding: 0.5mm 1mm;
+      transition: all 0.2s;
+    }
+    .lyric-line .ru:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(26,94,78,0.35);
+      text-underline-offset: 2px;
+    }
+    .slot-hdr::after {
+      content: "🔊 클릭 시 발음 재생";
+      font-size: 5.5pt;
+      color: rgba(26,94,78,0.35);
+      font-weight: 500;
+      align-self: flex-end;
+      padding-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    /* ── TTS 상태바 ── */
+    #tts-status-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1a5e4e; color: white;
+      padding: 3mm 8mm; font-size: 8pt; font-weight: 600;
+      display: none; align-items: center; justify-content: space-between;
+      font-family: "Noto Sans KR", sans-serif;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    }
+    #tts-status-bar.visible { display: flex; }
+    #tts-stop-btn {
+      background: white; border: none; color: #1a5e4e;
+      padding: 1.5mm 4mm; border-radius: 2mm; cursor: pointer;
+      font-size: 7.5pt; font-weight: 700; font-family: inherit;
+    }
+
+    /* 인쇄 설정 */
+
+    /* ── 발음 편집 기능 ── */
+    .pron {
+      cursor: text;
+      border-radius: 3px;
+      transition: background 0.15s;
+      outline: none;
+      min-width: 20px;
+      display: inline-block;
+    }
+    .pron:hover {
+      background: rgba(26,94,78,0.07);
+    }
+    .pron:focus {
+      background: rgba(26,94,78,0.13);
+      box-shadow: 0 0 0 2px rgba(26,94,78,0.25);
+    }
+    .pron.edited {
+      color: #0d4030;
+      font-weight: 900;
+    }
+    .pron.edited::after {
+      content: " ✏";
+      font-size: 7pt;
+      opacity: 0.4;
+      font-weight: 400;
+    }
+
+    /* 저장 완료 토스트 */
+    #save-toast {
+      position: fixed;
+      bottom: 12mm;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a5e4e;
+      color: white;
+      padding: 2mm 5mm;
+      border-radius: 3mm;
+      font-size: 8pt;
+      font-family: "Noto Sans KR", sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 9999;
+    }
+    #save-toast.show { opacity: 1; }
+
+    @media print {
+            #save-toast { display: none !important; }
+      .pron.edited::after { display: none !important; }
+      .pron:focus { background: none; box-shadow: none; }
+    }
+    @media print {
+      body { background: white; gap: 0; padding: 0; align-items: stretch; }
+      .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
+      .slot-hdr::after { display: none !important; }
+      #tts-status-bar { display: none !important; }
+      .lyric-line { cursor: default; }
+    }
+
+    /* ══════════════════════════════════════
+       모바일 반응형 스타일 (완전 재정비)
+    ══════════════════════════════════════ */
+
+    /* ── 모바일 공통 기반 ── */
+    @media screen and (max-width: 768px) {
+
+      html, body {
+        background: #f0f0ec;
+        margin: 0; padding: 0;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* 페이지 블록: A4 고정 → 완전 자동 높이 */
+      .page {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 8px solid #e0e0d8 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+
+      /* 페이지 내부 wrapper */
+      .page > div {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 14px 16px !important;
+      }
+
+      /* ── 곡 레이아웃 ── */
+      .song-row {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 곡 슬롯 */
+      .song-slot {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        padding: 0 0 20px 0 !important;
+        border-right: none !important;
+        border-bottom: 2px dashed #d0d0c8 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .song-slot:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 4px !important;
+      }
+
+      /* 세로 구분선 숨기기 */
+      .v-div { display: none !important; }
+
+      /* ── 곡 헤더 ── */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .slot-num {
+        width: 32px !important; height: 32px !important;
+        font-size: 13px !important;
+        flex-shrink: 0 !important;
+      }
+
+      .slot-title-ru {
+        font-size: 13pt !important;
+        line-height: 1.3 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
+        margin-top: 2px !important;
+      }
+
+      /* ── 가사 body ── */
+      .slot-body {
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 섹션 (본절/후렴) */
+      .lyrics-section {
+        margin-bottom: 14px !important;
+        overflow: visible !important;
+      }
+
+      .section-tag {
+        font-size: 8pt !important;
+        padding: 2px 7px !important;
+        margin-bottom: 8px !important;
+        display: inline-block !important;
+      }
+
+      /* ── 가사 한 줄 (ru + pron + ko) ── */
+      .lyric-line {
+        display: block !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #f0f0ec !important;
+        gap: 0 !important;
+      }
+
+      .lyric-line:last-child {
+        border-bottom: none !important;
+      }
+
+      /* 러시아어 원문 */
+      .ru {
+        font-size: 11pt !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        color: #111 !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+      }
+
+      /* 한글 발음 */
+      .pron {
+        font-size: 10.5pt !important;
+        font-weight: 800 !important;
+        line-height: 1.5 !important;
+        color: #1a5e4e !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+        padding: 3px 6px !important;
+        background: rgba(26,94,78,0.06) !important;
+        border-radius: 4px !important;
+        min-height: 36px !important;
+      }
+
+      /* 한국어 의미 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #888 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 1px !important;
+      }
+
+      /* ── 단어집 ── */
+      .vocab-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      .vocab-card {
+        padding: 10px 8px !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(26,94,78,0.1);
+      }
+
+      .vocab-card:active {
+        transform: scale(0.97) !important;
+        background: #eaf5ef !important;
+      }
+
+      .vocab-ru { font-size: 12pt !important; margin-bottom: 3px !important; }
+      .vocab-pron { font-size: 9.5pt !important; }
+      .vocab-ko { font-size: 8pt !important; }
+
+      /* ── 목차 ── */
+      div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 5px !important;
+      }
+
+      /* ── 페이지 푸터 숨기기 ── */
+      .page-footer { display: none !important; }
+
+      /* ── 표지 페이지 ── */
+      .page[style*="background:#1a5e4e"],
+      .page[style*="background: #1a5e4e"] {
+        padding: 30px 20px !important;
+        min-height: 60vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+
+      /* ── 모바일: 목차 섹션 숨기기 (네비바 드롭다운으로 대체) ── */
+      #toc-section { display: none !important; }
+      /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
+      .slot-key { display: none !important; }
+
+      /* ── 텍스트 배치 정돈 ── */
+
+      /* 가사 한 줄: 블록 구조로 명확하게 */
+      .lyric-line {
+        display: block !important;
+        padding: 10px 12px !important;
+        margin-bottom: 5px !important;
+        border-radius: 8px !important;
+        border-left-width: 3px !important;
+        background: #fafaf8 !important;
+        cursor: default !important;
+      }
+
+      .verse-line  { background: #f5fbf8 !important; border-left-color: #1a5e4e !important; }
+      .chorus-line { background: #f4f7ff !important; border-left-color: #2255aa !important; }
+
+      /* 러시아어 원문 — 굵고 크게 */
+      .ru {
+        font-size: 12pt !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+        line-height: 1.5 !important;
+        margin-bottom: 4px !important;
+        display: block !important;
+      }
+
+      /* 발음 — 터치 영역 넓게, 배경 강조 */
+      .pron {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #1a5e4e !important;
+        line-height: 1.5 !important;
+        display: block !important;
+        padding: 4px 8px !important;
+        margin: 3px 0 !important;
+        background: rgba(26,94,78,0.08) !important;
+        border-radius: 5px !important;
+        min-height: 34px !important;
+      }
+
+      /* 한국어 의미 — 작고 회색 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #999 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 2px !important;
+        font-weight: 400 !important;
+      }
+
+      /* 섹션 태그 간격 */
+      .section-tag {
+        margin-bottom: 6px !important;
+        margin-top: 2px !important;
+      }
+
+      .lyrics-section {
+        margin-bottom: 16px !important;
+      }
+
+      /* 슬롯 헤더 정돈 */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom: 2px solid #1a5e4e !important;
+        align-items: flex-start !important;
+      }
+
+      .slot-hdr-left {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        flex: 1 !important;
+      }
+
+      /* 곡 번호 원 */
+      .slot-num {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        margin-top: 2px !important;
+      }
+
+      /* 곡 제목 */
+      .slot-title-ru {
+        font-size: 12.5pt !important;
+        font-weight: 900 !important;
+        line-height: 1.3 !important;
+        color: #111 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        color: #666 !important;
+        margin-top: 3px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* 단어집 헤더 뱃지 숨기기 */
+      div[style*="러시아어 · 한글 발음"] {
+        display: none !important;
+      }
+
+      /* 단어집 페이지 서브타이틀 */
+      div[style*="클릭하면 발음을"] {
+        font-size: 9pt !important;
+      }
+    } /* end @media 768px */
+
+    /* ── 데스크탑에서 모바일 전용 요소 숨기기 ── */
+    @media screen and (min-width: 769px) {
+      #mobile-nav, #mobile-toc-menu { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 모바일 상단 네비게이션 -->
+  
+
+
+  <div id="mobile-nav">
+    <div class="nav-left">
+      <div class="nav-cross">✝</div>
+      <div class="nav-text">
+        <div class="nav-title">코나예프 찬양가이드북</div>
+        <div class="nav-sub">2026 AGAPAO · 총 16곡</div>
+      </div>
+    </div>
+    <button id="mobile-toc-btn" onclick="toggleMobileToc()" aria-label="목차 열기">
+      <span id="toc-btn-icon">☰</span>
+      <span>목차</span>
+    </button>
   </div>
   <div id="mobile-toc-menu">
     <div class="mobile-toc-item" onclick="goToPage('page-vocab');toggleMobileToc()">
@@ -2373,7 +3203,3444 @@
     // ── 모바일 목차 네비게이션 ──
     function toggleMobileToc() {
       const menu = document.getElementById('mobile-toc-menu');
-      menu.classList.toggle('open');
+      const icon = document.getElementById('toc-btn-icon');
+      const isOpen = menu.classList.toggle('open');
+      if (icon) icon.textContent = isOpen ? '✕' : '☰';
+    }
+    function goToPage(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const navH = document.getElementById('mobile-nav');
+      const offset = navH ? navH.offsetHeight + 8 : 0;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    // 바깥 클릭 시 목차 닫기
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobile-toc-menu');
+      const btn = document.getElementById('mobile-toc-btn');
+      if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+    // 모바일에서 상단 패딩 (네비 높이만큼)
+    function adjustTopPadding() {
+      const nav = document.getElementById('mobile-nav');
+      if (!nav) return;
+      if (window.innerWidth <= 768) {
+        const h = nav.getBoundingClientRect().height;
+        document.body.style.paddingTop = h + 'px';
+      } else {
+        document.body.style.paddingTop = '';
+      }
+    }
+    window.addEventListener('resize', adjustTopPadding);
+    window.addEventListener('load', adjustTopPadding);
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(adjustTopPadding, 100);
+    });
+
+  </script>
+
+</body>
+</html    /* ══ 모바일 네비바 ══ */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1a5e4e;
+      height: 54px;
+      padding: 0 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    @media screen and (max-width: 768px) {
+      #mobile-nav { display: flex !important; }
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-cross {
+      font-size: 18pt;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .nav-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.2px;
+    }
+
+    .nav-sub {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1px;
+      font-weight: 400;
+    }
+
+    #mobile-toc-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.14);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: white;
+      border-radius: 20px;
+      padding: 6px 13px;
+      font-size: 9pt;
+      font-weight: 700;
+      font-family: "Noto Sans KR", sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #mobile-toc-btn:active { background: rgba(255,255,255,0.26); }
+
+    /* ══ 목차 드롭다운 ══ */
+    #mobile-toc-menu {
+      display: none;
+      position: fixed;
+      top: 54px;
+      left: 0; right: 0; bottom: 0;
+      background: #fafaf8;
+      z-index: 9998;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    #mobile-toc-menu.open { display: block; }
+
+    /* 목차 헤더 */
+    .toc-menu-header {
+      position: sticky;
+      top: 0;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px 13px;
+      border-bottom: 2px solid #1a5e4e;
+      z-index: 10;
+    }
+
+    .toc-menu-title {
+      font-size: 12pt;
+      font-weight: 900;
+      color: #1a5e4e;
+      letter-spacing: 0.5px;
+    }
+
+    .toc-close-btn {
+      background: #f0f0ec;
+      border: none;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      font-size: 12pt;
+      color: #666;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .toc-close-btn:active { background: #e0e0dc; }
+
+    /* 섹션 레이블 */
+    .toc-section-label {
+      padding: 10px 18px 6px;
+      font-size: 7.5pt;
+      font-weight: 800;
+      color: #aaa;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      background: #f5f5f0;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    /* 목차 항목 */
+    .mobile-toc-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 12px 18px;
+      background: white;
+      border-bottom: 1px solid #f0f0ec;
+      cursor: pointer;
+      transition: background 0.1s;
+      -webkit-tap-highlight-color: rgba(26,94,78,0.06);
+    }
+    .mobile-toc-item:active { background: #f0f8f4; }
+
+    /* 곡 번호 원 */
+    .toc-num {
+      width: 30px; height: 30px;
+      background: #1a5e4e;
+      color: white;
+      border-radius: 50%;
+      font-size: 9pt;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    .toc-num-vocab   { background: #b8860b; font-size: 11pt; }
+    .toc-num-restore { background: #2d7a5f; font-size: 11pt; }
+    .toc-num-reset   { background: #c0392b; font-size: 11pt; }
+
+    /* 텍스트 */
+    .toc-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .toc-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .toc-sub {
+      font-size: 7.5pt;
+      color: #aaa;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 화살표 */
+    .toc-arrow {
+      color: #ccc;
+      font-size: 14pt;
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+
+    /* 단어장 항목 강조 */
+    .toc-vocab { background: #fdfbf4; }
+    .toc-vocab .toc-name { color: #8a6200; }
+
+    /* 도구 항목 */
+    .toc-tool-item { background: #fafaf8; }
+t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+    @page { size: A4 portrait; margin: 0; }
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: #f0ede8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6mm;
+      padding: 6mm;
+    }
+
+    /* ══ A4 세로 페이지 ══ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.08);
+      border-radius: 1.5mm;
+    }
+
+    /* ══ 표지/목차 페이지 ══ */
+    .index-page { background: #ffffff; }
+
+    /* ══ 곡 2단 레이아웃 ══ */
+    .song-row {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* 각 곡 슬롯 */
+    .song-slot {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 5mm 5.5mm 2mm 5.5mm;
+      overflow: hidden;
+    }
+
+    /* 슬롯 헤더 */
+    .slot-hdr {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2.5mm;
+      border-bottom: 2px solid #1a5e4e;
+      margin-bottom: 3mm;
+      gap: 2mm;
+    }
+    .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
+    .slot-num {
+      flex-shrink: 0;
+      width: 9mm; height: 9mm;
+      background: #1a5e4e; color: white;
+      border-radius: 50%;
+      font-size: 9.5pt; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(26,94,78,0.25);
+    }
+    .slot-titles { min-width: 0; }
+    .slot-title-ru {
+      font-size: 11pt; font-weight: 900; color: #111;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .slot-title-ko {
+      font-size: 7.5pt; color: #1a5e4e; font-weight: 700;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.35; margin-top: 0.8mm;
+    }
+    .slot-key {
+      flex-shrink: 0;
+      font-size: 6.5pt; color: #1a5e4e; background: #eaf5ef;
+      padding: 1.2mm 2.5mm; border-radius: 2mm; font-weight: 700;
+      white-space: nowrap; border: 1px solid #b8d8c8;
+    }
+
+    /* 가사 바디 */
+    .slot-body {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5mm;
+    }
+
+    /* 섹션 블록 */
+    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 6.5pt; font-weight: 800;
+      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
+      margin-bottom: 1.8mm; flex-shrink: 0;
+    }
+    .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
+    .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
+    .tag-bridge { background: #f7f0fc; color: #6a3a90; border: 1px solid #d8c8ee; }
+    .tag-kazakh { background: #fff8e8; color: #7a5800; border: 1px solid #e8d898; }
+    .tag-repeat { background: #f4f4f4; color: #666; border: 1px solid #ddd; }
+
+    /* 가사 라인 */
+    .lyric-line {
+      padding: 1.8mm 2.5mm;
+      border-radius: 1.5mm;
+      margin-bottom: 1.2mm;
+      border-left: 2.5px solid transparent;
+      background: #fafafa;
+      cursor: pointer;
+      transition: filter 0.12s;
+    }
+    .lyric-line:hover { filter: brightness(0.97); }
+    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
+    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
+    .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
+
+    /* ─── 텍스트 3단계 ─── */
+    .ru {
+      font-size: 7pt; color: #999;
+      font-weight: 400; line-height: 1.4;
+      font-style: italic;
+    }
+    .pron {
+      font-size: 10.5pt; color: #1a5e4e;
+      font-weight: 800; line-height: 1.45;
+      letter-spacing: 0.1px;
+    }
+    .ko {
+      font-size: 7.5pt; color: #333;
+      font-weight: 500; line-height: 1.4;
+      border-left: 1.5px solid rgba(26,94,78,0.12);
+      padding-left: 1.5mm;
+      margin-top: 0.3mm;
+    }
+
+    /* 세로 구분선 */
+    .v-div {
+      flex-shrink: 0;
+      width: 0.5px;
+      background: linear-gradient(to bottom,
+        transparent 0%, #d0ccc8 10%, #d0ccc8 90%, transparent 100%);
+    }
+
+    /* ── 풋터 ── */
+    .page-footer {
+      flex-shrink: 0;
+      height: 8mm;
+      background: #1a5e4e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10mm;
+    }
+    .ft-left  { color: rgba(255,255,255,0.7); font-size: 6.5pt; }
+    .ft-right { color: #f0d070; font-size: 7.5pt; font-weight: 700; }
+
+    /* ── 단어 페이지 ── */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 2.5mm; margin-bottom: 3mm;
+    }
+    .vocab-card {
+      background: #fafafa;
+      border: 1px solid #e8e4e0;
+      border-radius: 2.5mm; padding: 3mm;
+    }
+    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
+    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
+    .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
+    .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
+    .cat-lbl {
+      font-size:7pt; font-weight:700; padding:1.5mm 3mm;
+      border-radius:2mm; display:inline-block; margin-bottom:2mm;
+    }
+
+    /* ── 발음 클릭 기능 ── */
+    .pron-highlight {
+      background: rgba(26,94,78,0.12) !important;
+      border-radius: 3px;
+      font-weight: 900 !important;
+      color: #0d4030 !important;
+      padding: 0.5mm 1mm;
+      transition: all 0.2s;
+    }
+    .lyric-line .ru:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(26,94,78,0.35);
+      text-underline-offset: 2px;
+    }
+    .slot-hdr::after {
+      content: "🔊 클릭 시 발음 재생";
+      font-size: 5.5pt;
+      color: rgba(26,94,78,0.35);
+      font-weight: 500;
+      align-self: flex-end;
+      padding-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    /* ── TTS 상태바 ── */
+    #tts-status-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1a5e4e; color: white;
+      padding: 3mm 8mm; font-size: 8pt; font-weight: 600;
+      display: none; align-items: center; justify-content: space-between;
+      font-family: "Noto Sans KR", sans-serif;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    }
+    #tts-status-bar.visible { display: flex; }
+    #tts-stop-btn {
+      background: white; border: none; color: #1a5e4e;
+      padding: 1.5mm 4mm; border-radius: 2mm; cursor: pointer;
+      font-size: 7.5pt; font-weight: 700; font-family: inherit;
+    }
+
+    /* 인쇄 설정 */
+
+    /* ── 발음 편집 기능 ── */
+    .pron {
+      cursor: text;
+      border-radius: 3px;
+      transition: background 0.15s;
+      outline: none;
+      min-width: 20px;
+      display: inline-block;
+    }
+    .pron:hover {
+      background: rgba(26,94,78,0.07);
+    }
+    .pron:focus {
+      background: rgba(26,94,78,0.13);
+      box-shadow: 0 0 0 2px rgba(26,94,78,0.25);
+    }
+    .pron.edited {
+      color: #0d4030;
+      font-weight: 900;
+    }
+    .pron.edited::after {
+      content: " ✏";
+      font-size: 7pt;
+      opacity: 0.4;
+      font-weight: 400;
+    }
+
+    /* 저장 완료 토스트 */
+    #save-toast {
+      position: fixed;
+      bottom: 12mm;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a5e4e;
+      color: white;
+      padding: 2mm 5mm;
+      border-radius: 3mm;
+      font-size: 8pt;
+      font-family: "Noto Sans KR", sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 9999;
+    }
+    #save-toast.show { opacity: 1; }
+
+    @media print {
+            #save-toast { display: none !important; }
+      .pron.edited::after { display: none !important; }
+      .pron:focus { background: none; box-shadow: none; }
+    }
+    @media print {
+      body { background: white; gap: 0; padding: 0; align-items: stretch; }
+      .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
+      .slot-hdr::after { display: none !important; }
+      #tts-status-bar { display: none !important; }
+      .lyric-line { cursor: default; }
+    }
+
+    /* ══════════════════════════════════════
+       모바일 반응형 스타일 (완전 재정비)
+    ══════════════════════════════════════ */
+
+    /* ── 모바일 공통 기반 ── */
+    @media screen and (max-width: 768px) {
+
+      html, body {
+        background: #f0f0ec;
+        margin: 0; padding: 0;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* 페이지 블록: A4 고정 → 완전 자동 높이 */
+      .page {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 8px solid #e0e0d8 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+
+      /* 페이지 내부 wrapper */
+      .page > div {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 14px 16px !important;
+      }
+
+      /* ── 곡 레이아웃 ── */
+      .song-row {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 곡 슬롯 */
+      .song-slot {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        padding: 0 0 20px 0 !important;
+        border-right: none !important;
+        border-bottom: 2px dashed #d0d0c8 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .song-slot:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 4px !important;
+      }
+
+      /* 세로 구분선 숨기기 */
+      .v-div { display: none !important; }
+
+      /* ── 곡 헤더 ── */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .slot-num {
+        width: 32px !important; height: 32px !important;
+        font-size: 13px !important;
+        flex-shrink: 0 !important;
+      }
+
+      .slot-title-ru {
+        font-size: 13pt !important;
+        line-height: 1.3 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
+        margin-top: 2px !important;
+      }
+
+      /* ── 가사 body ── */
+      .slot-body {
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 섹션 (본절/후렴) */
+      .lyrics-section {
+        margin-bottom: 14px !important;
+        overflow: visible !important;
+      }
+
+      .section-tag {
+        font-size: 8pt !important;
+        padding: 2px 7px !important;
+        margin-bottom: 8px !important;
+        display: inline-block !important;
+      }
+
+      /* ── 가사 한 줄 (ru + pron + ko) ── */
+      .lyric-line {
+        display: block !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #f0f0ec !important;
+        gap: 0 !important;
+      }
+
+      .lyric-line:last-child {
+        border-bottom: none !important;
+      }
+
+      /* 러시아어 원문 */
+      .ru {
+        font-size: 11pt !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        color: #111 !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+      }
+
+      /* 한글 발음 */
+      .pron {
+        font-size: 10.5pt !important;
+        font-weight: 800 !important;
+        line-height: 1.5 !important;
+        color: #1a5e4e !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+        padding: 3px 6px !important;
+        background: rgba(26,94,78,0.06) !important;
+        border-radius: 4px !important;
+        min-height: 36px !important;
+      }
+
+      /* 한국어 의미 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #888 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 1px !important;
+      }
+
+      /* ── 단어집 ── */
+      .vocab-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      .vocab-card {
+        padding: 10px 8px !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(26,94,78,0.1);
+      }
+
+      .vocab-card:active {
+        transform: scale(0.97) !important;
+        background: #eaf5ef !important;
+      }
+
+      .vocab-ru { font-size: 12pt !important; margin-bottom: 3px !important; }
+      .vocab-pron { font-size: 9.5pt !important; }
+      .vocab-ko { font-size: 8pt !important; }
+
+      /* ── 목차 ── */
+      div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 5px !important;
+      }
+
+      /* ── 페이지 푸터 숨기기 ── */
+      .page-footer { display: none !important; }
+
+      /* ── 표지 페이지 ── */
+      .page[style*="background:#1a5e4e"],
+      .page[style*="background: #1a5e4e"] {
+        padding: 30px 20px !important;
+        min-height: 60vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+
+      /* ── 모바일: 목차 섹션 숨기기 (네비바 드롭다운으로 대체) ── */
+      #toc-section { display: none !important; }
+      /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
+      .slot-key { display: none !important; }
+
+      /* ── 텍스트 배치 정돈 ── */
+
+      /* 가사 한 줄: 블록 구조로 명확하게 */
+      .lyric-line {
+        display: block !important;
+        padding: 10px 12px !important;
+        margin-bottom: 5px !important;
+        border-radius: 8px !important;
+        border-left-width: 3px !important;
+        background: #fafaf8 !important;
+        cursor: default !important;
+      }
+
+      .verse-line  { background: #f5fbf8 !important; border-left-color: #1a5e4e !important; }
+      .chorus-line { background: #f4f7ff !important; border-left-color: #2255aa !important; }
+
+      /* 러시아어 원문 — 굵고 크게 */
+      .ru {
+        font-size: 12pt !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+        line-height: 1.5 !important;
+        margin-bottom: 4px !important;
+        display: block !important;
+      }
+
+      /* 발음 — 터치 영역 넓게, 배경 강조 */
+      .pron {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #1a5e4e !important;
+        line-height: 1.5 !important;
+        display: block !important;
+        padding: 4px 8px !important;
+        margin: 3px 0 !important;
+        background: rgba(26,94,78,0.08) !important;
+        border-radius: 5px !important;
+        min-height: 34px !important;
+      }
+
+      /* 한국어 의미 — 작고 회색 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #999 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 2px !important;
+        font-weight: 400 !important;
+      }
+
+      /* 섹션 태그 간격 */
+      .section-tag {
+        margin-bottom: 6px !important;
+        margin-top: 2px !important;
+      }
+
+      .lyrics-section {
+        margin-bottom: 16px !important;
+      }
+
+      /* 슬롯 헤더 정돈 */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom: 2px solid #1a5e4e !important;
+        align-items: flex-start !important;
+      }
+
+      .slot-hdr-left {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        flex: 1 !important;
+      }
+
+      /* 곡 번호 원 */
+      .slot-num {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        margin-top: 2px !important;
+      }
+
+      /* 곡 제목 */
+      .slot-title-ru {
+        font-size: 12.5pt !important;
+        font-weight: 900 !important;
+        line-height: 1.3 !important;
+        color: #111 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        color: #666 !important;
+        margin-top: 3px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* 단어집 헤더 뱃지 숨기기 */
+      div[style*="러시아어 · 한글 발음"] {
+        display: none !important;
+      }
+
+      /* 단어집 페이지 서브타이틀 */
+      div[style*="클릭하면 발음을"] {
+        font-size: 9pt !important;
+      }
+    } /* end @media 768px */
+
+    /* ── 데스크탑에서 모바일 전용 요소 숨기기 ── */
+    @media screen and (min-width: 769px) {
+      #mobile-nav, #mobile-toc-menu { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 모바일 상단 네비게이션 -->
+  
+
+
+  <div id="mobile-nav">
+    <div class="nav-left">
+      <div class="nav-cross">✝</div>
+      <div class="nav-text">
+        <div class="nav-title">코나예프 찬양가이드북</div>
+        <div class="nav-sub">2026 AGAPAO · 총 16곡</div>
+      </div>
+    </div>
+    <button id="mobile-toc-btn" onclick="toggleMobileToc()" aria-label="목차 열기">
+      <span id="toc-btn-icon">☰</span>
+      <span>목차</span>
+    </button>
+  </div>
+  <div id="mobile-toc-menu">
+
+    <!-- 메뉴 헤더 -->
+    <div class="toc-menu-header">
+      <span class="toc-menu-title">목차</span>
+      <button class="toc-close-btn" onclick="toggleMobileToc()">✕</button>
+    </div>
+
+    <!-- 단어장 -->
+    <div class="toc-section-label">단어장</div>
+    <div class="mobile-toc-item toc-vocab" onclick="goToPage('page-vocab');toggleMobileToc()">
+      <span class="toc-num toc-num-vocab">★</span>
+      <div class="toc-info">
+        <span class="toc-name">러시아어 핵심 단어 30</span>
+        <span class="toc-sub">Ключевые слова</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <!-- 찬양 곡 목록 -->
+    <div class="toc-section-label">찬양 곡 목록</div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">1</span>
+      <div class="toc-info">
+        <span class="toc-name">기뻐하고 또 기뻐하라</span>
+        <span class="toc-sub">Радуйтесь и ликуйте</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">2</span>
+      <div class="toc-info">
+        <span class="toc-name">주님의 사랑 안에 영원히</span>
+        <span class="toc-sub">Буду жить в Твоей любви</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">3</span>
+      <div class="toc-info">
+        <span class="toc-name">사랑해요 주님 (카자흐어)</span>
+        <span class="toc-sub">Сені сүйемін Құдай</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">4</span>
+      <div class="toc-info">
+        <span class="toc-name">송축해 내 영혼</span>
+        <span class="toc-sub">Славь, душа, Господа</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">5</span>
+      <div class="toc-info">
+        <span class="toc-name">주 품에 (Still)</span>
+        <span class="toc-sub">Скрой меня Своим крылом</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">6</span>
+      <div class="toc-info">
+        <span class="toc-name">온 땅들아 여호와를 찬양하라</span>
+        <span class="toc-sub">Славьте Господа все народы</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">7</span>
+      <div class="toc-info">
+        <span class="toc-name">What A Beautiful Name</span>
+        <span class="toc-sub">Святый</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">8</span>
+      <div class="toc-info">
+        <span class="toc-name">내 모든 삶의 행동 주안에</span>
+        <span class="toc-sub">Всей своей жизнью</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-09');toggleMobileToc()">
+      <span class="toc-num">9</span>
+      <div class="toc-info">
+        <span class="toc-name">야훼</span>
+        <span class="toc-sub">Яхве</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-10');toggleMobileToc()">
+      <span class="toc-num">10</span>
+      <div class="toc-info">
+        <span class="toc-name">내 맘의 눈을 여소서</span>
+        <span class="toc-sub">Open the Eyes of My Heart</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">11</span>
+      <div class="toc-info">
+        <span class="toc-name">Deep Down in My Heart</span>
+        <span class="toc-sub">В глубине моего сердца</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">12</span>
+      <div class="toc-info">
+        <span class="toc-name">이 날은 주가 지으신 날</span>
+        <span class="toc-sub">Это день, который создал Господь</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">13</span>
+      <div class="toc-info">
+        <span class="toc-name">주 사랑합니다 + Beautiful Day</span>
+        <span class="toc-sub">Господь, я люблю Тебя</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">14</span>
+      <div class="toc-info">
+        <span class="toc-name">Surrounded</span>
+        <span class="toc-sub">Окружён</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">15</span>
+      <div class="toc-info">
+        <span class="toc-name">Sing Sing Sing</span>
+        <span class="toc-sub">Пой, пой, пой</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">16</span>
+      <div class="toc-info">
+        <span class="toc-name">좋으신 하나님 (You are Good)</span>
+        <span class="toc-sub">Бог, Ты благ</span>
+      </div>
+      <span class="toc-arrow">›</span>
+    </div>
+
+    <!-- 도구 영역 -->
+    <div class="toc-section-label">발음 관리</div>
+
+    <div id="restore-pron-btn" class="mobile-toc-item toc-tool-item" onclick="restorePronBackup()" style="display:none;">
+      <span class="toc-num toc-num-restore">↩</span>
+      <div class="toc-info">
+        <span class="toc-name" style="color:#2d7a5f;">이전 발음으로 복원</span>
+        <span class="toc-sub">백업된 발음 불러오기</span>
+      </div>
+      <span class="toc-arrow" style="color:#2d7a5f;">›</span>
+    </div>
+
+    <div id="reset-pron-btn" class="mobile-toc-item toc-tool-item" onclick="resetPronEdits()">
+      <span class="toc-num toc-num-reset">↺</span>
+      <div class="toc-info">
+        <span class="toc-name" style="color:#c0392b;">발음 편집 초기화</span>
+        <span class="toc-sub">현재 편집 내용 지우기</span>
+      </div>
+      <span class="toc-arrow" style="color:#c0392b;">›</span>
+    </div>
+
+    <div style="height:env(safe-area-inset-bottom, 12px);"></div>
+  </div>
+PE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+    @page { size: A4 portrait; margin: 0; }
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: #f0ede8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6mm;
+      padding: 6mm;
+    }
+
+    /* ══ A4 세로 페이지 ══ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.08);
+      border-radius: 1.5mm;
+    }
+
+    /* ══ 표지/목차 페이지 ══ */
+    .index-page { background: #ffffff; }
+
+    /* ══ 곡 2단 레이아웃 ══ */
+    .song-row {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* 각 곡 슬롯 */
+    .song-slot {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 5mm 5.5mm 2mm 5.5mm;
+      overflow: hidden;
+    }
+
+    /* 슬롯 헤더 */
+    .slot-hdr {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 2.5mm;
+      border-bottom: 2px solid #1a5e4e;
+      margin-bottom: 3mm;
+      gap: 2mm;
+    }
+    .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
+    .slot-num {
+      flex-shrink: 0;
+      width: 9mm; height: 9mm;
+      background: #1a5e4e; color: white;
+      border-radius: 50%;
+      font-size: 9.5pt; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(26,94,78,0.25);
+    }
+    .slot-titles { min-width: 0; }
+    .slot-title-ru {
+      font-size: 11pt; font-weight: 900; color: #111;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .slot-title-ko {
+      font-size: 7.5pt; color: #1a5e4e; font-weight: 700;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.35; margin-top: 0.8mm;
+    }
+    .slot-key {
+      flex-shrink: 0;
+      font-size: 6.5pt; color: #1a5e4e; background: #eaf5ef;
+      padding: 1.2mm 2.5mm; border-radius: 2mm; font-weight: 700;
+      white-space: nowrap; border: 1px solid #b8d8c8;
+    }
+
+    /* 가사 바디 */
+    .slot-body {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5mm;
+    }
+
+    /* 섹션 블록 */
+    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 6.5pt; font-weight: 800;
+      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
+      margin-bottom: 1.8mm; flex-shrink: 0;
+    }
+    .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
+    .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
+    .tag-bridge { background: #f7f0fc; color: #6a3a90; border: 1px solid #d8c8ee; }
+    .tag-kazakh { background: #fff8e8; color: #7a5800; border: 1px solid #e8d898; }
+    .tag-repeat { background: #f4f4f4; color: #666; border: 1px solid #ddd; }
+
+    /* 가사 라인 */
+    .lyric-line {
+      padding: 1.8mm 2.5mm;
+      border-radius: 1.5mm;
+      margin-bottom: 1.2mm;
+      border-left: 2.5px solid transparent;
+      background: #fafafa;
+      cursor: pointer;
+      transition: filter 0.12s;
+    }
+    .lyric-line:hover { filter: brightness(0.97); }
+    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
+    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
+    .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
+
+    /* ─── 텍스트 3단계 ─── */
+    .ru {
+      font-size: 7pt; color: #999;
+      font-weight: 400; line-height: 1.4;
+      font-style: italic;
+    }
+    .pron {
+      font-size: 10.5pt; color: #1a5e4e;
+      font-weight: 800; line-height: 1.45;
+      letter-spacing: 0.1px;
+    }
+    .ko {
+      font-size: 7.5pt; color: #333;
+      font-weight: 500; line-height: 1.4;
+      border-left: 1.5px solid rgba(26,94,78,0.12);
+      padding-left: 1.5mm;
+      margin-top: 0.3mm;
+    }
+
+    /* 세로 구분선 */
+    .v-div {
+      flex-shrink: 0;
+      width: 0.5px;
+      background: linear-gradient(to bottom,
+        transparent 0%, #d0ccc8 10%, #d0ccc8 90%, transparent 100%);
+    }
+
+    /* ── 풋터 ── */
+    .page-footer {
+      flex-shrink: 0;
+      height: 8mm;
+      background: #1a5e4e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10mm;
+    }
+    .ft-left  { color: rgba(255,255,255,0.7); font-size: 6.5pt; }
+    .ft-right { color: #f0d070; font-size: 7.5pt; font-weight: 700; }
+
+    /* ── 단어 페이지 ── */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 2.5mm; margin-bottom: 3mm;
+    }
+    .vocab-card {
+      background: #fafafa;
+      border: 1px solid #e8e4e0;
+      border-radius: 2.5mm; padding: 3mm;
+    }
+    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
+    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
+    .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
+    .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
+    .cat-lbl {
+      font-size:7pt; font-weight:700; padding:1.5mm 3mm;
+      border-radius:2mm; display:inline-block; margin-bottom:2mm;
+    }
+
+    /* ── 발음 클릭 기능 ── */
+    .pron-highlight {
+      background: rgba(26,94,78,0.12) !important;
+      border-radius: 3px;
+      font-weight: 900 !important;
+      color: #0d4030 !important;
+      padding: 0.5mm 1mm;
+      transition: all 0.2s;
+    }
+    .lyric-line .ru:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(26,94,78,0.35);
+      text-underline-offset: 2px;
+    }
+    .slot-hdr::after {
+      content: "🔊 클릭 시 발음 재생";
+      font-size: 5.5pt;
+      color: rgba(26,94,78,0.35);
+      font-weight: 500;
+      align-self: flex-end;
+      padding-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    /* ── TTS 상태바 ── */
+    #tts-status-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #1a5e4e; color: white;
+      padding: 3mm 8mm; font-size: 8pt; font-weight: 600;
+      display: none; align-items: center; justify-content: space-between;
+      font-family: "Noto Sans KR", sans-serif;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    }
+    #tts-status-bar.visible { display: flex; }
+    #tts-stop-btn {
+      background: white; border: none; color: #1a5e4e;
+      padding: 1.5mm 4mm; border-radius: 2mm; cursor: pointer;
+      font-size: 7.5pt; font-weight: 700; font-family: inherit;
+    }
+
+    /* 인쇄 설정 */
+
+    /* ── 발음 편집 기능 ── */
+    .pron {
+      cursor: text;
+      border-radius: 3px;
+      transition: background 0.15s;
+      outline: none;
+      min-width: 20px;
+      display: inline-block;
+    }
+    .pron:hover {
+      background: rgba(26,94,78,0.07);
+    }
+    .pron:focus {
+      background: rgba(26,94,78,0.13);
+      box-shadow: 0 0 0 2px rgba(26,94,78,0.25);
+    }
+    .pron.edited {
+      color: #0d4030;
+      font-weight: 900;
+    }
+    .pron.edited::after {
+      content: " ✏";
+      font-size: 7pt;
+      opacity: 0.4;
+      font-weight: 400;
+    }
+
+    /* 저장 완료 토스트 */
+    #save-toast {
+      position: fixed;
+      bottom: 12mm;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a5e4e;
+      color: white;
+      padding: 2mm 5mm;
+      border-radius: 3mm;
+      font-size: 8pt;
+      font-family: "Noto Sans KR", sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 9999;
+    }
+    #save-toast.show { opacity: 1; }
+
+    @media print {
+            #save-toast { display: none !important; }
+      .pron.edited::after { display: none !important; }
+      .pron:focus { background: none; box-shadow: none; }
+    }
+    @media print {
+      body { background: white; gap: 0; padding: 0; align-items: stretch; }
+      .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
+      .slot-hdr::after { display: none !important; }
+      #tts-status-bar { display: none !important; }
+      .lyric-line { cursor: default; }
+    }
+
+    /* ══════════════════════════════════════
+       모바일 반응형 스타일 (완전 재정비)
+    ══════════════════════════════════════ */
+
+    /* ── 모바일 공통 기반 ── */
+    @media screen and (max-width: 768px) {
+
+      html, body {
+        background: #f0f0ec;
+        margin: 0; padding: 0;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* 페이지 블록: A4 고정 → 완전 자동 높이 */
+      .page {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 8px solid #e0e0d8 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+
+      /* 페이지 내부 wrapper */
+      .page > div {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 14px 16px !important;
+      }
+
+      /* ── 곡 레이아웃 ── */
+      .song-row {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 곡 슬롯 */
+      .song-slot {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        padding: 0 0 20px 0 !important;
+        border-right: none !important;
+        border-bottom: 2px dashed #d0d0c8 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .song-slot:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 4px !important;
+      }
+
+      /* 세로 구분선 숨기기 */
+      .v-div { display: none !important; }
+
+      /* ── 곡 헤더 ── */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .slot-num {
+        width: 32px !important; height: 32px !important;
+        font-size: 13px !important;
+        flex-shrink: 0 !important;
+      }
+
+      .slot-title-ru {
+        font-size: 13pt !important;
+        line-height: 1.3 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
+        margin-top: 2px !important;
+      }
+
+      /* ── 가사 body ── */
+      .slot-body {
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 섹션 (본절/후렴) */
+      .lyrics-section {
+        margin-bottom: 14px !important;
+        overflow: visible !important;
+      }
+
+      .section-tag {
+        font-size: 8pt !important;
+        padding: 2px 7px !important;
+        margin-bottom: 8px !important;
+        display: inline-block !important;
+      }
+
+      /* ── 가사 한 줄 (ru + pron + ko) ── */
+      .lyric-line {
+        display: block !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #f0f0ec !important;
+        gap: 0 !important;
+      }
+
+      .lyric-line:last-child {
+        border-bottom: none !important;
+      }
+
+      /* 러시아어 원문 */
+      .ru {
+        font-size: 11pt !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        color: #111 !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+      }
+
+      /* 한글 발음 */
+      .pron {
+        font-size: 10.5pt !important;
+        font-weight: 800 !important;
+        line-height: 1.5 !important;
+        color: #1a5e4e !important;
+        margin-bottom: 2px !important;
+        display: block !important;
+        padding: 3px 6px !important;
+        background: rgba(26,94,78,0.06) !important;
+        border-radius: 4px !important;
+        min-height: 36px !important;
+      }
+
+      /* 한국어 의미 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #888 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 1px !important;
+      }
+
+      /* ── 단어집 ── */
+      .vocab-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      .vocab-card {
+        padding: 10px 8px !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(26,94,78,0.1);
+      }
+
+      .vocab-card:active {
+        transform: scale(0.97) !important;
+        background: #eaf5ef !important;
+      }
+
+      .vocab-ru { font-size: 12pt !important; margin-bottom: 3px !important; }
+      .vocab-pron { font-size: 9.5pt !important; }
+      .vocab-ko { font-size: 8pt !important; }
+
+      /* ── 목차 ── */
+      div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 5px !important;
+      }
+
+      /* ── 페이지 푸터 숨기기 ── */
+      .page-footer { display: none !important; }
+
+      /* ── 표지 페이지 ── */
+      .page[style*="background:#1a5e4e"],
+      .page[style*="background: #1a5e4e"] {
+        padding: 30px 20px !important;
+        min-height: 60vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+
+      /* ── 모바일: 목차 섹션 숨기기 (네비바 드롭다운으로 대체) ── */
+      #toc-section { display: none !important; }
+      /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
+      .slot-key { display: none !important; }
+
+      /* ── 텍스트 배치 정돈 ── */
+
+      /* 가사 한 줄: 블록 구조로 명확하게 */
+      .lyric-line {
+        display: block !important;
+        padding: 10px 12px !important;
+        margin-bottom: 5px !important;
+        border-radius: 8px !important;
+        border-left-width: 3px !important;
+        background: #fafaf8 !important;
+        cursor: default !important;
+      }
+
+      .verse-line  { background: #f5fbf8 !important; border-left-color: #1a5e4e !important; }
+      .chorus-line { background: #f4f7ff !important; border-left-color: #2255aa !important; }
+
+      /* 러시아어 원문 — 굵고 크게 */
+      .ru {
+        font-size: 12pt !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+        line-height: 1.5 !important;
+        margin-bottom: 4px !important;
+        display: block !important;
+      }
+
+      /* 발음 — 터치 영역 넓게, 배경 강조 */
+      .pron {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #1a5e4e !important;
+        line-height: 1.5 !important;
+        display: block !important;
+        padding: 4px 8px !important;
+        margin: 3px 0 !important;
+        background: rgba(26,94,78,0.08) !important;
+        border-radius: 5px !important;
+        min-height: 34px !important;
+      }
+
+      /* 한국어 의미 — 작고 회색 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #999 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 2px !important;
+        font-weight: 400 !important;
+      }
+
+      /* 섹션 태그 간격 */
+      .section-tag {
+        margin-bottom: 6px !important;
+        margin-top: 2px !important;
+      }
+
+      .lyrics-section {
+        margin-bottom: 16px !important;
+      }
+
+      /* 슬롯 헤더 정돈 */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom: 2px solid #1a5e4e !important;
+        align-items: flex-start !important;
+      }
+
+      .slot-hdr-left {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        flex: 1 !important;
+      }
+
+      /* 곡 번호 원 */
+      .slot-num {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        margin-top: 2px !important;
+      }
+
+      /* 곡 제목 */
+      .slot-title-ru {
+        font-size: 12.5pt !important;
+        font-weight: 900 !important;
+        line-height: 1.3 !important;
+        color: #111 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        color: #666 !important;
+        margin-top: 3px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* 단어집 헤더 뱃지 숨기기 */
+      div[style*="러시아어 · 한글 발음"] {
+        display: none !important;
+      }
+
+      /* 단어집 페이지 서브타이틀 */
+      div[style*="클릭하면 발음을"] {
+        font-size: 9pt !important;
+      }
+    } /* end @media 768px */
+
+    /* ── 데스크탑에서 모바일 전용 요소 숨기기 ── */
+    @media screen and (min-width: 769px) {
+      #mobile-nav, #mobile-toc-menu { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 모바일 상단 네비게이션 -->
+  
+
+
+  <div id="mobile-nav">
+    <div class="nav-left">
+      <div class="nav-cross">✝</div>
+      <div class="nav-text">
+        <div class="nav-title">코나예프 찬양가이드북</div>
+        <div class="nav-sub">2026 AGAPAO · 총 16곡</div>
+      </div>
+    </div>
+    <button id="mobile-toc-btn" onclick="toggleMobileToc()" aria-label="목차 열기">
+      <span id="toc-btn-icon">☰</span>
+      <span>목차</span>
+    </button>
+  </div>
+  <div id="mobile-toc-menu">
+    <div class="mobile-toc-item" onclick="goToPage('page-vocab');toggleMobileToc()">
+      <span class="toc-num" style="background:#b8860b;">★</span>
+      <span class="toc-name">러시아어 핵심 단어 30</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">1</span>
+      <span class="toc-name">기뻐하고 또 기뻐하라</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">2</span>
+      <span class="toc-name">주의 사랑 안에 영원히</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">3</span>
+      <span class="toc-name">사랑해요 주님 (카자흐어)</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">4</span>
+      <span class="toc-name">송축해 내 영혼</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">5</span>
+      <span class="toc-name">주 품에 (Still)</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">6</span>
+      <span class="toc-name">온 땅들아 여호와를 찬양하라</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">7</span>
+      <span class="toc-name">What A Beautiful Name</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">8</span>
+      <span class="toc-name">내 모든 삶의 행동 주안에</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-09');toggleMobileToc()">
+      <span class="toc-num">9</span>
+      <span class="toc-name">야훼</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-10');toggleMobileToc()">
+      <span class="toc-num">10</span>
+      <span class="toc-name">내 맘의 눈을 여소서</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">11</span>
+      <span class="toc-name">Deep Down in My Heart</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">12</span>
+      <span class="toc-name">이 날은 주가 지으신 날</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">13</span>
+      <span class="toc-name">주 사랑합니다 + Beautiful Day</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">14</span>
+      <span class="toc-name">Surrounded</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">15</span>
+      <span class="toc-name">Sing Sing Sing</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">16</span>
+      <span class="toc-name">좋으신 하나님 (You are Good)</span>
+    </div>
+  </div>
+
+
+
+<div id="page-vocab" class="page index-page">
+  <div style="display:flex;flex-direction:column;height:100%;">
+
+    <!-- 상단 배너 -->
+    <div style="background:#1a5e4e;padding:10mm 12mm 8mm 12mm;flex-shrink:0;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+        <div>
+          <div style="font-size:7pt;color:rgba(255,255,255,0.55);letter-spacing:2px;margin-bottom:3mm;font-weight:500;">✝️ 2026 AGAPAO MISSION — КОНАЕВ</div>
+          <div style="font-size:24pt;font-weight:900;color:#ffffff;line-height:1.1;">현지찬양가사<br>가이드북</div>
+          <div style="margin-top:3mm;font-size:8.5pt;color:rgba(255,255,255,0.6);font-weight:400;">Сборник Песен Поклонения</div>
+        </div>
+        <div style="text-align:right;padding-bottom:2mm;">
+          <div style="font-size:26pt;opacity:0.12;line-height:1;">🎵</div>
+          <div style="font-size:7pt;color:rgba(255,255,255,0.45);margin-top:2mm;">총 16곡<br>러시아어 · 한글 발음</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 목차 본문 -->
+    <div id="toc-section" style="flex:1;padding:7mm 12mm 2mm 12mm;display:flex;flex-direction:column;">
+
+      <div style="display:flex;align-items:center;gap:3mm;margin-bottom:5mm;padding-bottom:3mm;border-bottom:2px solid #1a5e4e;">
+        <span style="font-size:10pt;color:#1a5e4e;font-weight:900;letter-spacing:1px;">📋 목 차</span>
+        <div style="flex:1;height:1px;background:#e8e4e0;"></div>
+        <span style="font-size:7pt;color:#bbb;">Contents</span>
+      </div>
+
+      <!-- 단어장 -->
+      <div style="display:flex;align-items:center;gap:3mm;padding:2.5mm 4mm;background:#eaf5ef;border-radius:2mm;border-left:3px solid #1a5e4e;margin-bottom:3mm;">
+        <span style="color:#1a5e4e;font-size:8pt;font-weight:900;min-width:10mm;">p.1</span>
+        <span style="font-size:9pt;">📖</span>
+        <span style="color:#1a5e4e;font-size:9pt;font-weight:800;cursor:pointer;" onclick="document.getElementById('page-vocab').scrollIntoView({behavior:'smooth'})">러시아어 핵심 단어 30개</span>
+      </div>
+
+      <!-- 2열 곡 목록 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 8mm;">
+        <div onclick="document.getElementById('page-song-01').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.2</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">01</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">기뻐하고 또 기뻐하라</span>
+        </div>
+        <div onclick="document.getElementById('page-song-01').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">02</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주의 사랑 안에 영원히</span>
+        </div>
+        <div onclick="document.getElementById('page-song-03').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.3</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">03</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">사랑해요 주님 (카자흐어)</span>
+        </div>
+        <div onclick="document.getElementById('page-song-03').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">04</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">송축해 내 영혼 (10,000 Reasons)</span>
+        </div>
+        <div onclick="document.getElementById('page-song-05').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.4</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">05</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주 품에 (Hillsong — Still)</span>
+        </div>
+        <div onclick="document.getElementById('page-song-05').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">06</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">온 땅들아 여호와를 찬양하라</span>
+        </div>
+        <div onclick="document.getElementById('page-song-07').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.5</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">07</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">What A Beautiful Name</span>
+        </div>
+        <div onclick="document.getElementById('page-song-07').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">08</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">내 모든 삶의 행동 주안에</span>
+        </div>
+        <div onclick="document.getElementById('page-song-09').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.6</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">09</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">야훼</span>
+        </div>
+        <div onclick="document.getElementById('page-song-10').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.7</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">10</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">내 맘의 눈을 여소서</span>
+        </div>
+        <div onclick="document.getElementById('page-song-11').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.8</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">11</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Deep Down in My Heart</span>
+        </div>
+        <div onclick="document.getElementById('page-song-11').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">12</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">이 날은 주가 지으신 날</span>
+        </div>
+        <div onclick="document.getElementById('page-song-13').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.9</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">13</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">주 사랑합니다 + Beautiful Day</span>
+        </div>
+        <div onclick="document.getElementById('page-song-13').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">14</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Surrounded</span>
+        </div>
+        <div onclick="document.getElementById('page-song-15').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+          <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.10</span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">15</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">Sing Sing Sing</span>
+        </div>
+        <div onclick="document.getElementById('page-song-15').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+          <span style="min-width:10mm;"></span>
+          <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">16</span>
+          <span style="color:#111;font-size:8pt;font-weight:700;">좋으신 하나님 (You are Good)</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="page-footer">
+      <span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span>
+      <span class="ft-right">📋 목 차</span>
+    </div>
+  </div>
+</div>
+<div class="page" style="background:#ffffff;">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
+
+    <!-- 헤더 -->
+    <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding-bottom:3mm;border-bottom:2px solid #1a5e4e;margin-bottom:4mm;">
+      <div>
+        <div style="font-size:13pt;font-weight:900;color:#111;">📖 가사 핵심 단어 30개</div>
+        <div style="font-size:7.5pt;color:#1a5e4e;font-weight:600;margin-top:1mm;">클릭하면 발음을 들을 수 있어요 🔊</div>
+      </div>
+      <div style="background:#eaf5ef;border:1px solid #b8d8c8;border-radius:2mm;padding:2mm 4mm;font-size:7pt;color:#1a5e4e;font-weight:700;">러시아어 · 한글 발음 · 뜻</div>
+    </div>
+
+    <!-- 카테고리 1: 찬양/예배 -->
+    <div style="margin-bottom:3mm;">
+      <div style="display:inline-block;font-size:6.5pt;font-weight:800;color:#1a5e4e;background:#eaf5ef;border:1px solid #c0ddd0;border-radius:1.5mm;padding:0.5mm 2.5mm;margin-bottom:2mm;">🎵 찬양 · 예배</div>
+      <div class="vocab-grid">
+<div class="vocab-card" data-speak-ru="Господь" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Господь</div>
+              <div class="vocab-pron">고스빠쯔</div>
+              <div class="vocab-ko">주님</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Бог" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Бог</div>
+              <div class="vocab-pron">복</div>
+              <div class="vocab-ko">하나님</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Иисус" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Иисус</div>
+              <div class="vocab-pron">이이수스</div>
+              <div class="vocab-ko">예수님</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Масиха" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Масиха</div>
+              <div class="vocab-pron">마시하</div>
+              <div class="vocab-ko">메시아</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Дух" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Дух</div>
+              <div class="vocab-pron">두흐</div>
+              <div class="vocab-ko">영·성령</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Имя" style="border-top:2.5px solid #1a5e4e;">
+              <div class="vocab-ru" style="color:#1a5e4e;">Имя</div>
+              <div class="vocab-pron">이먀</div>
+              <div class="vocab-ko">이름</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Радуйтесь" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Радуйтесь</div>
+              <div class="vocab-pron">라두이쩨스</div>
+              <div class="vocab-ko">기뻐하라</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Славьте" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Славьте</div>
+              <div class="vocab-pron">슬라브쩨</div>
+              <div class="vocab-ko">찬양하라</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Пой" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Пой</div>
+              <div class="vocab-pron">포이</div>
+              <div class="vocab-ko">노래하라</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Петь" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Петь</div>
+              <div class="vocab-pron">뻬치</div>
+              <div class="vocab-ko">노래하다</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Люблю" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Люблю</div>
+              <div class="vocab-pron">류블류</div>
+              <div class="vocab-ko">사랑합니다</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Хвала" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Хвала</div>
+              <div class="vocab-pron">흐발라</div>
+              <div class="vocab-ko">찬양·찬미</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Аллилуйя" style="border-top:2.5px solid #2d7a5f;">
+              <div class="vocab-ru" style="color:#2d7a5f;">Аллилуйя</div>
+              <div class="vocab-pron">알리루야</div>
+              <div class="vocab-ko">할렐루야</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Святый" style="border-top:2.5px solid #4a90a4;">
+              <div class="vocab-ru" style="color:#4a90a4;">Святый</div>
+              <div class="vocab-pron">스뱌뜨의</div>
+              <div class="vocab-ko">거룩하신</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Славу" style="border-top:2.5px solid #4a90a4;">
+              <div class="vocab-ru" style="color:#4a90a4;">Славу</div>
+              <div class="vocab-pron">슬라부</div>
+              <div class="vocab-ko">영광을</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Благ" style="border-top:2.5px solid #4a90a4;">
+              <div class="vocab-ru" style="color:#4a90a4;">Благ</div>
+              <div class="vocab-pron">블락</div>
+              <div class="vocab-ko">선하신</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Царь" style="border-top:2.5px solid #4a90a4;">
+              <div class="vocab-ru" style="color:#4a90a4;">Царь</div>
+              <div class="vocab-pron">짜리</div>
+              <div class="vocab-ko">왕</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Любовь" style="border-top:2.5px solid #4a90a4;">
+              <div class="vocab-ru" style="color:#4a90a4;">Любовь</div>
+              <div class="vocab-pron">류보프</div>
+              <div class="vocab-ko">사랑</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Буду" style="border-top:2.5px solid #7b5ea7;">
+              <div class="vocab-ru" style="color:#7b5ea7;">Буду</div>
+              <div class="vocab-pron">부두</div>
+              <div class="vocab-ko">~하겠습니다</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Сердце" style="border-top:2.5px solid #7b5ea7;">
+              <div class="vocab-ru" style="color:#7b5ea7;">Сердце</div>
+              <div class="vocab-pron">세르쩨</div>
+              <div class="vocab-ko">마음·심장</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Душа" style="border-top:2.5px solid #7b5ea7;">
+              <div class="vocab-ru" style="color:#7b5ea7;">Душа</div>
+              <div class="vocab-pron">두샤</div>
+              <div class="vocab-ko">영혼</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Верю" style="border-top:2.5px solid #7b5ea7;">
+              <div class="vocab-ru" style="color:#7b5ea7;">Верю</div>
+              <div class="vocab-pron">볘류</div>
+              <div class="vocab-ko">믿습니다</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Жизнь" style="border-top:2.5px solid #7b5ea7;">
+              <div class="vocab-ru" style="color:#7b5ea7;">Жизнь</div>
+              <div class="vocab-pron">지즌</div>
+              <div class="vocab-ko">생명·삶</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Я" style="border-top:2.5px solid #c0752a;">
+              <div class="vocab-ru" style="color:#c0752a;">Я</div>
+              <div class="vocab-pron">야</div>
+              <div class="vocab-ko">나·저</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Мы" style="border-top:2.5px solid #c0752a;">
+              <div class="vocab-ru" style="color:#c0752a;">Мы</div>
+              <div class="vocab-pron">므의</div>
+              <div class="vocab-ko">우리</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Тебя" style="border-top:2.5px solid #c0752a;">
+              <div class="vocab-ru" style="color:#c0752a;">Тебя</div>
+              <div class="vocab-pron">쩨뱌</div>
+              <div class="vocab-ko">당신을</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Нас" style="border-top:2.5px solid #c0752a;">
+              <div class="vocab-ru" style="color:#c0752a;">Нас</div>
+              <div class="vocab-pron">나스</div>
+              <div class="vocab-ko">우리를</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Всегда" style="border-top:2.5px solid #8a7a5a;">
+              <div class="vocab-ru" style="color:#8a7a5a;">Всегда</div>
+              <div class="vocab-pron">브셰그다</div>
+              <div class="vocab-ko">항상·언제나</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Вместе" style="border-top:2.5px solid #8a7a5a;">
+              <div class="vocab-ru" style="color:#8a7a5a;">Вместе</div>
+              <div class="vocab-pron">브메스쩨</div>
+              <div class="vocab-ko">함께</div>
+            </div>
+<div class="vocab-card" data-speak-ru="Вечно" style="border-top:2.5px solid #8a7a5a;">
+              <div class="vocab-ru" style="color:#8a7a5a;">Вечно</div>
+              <div class="vocab-pron">볘츠나</div>
+              <div class="vocab-ko">영원히</div>
+            </div>
+          </div>
+    </div>
+
+    <!-- 카테고리 2: 하나님 / 신앙 -->
+    <div style="margin-bottom:3mm;">
+      <div style="display:inline-block;font-size:6.5pt;font-weight:800;color:#2255aa;background:#f0f7ff;border:1px solid #c0d4ee;border-radius:1.5mm;padding:0.5mm 2.5mm;margin-bottom:2mm;">✝️ 하나님 · 신앙</div>
+      <div class="vocab-grid">
+        <div class="vocab-card" data-speak-ru="Господь">
+          <div class="vc-ru">Господь</div>
+          <div class="vc-pron">가스뽀지</div>
+          <div class="vc-ko">주님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Бог">
+          <div class="vc-ru">Бог</div>
+          <div class="vc-pron">복</div>
+          <div class="vc-ko">하나님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Иисус">
+          <div class="vc-ru">Иисус</div>
+          <div class="vc-pron">이이수스</div>
+          <div class="vc-ko">예수</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Мессия">
+          <div class="vc-ru">Мессия</div>
+          <div class="vc-pron">메시야</div>
+          <div class="vc-ko">메시야</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="любовь">
+          <div class="vc-ru">Любовь</div>
+          <div class="vc-pron">류보프</div>
+          <div class="vc-ko">사랑</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="благодать">
+          <div class="vc-ru">Благодать</div>
+          <div class="vc-pron">블라가다치</div>
+          <div class="vc-ko">은혜</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="вера">
+          <div class="vc-ru">Вера</div>
+          <div class="vc-pron">볘라</div>
+          <div class="vc-ko">믿음</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="победа">
+          <div class="vc-ru">Победа</div>
+          <div class="vc-pron">빠볘다</div>
+          <div class="vc-ko">승리</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="спасение">
+          <div class="vc-ru">Спасение</div>
+          <div class="vc-pron">스파세니예</div>
+          <div class="vc-ko">구원</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="молитва">
+          <div class="vc-ru">Молитва</div>
+          <div class="vc-pron">말리트바</div>
+          <div class="vc-ko">기도</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카테고리 3: 하나님의 이름 / 행동 -->
+    <div>
+      <div style="display:inline-block;font-size:6.5pt;font-weight:800;color:#6a3a90;background:#f7f0fc;border:1px solid #d8c8ee;border-radius:1.5mm;padding:0.5mm 2.5mm;margin-bottom:2mm;">👑 하나님 이름 · 행동</div>
+      <div class="vocab-grid">
+        <div class="vocab-card" data-speak-ru="Яхве">
+          <div class="vc-ru">Яхве</div>
+          <div class="vc-pron">야훼</div>
+          <div class="vc-ko">야훼 (나는 스스로 있는 자)</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Адонай">
+          <div class="vc-ru">Адонай</div>
+          <div class="vc-pron">아도나이</div>
+          <div class="vc-ko">주님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Рафа">
+          <div class="vc-ru">Рафа</div>
+          <div class="vc-pron">라파</div>
+          <div class="vc-ko">치료하시는 하나님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Элохим">
+          <div class="vc-ru">Элохим</div>
+          <div class="vc-pron">엘로힘</div>
+          <div class="vc-ko">창조주 하나님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="Ире">
+          <div class="vc-ru">Ире</div>
+          <div class="vc-pron">이레</div>
+          <div class="vc-ko">준비하시는 하나님</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="явить">
+          <div class="vc-ru">Являть</div>
+          <div class="vc-pron">야블랴치</div>
+          <div class="vc-ko">나타내다</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="открыть">
+          <div class="vc-ru">Открыть</div>
+          <div class="vc-pron">아뜨크리치</div>
+          <div class="vc-ko">열다 / 여소서</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="видеть">
+          <div class="vc-ru">Видеть</div>
+          <div class="vc-pron">비젯</div>
+          <div class="vc-ko">보다</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="сердце">
+          <div class="vc-ru">Сердце</div>
+          <div class="vc-pron">세르체</div>
+          <div class="vc-ko">마음 / 심령</div>
+        </div>
+        <div class="vocab-card" data-speak-ru="небо">
+          <div class="vc-ru">Небо</div>
+          <div class="vc-pron">녜바</div>
+          <div class="vc-ko">하늘 / 천국</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span>
+    <span class="ft-right">📖 러시아어 핵심 단어 30개</span>
+  </div>
+</div>
+
+<div id="page-song-01" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">01</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Радуйтесь и ликуйте</div>
+        <div class="slot-title-ko">기뻐하고 또 기뻐하라</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Радуйтесь и ликуйте,</div>
+            <div class="pron">라두이쩨 이 리꾸이쩨</div>
+            <div class="ko">기뻐하고 또 기뻐하라</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Дух Господень наполняет нас</div>
+            <div class="pron">두흐 가스뽀젠 나뽈냐옛 나스</div>
+            <div class="ko">하나님의 영이 우리를 충만하게 하셨도다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Пленникам свободу возвещаем мы,</div>
+            <div class="pron">쁠렌니깜 스바보두 바즈베샤옘 믜</div>
+            <div class="ko">내가 포로들에게 자유를 선포하겠네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Побеждать врагов, имеем власть!</div>
+            <div class="pron">빠베즈닫 브라고프, 이미옘 블라스트!</div>
+            <div class="ko">원수들을 물리칠 능력이 우리에게 있도다</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мы – Божий народ, дети живого Бога,</div>
+            <div class="pron">므의 — 보지 나롯, 제티 지보바 보가</div>
+            <div class="ko">우리는 하나님의 백성, 살아 계신 하나님의 자녀</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Миру свет и соль земли.</div>
+            <div class="pron">미루 스볫 이 솔 젬리</div>
+            <div class="ko">세상의 빛과 땅의 소금입니다</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мы будем сиять, как город,</div>
+            <div class="pron">므의 부뎀 시얏, 깍 고랏</div>
+            <div class="ko">우리는 빛날 것입니다 — 성처럼</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Стоящий на вершине горы.</div>
+            <div class="pron">스따야시 나 베르시네 가릐</div>
+            <div class="ko">산꼭대기 위에 세워진 성처럼</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">02</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Буду жить всегда в Твоей любви</div>
+        <div class="slot-title-ko">주님의 사랑 안에 영원히 (나이-나이)</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Я буду жить всегда в Твоей любви</div>
+            <div class="pron">야 부두 짓 브셰그다 브 뜨바예이 류브비</div>
+            <div class="ko">주님의 사랑 안에서 영원히 살겠습니다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Я буду видеть чудеса Твои</div>
+            <div class="pron">야 부두 비젯 추데사 뜨바이</div>
+            <div class="ko">주님의 놀라운 일들을 보겠습니다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">В Твоём законе воля моя</div>
+            <div class="pron">브 뜨바옘 자꼬녜 볼랴 마야</div>
+            <div class="ko">제 뜻은 주님의 율법 안에 있습니다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Буду вечно прославлять Тебя</div>
+            <div class="pron">부두 베츠나 프라슬라블랴츠 찌뱌</div>
+            <div class="ko">영원히 주님을 영화롭게 하겠습니다</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Най-най-най-на-на-най-най-най</div>
+            <div class="pron">나이-나이-나이-나-나-나이-나이-나이</div>
+            <div class="ko">（기쁨의 허밍 — 말로 표현할 수 없는 기쁨의 찬양）</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мені бірінші сүйдің — 나를 먼저 사랑하셨네</div>
+            <div class="pron">메니 비린쉬 수이딩</div>
+            <div class="ko">하나님이 나를 먼저 사랑하셨네</div>
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 01 + 02</span></div>
+</div>
+<div id="page-song-03" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">03</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Мені бірінші сүйдің</div>
+        <div class="slot-title-ko">나를 먼저 사랑하셨네 (카자흐어)</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-kazakh">🎵 1절</span>
+          <div class="lyric-line kazakh-line">
+            <div class="ru">Мені бірінші сүйдің</div>
+            <div class="pron">메느브른쉬 - 샤크르든</div>
+            <div class="ko">나를 먼저 사랑하셨네</div>
+          </div>
+          <div class="lyric-line kazakh-line">
+            <div class="ru">Мені бірінші шақырдың</div>
+            <div class="pron">메느브른쉬 - 쉐이-든</div>
+            <div class="ko">나를 먼저 불러 주셨네</div>
+          </div>
+          <div class="lyric-line kazakh-line">
+            <div class="ru">Мен үшін жіберілген Иса</div>
+            <div class="pron">메누순지베-를 겐이싸</div>
+            <div class="ko">나를 위해 보내신 예수님</div>
+          </div>
+          <div class="lyric-line kazakh-line">
+            <div class="ru">Айқышта шегеленді</div>
+            <div class="pron">아이쿠쉬타 쉐게-렌드</div>
+            <div class="ko">십자가에 못 박히셨네</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мен осындамын Құдай</div>
+            <div class="pron">슨 따 므는 - 쿠다이</div>
+            <div class="ko">내가 여기 있어요 주님</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Кездескім келеді Құдай</div>
+            <div class="pron">케스데스금 케레드 - 쿠다이</div>
+            <div class="ko">만나기 원해요 주님</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жақын болғым келеді Құдай</div>
+            <div class="pron">자큰 보금 케레드 - 쿠다이</div>
+            <div class="ko">가까이 있고 싶어요 주님</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Сені сүйемін Құдай</div>
+            <div class="pron">세네쑤예믄 쿠다이</div>
+            <div class="ko">사랑해요 주님</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">04</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Славь душа Господа</div>
+        <div class="slot-title-ko">송축해 내 영혼 (10,000 Reasons)</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Слaвь, душa, Гocпoдa, Слaвь, душa,</div>
+            <div class="pron">슬라브 두샤 고스빠다 슬라브 두샤</div>
+            <div class="ko">송축해 내 영혼 내 영혼아</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Имя Святoe Eгo.</div>
+            <div class="pron">이먀 스뱌또예 예보</div>
+            <div class="ko">거룩하신 이름</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Пoй Eму, кaк никoгдa, пoй, душa,</div>
+            <div class="pron">포이 예무 깍 니까그다 포이 두샤</div>
+            <div class="ko">이전에 없었던 노래로</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Блaгocлoви Гocпoдa.</div>
+            <div class="pron">블라가슬라비 고스빠다</div>
+            <div class="ko">나 주님을 경배해</div>
+          </div>
+        </div>
+        <div style="margin-top:3mm;padding:3mm;background:#fdf3ee;border-radius:2mm;border:0.5px dashed #c96a3a;">
+          <div style="font-size:7pt;color:#c96a3a;font-weight:700;margin-bottom:1.5mm;">📝 Matt Redman 원곡 (2011)</div>
+          <div style="font-size:7.5pt;color:#555;line-height:1.7;">
+            영어 원곡: "Bless the Lord O my soul, O my soul<br>
+            Worship His holy name"<br>
+            — 전 세계적으로 사랑받는 현대 찬양
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 03 + 04</span></div>
+</div>
+<div id="page-song-05" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">05</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Скрой меня</div>
+        <div class="slot-title-ko">주 품에 (Hillsong — Still)</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Скрой меня Своим крылом</div>
+            <div class="pron">스크로이 몌냐 스바임 크륄롬</div>
+            <div class="ko">주의 날개 아래 나를 숨겨 주세요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Сохрани под сильною рукой</div>
+            <div class="pron">사흐라니 빠드 실나유 루코이</div>
+            <div class="ko">강한 주님의 손으로 나를 지켜 주세요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Пусть бушует шторм и гром гремит</div>
+            <div class="pron">푸스트 부슈옛 슈톰 이 그롬 그레밋</div>
+            <div class="ko">폭풍이 몰아치고 천둥이 울려도</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Над бурей буду я с Тобой парить</div>
+            <div class="pron">낫 부례이 부두 야 스 따보이 빠릿</div>
+            <div class="ko">나는 주님과 함께 폭풍 위를 날아오르리</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мой Отец, Ты Царь над всей землей</div>
+            <div class="pron">모이 아쩨츠, 뜨이 차리 나드 프셰이 젬료이</div>
+            <div class="ko">나의 아버지, 온 땅의 왕이신 주님</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Я не боюсь – мой Бог со мной</div>
+            <div class="pron">야 니 바유스 — 모이 복 사 므노이</div>
+            <div class="ko">나는 두렵지 않네, 나의 하나님이 나와 함께 계시니</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Найду покой в Тебе, мой Господь</div>
+            <div class="pron">나이두 빠코이 브 찌볘 모이 가스뽀지</div>
+            <div class="ko">나의 주님 안에서 평안을 찾으리</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Верю я в могущество Твоё</div>
+            <div class="pron">베류 야 브 마구셰스트바 뜨바요</div>
+            <div class="ko">나는 주님의 능력을 믿습니다</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">06</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Славьте Господа вся земля</div>
+        <div class="slot-title-ko">온 땅아 여호와를 찬양하라</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Славьте Господа, вся земля!</div>
+            <div class="pron">슬라브쩨 고스파다 브샤 제믈랴</div>
+            <div class="ko">온 땅아 여호와를 찬양하라</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Славьте Господа, небеса!</div>
+            <div class="pron">슬라브쩨 고스파다 네베싸</div>
+            <div class="ko">하늘아 여호와를 찬양하라</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Славьте Господа, ибо Он благ!</div>
+            <div class="pron">슬라브쩨 고스파다 이바 온 블락</div>
+            <div class="ko">여호와를 찬양하라, 그분은 선하시도다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ибо вовек милость Его!</div>
+            <div class="pron">이바 바베크 밀라스찌 예고</div>
+            <div class="ko">그분의 인자하심이 영원함이라</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Аллилуйя, Аллилуйя.</div>
+            <div class="pron">알릴루이야, 알릴루이야</div>
+            <div class="ko">할렐루야, 할렐루야</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Аллилуйя, Аллилуйя.</div>
+            <div class="pron">알릴루이야, 알릴루이야</div>
+            <div class="ko">할렐루야, 할렐루야</div>
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 05 + 06</span></div>
+</div>
+<div id="page-song-07" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">07</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Твоё Имя прекрасно, Бог</div>
+        <div class="slot-title-ko">What A Beautiful Name 그 이름 아름답도다</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Иса, в начале Ты был Словом,</div>
+            <div class="pron">이사, 브 나찰레 뜨이 븰 슬로봄</div>
+            <div class="ko">예수님, 태초에 말씀이 계시니</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Со Всевышним был Одно.</div>
+            <div class="pron">사 프셰비쉼 븰 아드노</div>
+            <div class="ko">지극히 높으신 주와 하나이셨네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">И слава, скрытая в творении,</div>
+            <div class="pron">이 슬라바, 스끄릍따야 브 뜨바례니이</div>
+            <div class="ko">만물에 감추인 그 영광</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">В Тебе явилась, наш Господь.</div>
+            <div class="pron">브 찌볘 야빌라스, 나쉬 가스뽀지</div>
+            <div class="ko">주 예수 안에 나타내셨네</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Твоё Имя прекрасно, Бог,</div>
+            <div class="pron">뜨바요 이미야 프리끄라스나, 복</div>
+            <div class="ko">그 이름 아름답도다</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ты Царь мой, Иса Господь.</div>
+            <div class="pron">뜨이 차리 모이, 이사 가스뽀지</div>
+            <div class="ko">나의 왕 예수 그리스도</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ни с чем не сравнить Его!</div>
+            <div class="pron">니 스 첸 니 스라브닛 예보!</div>
+            <div class="ko">비교할 수 없네!</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Иса – Господь мой!</div>
+            <div class="pron">이사 — 가스뽀지 모이!</div>
+            <div class="ko">예수의 이름!</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">08</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Каждое движение в Тебе</div>
+        <div class="slot-title-ko">내 모든 삶의 행동 주안에</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Каждое движение в Тебе</div>
+            <div class="pron">까쥐다 예-딥줴니 예f-찌볘 띠달 므녜씰루 이싸</div>
+            <div class="ko">내 모든 움직임이 주 안에 있네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ты дал мне силу, Иса</div>
+            <div class="pron">까쥐딥-독흐 야뎰라 윱찌볘</div>
+            <div class="ko">주님이 내게 힘을 주셨네, 예수님</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Каждый вздох я делаю в Тебе</div>
+            <div class="pron">까쥐디 쌱 야뎰라 윱찌볘 띠모이푸츠 이싸</div>
+            <div class="ko">내 모든 숨을 주 안에서 쉬네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Каждый шаг я делаю в Тебе</div>
+            <div class="pron">까쥐디 쌱 야뎰라 윱찌볘</div>
+            <div class="ko">내 모든 발걸음이 주 안에 있네</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ла-ла-ла-ла-ла-ла!</div>
+            <div class="pron">라 라라 라-라라라 / 라 라라 라-라라라</div>
+            <div class="ko">（기쁨의 라라라 — 주를 향한 순수한 기쁨）</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">И везде я вижу лишь Твоё лицо</div>
+            <div class="pron">이볘즈-뎨야 비주 리쉬바요 리쪼</div>
+            <div class="ko">어디서나 오직 주님의 얼굴만 보이네</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">И волны милости и благодать</div>
+            <div class="pron">이볼늬 밀라스틸 블라가닷츠</div>
+            <div class="ko">은혜의 파도와 자비가 넘치네</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Я утону в Твоей любви!</div>
+            <div class="pron">야우따누-뜨바이예 륩비 / 모이복흐 누깍 무녜 에땃 씨오빠냣</div>
+            <div class="ko">주님의 사랑에 빠져들겠네!</div>
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 07 + 08</span></div>
+</div>
+<div id="page-song-09" class="page">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
+      <div class="slot-num">09</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Яхве, славу нам являй!</div>
+        <div class="slot-title-ko">야훼</div>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Рядом мы чувствуем, Бог, Тебя</div>
+            <div class="pron">트랴담 므.추st부-옘 복- 찌뱌</div>
+            <div class="ko">주 영광 이곳에 가득해</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Являешь нам Свои чудеса</div>
+            <div class="pron">야블랴에쉬 남 스바-이 추데사</div>
+            <div class="ko">주님 여기 계시네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Здесь сила сверхъестественная</div>
+            <div class="pron">Z데스 실라 스베르 예s 톄st 베.나야</div>
+            <div class="ko">위대한 일 일어나네!</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Яхве, Рафа, Элохим, Эль Шаддай</div>
+            <div class="pron">야훼, 라fㅏ, 엘로힘, 엘샤다이</div>
+            <div class="ko">야훼, 라파, 엘로힘, 엘 샷다이</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ире, Адонай, Бог, славу нам являй</div>
+            <div class="pron">이레, 아도나이, 봉. 슬라부 남 야v랴이</div>
+            <div class="ko">이레, 아도나이, 주의 영광 나타내소서!</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">В поклонении Ты являешь славу нам</div>
+            <div class="pron">바글러네니/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">경배할 때 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Когда ищем Ты являешь славу нам</div>
+            <div class="pron">가그다 이솀/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">주 찾을 때 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Мы зовем Ты являешь славу нам</div>
+            <div class="pron">므이 즈바옘/ 디 야블랴에쉬 슬라부 남</div>
+            <div class="ko">주 부를 때 주의 영광 나타내소서</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지 2</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Яхве являешь славу нам</div>
+            <div class="pron">야훼 야블랴에쉬 슬라부 남</div>
+            <div class="ko">야훼 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Ире являешь славу нам</div>
+            <div class="pron">이레 야블랴에쉬 슬라부 남</div>
+            <div class="ko">이레 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Рафа являешь славу нам</div>
+            <div class="pron">라파 야블랴에쉬 슬라부 남</div>
+            <div class="ko">라파 주의 영광 나타내소서</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Являешь славу нам</div>
+            <div class="pron">야블랴에쉬 슬라부 남</div>
+            <div class="ko">주의 영광 나타내소서</div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 09</span></div>
+</div>
+<div id="page-song-10" class="page">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
+      <div class="slot-num">10</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Очи сердца открой, Бог</div>
+        <div class="slot-title-ko">내 맘의 눈을 여소서</div>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Oчи cepдцa oткpoй, Бoг.</div>
+            <div class="pron">어치 세르차 아뜨크로이, 복.</div>
+            <div class="ko">내 맘의 눈을 여소서</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Oчи cepдцa oткpoй</div>
+            <div class="pron">어치 세르차 아뜨크로이</div>
+            <div class="ko">내 맘의 눈을 여소서</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Видeть Teбя xoчу, видeть Teбя xoчу</div>
+            <div class="pron">비젯 찌뱌 하추, 비젯 찌뱌 하추</div>
+            <div class="ko">주 보기 원해 주 보기 원해</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Видeть, что Tы пpeвoзнeceн,</div>
+            <div class="pron">비젯, 슈또 뜨이 프리바즈네센,</div>
+            <div class="ko">주께서 높이 들리심을</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Слaвoю Свoeю cияeшь,</div>
+            <div class="pron">슬라바유 스바예유 시야예쉬,</div>
+            <div class="ko">영광의 빛 비추시며</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Нaм Свoю любoвь oткpoй,</div>
+            <div class="pron">남 스바유 류보프 아뜨크로이,</div>
+            <div class="ko">권능과 사랑 부으소서</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Мы пoeм: «Святый, Святый, Святый»</div>
+            <div class="pron">므이 빠욤: "스뱌뜨이, 스뱌뜨이, 스뱌뜨이"</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Святый, Святый, Святый</div>
+            <div class="pron">스뱌뜨이, 스뱌뜨이, 스뱌뜨이</div>
+            <div class="ko">거룩 거룩 거룩</div>
+          </div>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Видeть Teбя xoчу</div>
+            <div class="pron">비젯 찌뱌 하추</div>
+            <div class="ko">주 보기 원해</div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 10</span></div>
+</div>
+<div id="page-song-11" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">11</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Да, да, Масиха я люблю</div>
+        <div class="slot-title-ko">Deep Down in My Heart</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Да, да, Масиха я люблю</div>
+            <div class="pron">다 다 마시하 야 류블류</div>
+            <div class="ko">네 네 메시야 나는 사랑해요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Всем сердцем моим – люблю Масиха.</div>
+            <div class="pron">프셈 세르쩸 마임 류블류 마시하</div>
+            <div class="ko">내 온 마음으로 메시야를 사랑해요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Любишь ли Масиха всем сердцем своим?</div>
+            <div class="pron">류비시 리 마시하 프셈 세르쩸 스바임?</div>
+            <div class="ko">너는 온 마음으로 메시야를 사랑하니?</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Да, люблю Масиха всем сердцем своим!</div>
+            <div class="pron">다 류블류 마시하 프셈 세르쩸 스바임!</div>
+            <div class="ko">네! 나는 온 마음으로 메시야를 사랑해요!</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Deep, deep, o, deep down, down.</div>
+            <div class="pron">딥, 딥, 오, 딥 다운, 다운</div>
+            <div class="ko">깊이, 깊이, 오, 깊은 곳 깊은 곳에</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Deep down in my heart, I love my Jesus.</div>
+            <div class="pron">딥 다운 인 마이 하트, 아이 러브 마이 지저스</div>
+            <div class="ko">내 마음 깊은 곳에서 나는 예수님을 사랑해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Do you love your Jesus, deep down in your heart?</div>
+            <div class="ko">너는 네 마음 깊은 곳에서 예수님을 사랑하니?</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Yes, I love my Jesus, deep down in my heart.</div>
+            <div class="ko">네, 나는 내 마음 깊은 곳에서 예수님을 사랑해요!</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">12</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Этот день сотворил Господь</div>
+        <div class="slot-title-ko">이 날은 주가 지으신 날</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Этот день сотворил Господь</div>
+            <div class="pron">에땃 덴 사트바릴 가스포드</div>
+            <div class="ko">오늘은 주님께서 만드신 날</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Радуйся и веселись пред Ним</div>
+            <div class="pron">라두이샤 이 베셀리시 프레드 님!</div>
+            <div class="ko">그분 앞에서 기뻐하고 즐거워하라!</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ликуй в Господе</div>
+            <div class="pron">리쿠이 브 고스파데!</div>
+            <div class="ko">주 안에서 기뻐 외쳐라!</div>
+            <div style="font-size:6.5pt;color:#aaa;font-style:italic;">Likuy v Gospade!</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Торжествуй в присутствии Его!</div>
+            <div class="pron">타르제스트부이 브 프리수트스트비이 이보!</div>
+            <div class="ko">그분의 임재 앞에서 기뻐 뛰며 찬양하라!</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Иса достоин всей хвалы!</div>
+            <div class="pron">이사 다스토인 브세이 흐발리!</div>
+            <div class="ko">예수님은 모든 찬양을 받기에 합당하십니다!</div>
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 11 + 12</span></div>
+</div>
+<div id="page-song-13" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">13</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Бог Я Тебя люблю</div>
+        <div class="slot-title-ko">주 사랑합니다 — Beautiful Day</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Бог Я Тебя люблю</div>
+            <div class="pron">보흐 야 찌뱌 류블류</div>
+            <div class="ko">주 사랑합니다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Люблю больше, чем вчера</div>
+            <div class="pron">류블류 볼리체 쳄 브체라</div>
+            <div class="ko">어제보다 오늘 더 주를 사랑합니다</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">В храме ли я, на улице</div>
+            <div class="pron">브 흐라메리 야, 나 울리체</div>
+            <div class="ko">성소에서든 거리에서든</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">В пустыне ли, по долине пойду</div>
+            <div class="pron">브 푸스트네 리 빠 달리네 빠이두</div>
+            <div class="ko">광야에서든 깊은 골짜기에서든</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">В радости я или скорблю</div>
+            <div class="pron">브 라도스티 야 일리 스카르블류</div>
+            <div class="ko">기쁠 때도 슬플 때도</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Спасибо за солнце / за дождь</div>
+            <div class="pron">스파시바 짜 손체 / 짜 도즈찌</div>
+            <div class="ko">햇빛 주셔서 감사 / 비 주셔서 감사</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Спасибо за радость / за боль</div>
+            <div class="pron">스파시바 짜 라도스찌 / 짜 볼</div>
+            <div class="ko">기쁨 주셔서 감사 / 고통도 감사해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Богом даны нам день</div>
+            <div class="pron">보감 단느이 남 뎬</div>
+            <div class="ko">It's a beautiful day — 하나님이 주신 아름다운 날</div>
+          </div>
+        </div></div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">14</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Surrounded — Я верю, что Ты победил</div>
+        <div class="slot-title-ko">Surrounded</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body"><div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Я верю, что Ты победил</div>
+            <div class="pron">들랴민냐띠 쁘리가또 븰스또 / 나-베두 세흐그마히 브라고</div>
+            <div class="ko">나는 믿어요, 주님이 이기셨다는 것을</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Буду петь хвалу за все, что сделал Ты</div>
+            <div class="pron">뜨바요 졜라 이끄로쇼띠 쁘랄릴 / 엣따 또깍 야슬라쟈유스</div>
+            <div class="ko">주님이 행하신 모든 것을 위해 찬양할게요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Это то, как я сражаюсь</div>
+            <div class="pron">야볘-류 쉬또띠 빠삐쯸리 / 부-뚜 브예츠발루쟈 쇼-쉬또 스틸라오띠</div>
+            <div class="ko">이것이 내가 싸우는 방법이에요</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Если я окружён врагом,</div>
+            <div class="pron">엣따 또깍 야슬라쟈유스 / 엣따 또깍 야슬라쟈유스</div>
+            <div class="ko">만약 내가 원수에게 둘러싸여도</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Я знаю — Ты со мной</div>
+            <div class="pron">엣따 또깍 야슬라쟈유스 / 고스빠뗴</div>
+            <div class="ko">나는 알아요 — 주님이 나와 함께 계심을</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Я побеждаю в Господе</div>
+            <div class="pron">예스리야 악끄루좀 / 블라-곰 야스나유 띄쌈-노이</div>
+            <div class="ko">나는 주님 안에서 이겨요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Люблю Тебя / Бог, Ты все для меня</div>
+            <div class="pron">야빠뻬씨다유 고스빠뎨 / 야빠뻬씨다유 고스빠뎨</div>
+            <div class="ko">주님을 사랑해요 / 주님, 주님은 내 전부예요</div>
+          </div>
+        </div></div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 13 + 14</span></div>
+</div>
+<div id="page-song-15" class="page">
+  <div class="song-row">
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">15</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Будем петь, петь, петь</div>
+        <div class="slot-title-ko">Sing Sing Sing</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Будем петь, петь, петь с благодарными сердцами</div>
+            <div class="pron">부 쨈 볘츠-볘츠-볘츠 S블라가 달느미 쎌짜미</div>
+            <div class="ko">sing sing sing 천국에 울리는 노래</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Будем петь, петь, петь вместе с небесами</div>
+            <div class="pron">부 찜 볘츠-볘츠-볘츠 Vㅖ스때스 녜Vㅖ싸미</div>
+            <div class="ko">we will sing sing sing 주님 들으시네 감사드리며</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Воспевать хвалу и славить Мессию</div>
+            <div class="pron">바스볘 바츠H발루 이슬라-빗 매스하</div>
+            <div class="ko">예수 이름 높이세</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Великий и прекрасный, народы все и царства</div>
+            <div class="pron">빌리끼 이-쁠리 끄라스늬 / 나로-듸 세이 잘-쓰바</div>
+            <div class="ko">사랑스러운 주님 땅과 하늘 찬양해</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Пред Тобой склонятся / Боже мой, вся жизнь моя</div>
+            <div class="pron">볘레따 보이 S글라-니아짜 / 보-이 G 씐리 뜨랴-찌뱌</div>
+            <div class="ko">열방이 경배해 예수님 당신은 유일하신 삶의 이유</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Лишь для Тебя вся жизнь моя</div>
+            <div class="pron">(리쉬)들랴찌뱌 싸쥐스마야</div>
+            <div class="ko">유일하신 삶의 이유</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 2절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ты нас освобождаешь, любовью наполняешь</div>
+            <div class="pron">띠나쉬 아스Vㅏ바(SH)다 예쉬 / 쓸뵤뷰-나플라 Vㅑ 예쉬</div>
+            <div class="ko">자유케 하는 사람 타오르는 불처럼</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Огонь в нас зажигаешь / Боже мой, вся жизнь моя</div>
+            <div class="pron">아-곤 나Z자 쥐가 예쉬 / 보이-G 씐리 뜨랴-찌뱌</div>
+            <div class="ko">인도하시는 빛 예수님 당신은 주 유일하신 삶의 이유</div>
+          </div>
+        </div>
+      </div>
+</div>
+    <div class="v-div"></div>
+    <div class="song-slot">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">16</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Благ наш Господь</div>
+        <div class="slot-title-ko">좋으신 하나님 (You are Good)</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Благ наш Господь ибо милость Его вовеки</div>
+            <div class="pron">블라나SH 가스 보쥐-바 / 밀라ST이보 / 바베끼</div>
+            <div class="ko">좋으신 하나님 인자와 자비 영원히</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">Пусть все народы и племена / Придут и прославят</div>
+            <div class="pron">뿌이쉐 나로듸 이셰쁠리 미옌 나 / 쁘리 둣 (이)쁘RA쓸랴뱟 쟈랴 잇트-빨쨔</div>
+            <div class="ko">각 나라 족속과 백성 방언 세상 모든 세대 영원토록</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Хвала Тебе Аллилуйя ×2</div>
+            <div class="pron">흐발라 V찌볘 / 알렐루야 알렐루야</div>
+            <div class="ko">주 경배해 할렐루야 할렐루야</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Хвала Тебе за то, что Ты есть!</div>
+            <div class="pron">흐발라 V찌볘 / 자-또SH또 띠예ST</div>
+            <div class="ko">주 경배해 주 하나님</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-bridge">🎵 브릿지 2</span>
+          <div class="lyric-line bridge-line">
+            <div class="ru">О Масих — Ты так благ / Ты так благ для меня</div>
+            <div class="pron">오 이쑤스 띠 딱블락 띠 딱블략 들라민냐</div>
+            <div class="ko">You are good / All the time</div>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15 + 16</span></div>
+</div>
+
+  <script>
+  // ── 발음 기능: 러시아어 줄 클릭 시 TTS로 읽어주기 ──
+  (function() {
+    const synth = window.speechSynthesis;
+
+    function getRuVoice() {
+      const voices = synth.getVoices();
+      return voices.find(v => v.lang.startsWith('ru')) || voices[0] || null;
+    }
+
+    function speak(text) {
+      if (!synth) return;
+      synth.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'ru-RU';
+      utter.rate = 0.85;
+      utter.pitch = 1;
+      const voice = getRuVoice();
+      if (voice) utter.voice = voice;
+      synth.speak(utter);
+    }
+
+    function initPron() {
+      // RU lines: click → TTS
+      document.querySelectorAll('.lyric-line .ru').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 러시아어 발음을 들을 수 있어요';
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const text = this.textContent.replace(/[/|—–]/g, ' ').trim();
+          // Flash effect
+          this.style.transition = 'background 0.15s';
+          this.style.background = 'rgba(201,106,58,0.18)';
+          this.style.borderRadius = '3px';
+          setTimeout(() => this.style.background = '', 600);
+          speak(text);
+        });
+      });
+
+      // PRON lines: click → highlight toggle
+      document.querySelectorAll('.lyric-line .pron').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 발음 기호를 강조합니다';
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          this.classList.toggle('pron-highlight');
+        });
+      });
+
+      // Lyric lines: click entire line → read RU
+      document.querySelectorAll('.lyric-line').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function() {
+          const ru = this.querySelector('.ru');
+          if (ru) {
+            const text = ru.textContent.replace(/[/|—–]/g, ' ').trim();
+            ru.style.transition = 'background 0.15s';
+            ru.style.background = 'rgba(201,106,58,0.18)';
+            ru.style.borderRadius = '3px';
+            setTimeout(() => ru.style.background = '', 600);
+            speak(text);
+          }
+        });
+      });
+
+      // Vocab words: click → read
+      document.querySelectorAll('.vocab-card').forEach(el => {
+        const ru = el.querySelector('.vc-ru');
+        if (!ru) return;
+        el.style.cursor = 'pointer';
+        el.style.transition = 'transform 0.12s, box-shadow 0.12s';
+        el.title = '클릭하면 발음을 들을 수 있어요';
+        el.addEventListener('click', function() {
+          const word = this.dataset.speakRu || ru.textContent.trim();
+          speak(word);
+          this.style.transform = 'scale(1.06)';
+          this.style.boxShadow = '0 0 0 2px #1a5e4e';
+          setTimeout(() => {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+          }, 500);
+        });
+      });
+      document.querySelectorAll('[data-speak-ru]').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.title = '클릭하면 발음을 들을 수 있어요';
+        el.addEventListener('click', function() {
+          speak(this.dataset.speakRu);
+          this.style.transition = 'transform 0.1s';
+          this.style.transform = 'scale(1.08)';
+          setTimeout(() => this.style.transform = '', 200);
+        });
+      });
+    }
+
+    // Init after voices load
+    if (synth.getVoices().length > 0) {
+      initPron();
+    } else {
+      synth.addEventListener('voiceschanged', initPron, { once: true });
+      setTimeout(initPron, 800);
+    }
+  })();
+
+    // ── 발음 직접 편집 기능 (localStorage 저장) ──
+    (function() {
+      // STORAGE_KEY는 전역에서 선언됨 (STORAGE_KEY_MAIN)
+
+      function loadEdits() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY_MAIN) || '{}'); }
+        catch(e) { return {}; }
+      }
+
+      function saveEdits(edits) {
+        try { localStorage.setItem(STORAGE_KEY_MAIN, JSON.stringify(edits)); }
+        catch(e) {}
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById('save-toast');
+        if (!t) return;
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1800);
+      }
+
+      function initEditablePron() {
+        const edits = loadEdits();
+        const prons = document.querySelectorAll('.pron');
+
+        prons.forEach((el, idx) => {
+          const key = 'pron_' + idx;
+
+          // 저장된 편집 내용 복원
+          if (edits[key] !== undefined) {
+            el.textContent = edits[key];
+            el.classList.add('edited');
+          }
+
+          // contenteditable 설정
+          el.contentEditable = 'true';
+          el.spellcheck = false;
+          el.title = '클릭하여 내 발음으로 수정 (자동 저장)';
+
+          // 포커스 시 전체 선택
+          el.addEventListener('focus', function() {
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          });
+
+          // 엔터키 → blur (저장 트리거)
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              this.blur();
+            }
+          });
+
+          // blur 시 저장
+          el.addEventListener('blur', function() {
+            const current = loadEdits();
+            const original = this.dataset.origPron;
+            const val = this.textContent.trim();
+
+            if (val === original) {
+              // 원본으로 복원 → 저장 항목 삭제
+              delete current[key];
+              this.classList.remove('edited');
+            } else {
+              current[key] = val;
+              this.classList.add('edited');
+            }
+            saveEdits(current);
+            showToast('✅ 발음 저장됨');
+          });
+
+          // 원본 발음 저장
+          if (!el.dataset.origPron) {
+            el.dataset.origPron = el.textContent.trim();
+          }
+        });
+      }
+
+
+
+      // 저장 토스트
+      const toast = document.createElement('div');
+      toast.id = 'save-toast';
+      document.body.appendChild(toast);
+
+      // DOM 준비 후 실행
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initEditablePron);
+      } else {
+        initEditablePron();
+      }
+    })();
+
+
+
+    // ── 발음 초기화 + 되돌리기 기능 ──
+    const STORAGE_KEY_MAIN   = 'konaev_pron_edits_v1';
+    const STORAGE_KEY_BACKUP = 'konaev_pron_edits_backup_v1';
+    let undoTimer = null;
+    let undoCountdownInterval = null;
+
+    function resetPronEdits() {
+      // 1. 현재 편집 내용 백업
+      const current = localStorage.getItem(STORAGE_KEY_MAIN_MAIN);
+      if (!current || Object.keys(JSON.parse(current || '{}')).length === 0) {
+        showUndoToast('수정된 발음이 없습니다', false);
+        return;
+      }
+      localStorage.setItem(STORAGE_KEY_BACKUP, current);
+
+      // 2. 초기화 실행
+      localStorage.removeItem(STORAGE_KEY_MAIN);
+      document.querySelectorAll('.pron').forEach(el => {
+        if (el.dataset.origPron) {
+          el.textContent = el.dataset.origPron;
+          el.classList.remove('edited');
+        }
+      });
+
+      // 3. 목차 닫기
+      document.getElementById('mobile-toc-menu').classList.remove('open');
+
+      // 4. 되돌리기 토스트 표시 (10초)
+      showUndoToast('발음이 초기화되었습니다', true);
+    }
+
+    function undoPronReset() {
+      const backup = localStorage.getItem(STORAGE_KEY_MAIN_BACKUP);
+      if (!backup) return;
+
+      // 백업 복원
+      localStorage.setItem(STORAGE_KEY_MAIN, backup);
+      localStorage.removeItem(STORAGE_KEY_BACKUP);
+
+      // DOM에도 복원
+      const edits = JSON.parse(backup);
+      document.querySelectorAll('.pron').forEach((el, idx) => {
+        const key = 'pron_' + idx;
+        if (edits[key] !== undefined) {
+          el.textContent = edits[key];
+          el.classList.add('edited');
+        }
+      });
+
+      hideUndoToast();
+      showToast('✅ 발음이 복원되었습니다');
+    }
+
+    function showUndoToast(msg, showUndo) {
+      const toast = document.getElementById('undo-toast');
+      const msgEl = document.getElementById('undo-toast-msg');
+      const btn   = toast.querySelector('button');
+      const cd    = document.getElementById('undo-countdown');
+
+      msgEl.textContent = msg;
+      btn.style.display = showUndo ? 'inline-block' : 'none';
+      toast.style.display = 'flex';
+      toast.style.pointerEvents = 'auto';
+      setTimeout(() => toast.style.opacity = '1', 10);
+
+      // 기존 타이머 정리
+      if (undoTimer) clearTimeout(undoTimer);
+      if (undoCountdownInterval) clearInterval(undoCountdownInterval);
+
+      if (showUndo) {
+        let remaining = 10;
+        cd.textContent = remaining + 's';
+        undoCountdownInterval = setInterval(() => {
+          remaining--;
+          cd.textContent = remaining > 0 ? remaining + 's' : '';
+          if (remaining <= 0) clearInterval(undoCountdownInterval);
+        }, 1000);
+        undoTimer = setTimeout(() => {
+          hideUndoToast();
+          localStorage.removeItem(STORAGE_KEY_BACKUP);
+        }, 10000);
+      } else {
+        cd.textContent = '';
+        undoTimer = setTimeout(hideUndoToast, 2500);
+      }
+    }
+
+    function hideUndoToast() {
+      const toast = document.getElementById('undo-toast');
+      toast.style.opacity = '0';
+      toast.style.pointerEvents = 'none';
+      setTimeout(() => toast.style.display = 'none', 300);
+      if (undoTimer) { clearTimeout(undoTimer); undoTimer = null; }
+      if (undoCountdownInterval) { clearInterval(undoCountdownInterval); undoCountdownInterval = null; }
+    }
+
+    // ── 모바일 목차 네비게이션 ──
+    function toggleMobileToc() {
+      const menu = document.getElementById('mobile-toc-menu');
+      const icon = document.getElementById('toc-btn-icon');
+      const isOpen = menu.classList.toggle('open');
+      if (icon) icon.textContent = isOpen ? '✕' : '☰';
     }
     function goToPage(id) {
       const el = document.getElementById(id);
