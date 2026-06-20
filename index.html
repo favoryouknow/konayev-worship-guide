@@ -61,9 +61,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 2.5mm;
+      padding-bottom: 2.8mm;
       border-bottom: 2px solid #1a5e4e;
-      margin-bottom: 3mm;
+      margin-bottom: 3.5mm;
       gap: 2mm;
     }
     .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
@@ -78,7 +78,7 @@
     }
     .slot-titles { min-width: 0; }
     .slot-title-ru {
-      font-size: 11pt; font-weight: 900; color: #111;
+      font-size: 11.5pt; font-weight: 900; color: #111;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       line-height: 1.2;
     }
@@ -101,17 +101,18 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 2.5mm;
+      gap: 3mm;
     }
 
     /* 섹션 블록 */
-    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
+    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; gap: 0; }
 
     .section-tag {
       display: inline-block;
-      font-size: 6.5pt; font-weight: 800;
-      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
-      margin-bottom: 1.8mm; flex-shrink: 0;
+      font-size: 7pt; font-weight: 800;
+      padding: 0.8mm 3mm; border-radius: 1.5mm;
+      margin-bottom: 2mm; flex-shrink: 0;
+      letter-spacing: 0.2px;
     }
     .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
     .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
@@ -121,37 +122,37 @@
 
     /* 가사 라인 */
     .lyric-line {
-      padding: 1.8mm 2.5mm;
+      padding: 2mm 3mm;
       border-radius: 1.5mm;
-      margin-bottom: 1.2mm;
-      border-left: 2.5px solid transparent;
+      margin-bottom: 1.5mm;
+      border-left: 3px solid transparent;
       background: #fafafa;
       cursor: pointer;
       transition: filter 0.12s;
     }
     .lyric-line:hover { filter: brightness(0.97); }
-    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
-    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .verse-line  { border-left-color: #1a5e4e; background: #f4fbf7; }
+    .chorus-line { border-left-color: #2255aa; background: #f3f7ff; }
     .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
     .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
 
     /* ─── 텍스트 3단계 ─── */
     .ru {
-      font-size: 7pt; color: #999;
-      font-weight: 400; line-height: 1.4;
-      font-style: italic;
-    }
-    .pron {
-      font-size: 10.5pt; color: #1a5e4e;
-      font-weight: 800; line-height: 1.45;
+      font-size: 8.5pt; color: #555;
+      font-weight: 600; line-height: 1.45;
       letter-spacing: 0.1px;
     }
+    .pron {
+      font-size: 11pt; color: #1a5e4e;
+      font-weight: 800; line-height: 1.5;
+      letter-spacing: 0.15px;
+    }
     .ko {
-      font-size: 7.5pt; color: #333;
-      font-weight: 500; line-height: 1.4;
-      border-left: 1.5px solid rgba(26,94,78,0.12);
-      padding-left: 1.5mm;
-      margin-top: 0.3mm;
+      font-size: 8pt; color: #555;
+      font-weight: 500; line-height: 1.45;
+      border-left: 2px solid rgba(26,94,78,0.15);
+      padding-left: 2mm;
+      margin-top: 0.5mm;
     }
 
     /* 세로 구분선 */
@@ -186,9 +187,9 @@
       border: 1px solid #e8e4e0;
       border-radius: 2.5mm; padding: 3mm;
     }
-    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
-    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
-    .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
+    .vc-ru   { font-size:9pt;   font-weight:900; color:#111; margin-bottom:1.2mm; line-height:1.3; }
+    .vc-pron { font-size:9.5pt; font-weight:700; color:#1a5e4e; margin-bottom:1.2mm; line-height:1.3; }
+    .vc-ko   { font-size:8.5pt; font-weight:600; color:#444; margin-bottom:1mm;   line-height:1.3; }
     .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
     .cat-lbl {
       font-size:7pt; font-weight:700; padding:1.5mm 3mm;
@@ -209,15 +210,7 @@
       text-decoration-color: rgba(26,94,78,0.35);
       text-underline-offset: 2px;
     }
-    .slot-hdr::after {
-      content: "🔊 클릭 시 발음 재생";
-      font-size: 5.5pt;
-      color: rgba(26,94,78,0.35);
-      font-weight: 500;
-      align-self: flex-end;
-      padding-bottom: 1mm;
-      flex-shrink: 0;
-    }
+    /* slot-hdr::after 제거 — 발음 재생 안내 제거 */
 
     /* ── TTS 상태바 ── */
     #tts-status-bar {
@@ -615,7 +608,6 @@
 
   <!-- 모바일 네비 + 바텀시트 목차 -->
 
-  <!-- 네비바 -->
   <header id="mobile-nav">
     <div class="mnav-left">
       <span class="mnav-cross">✝</span>
@@ -630,125 +622,134 @@
     </button>
   </header>
 
-  <!-- 배경 오버레이 -->
   <div id="toc-overlay" onclick="closeMobileToc()"></div>
 
-  <!-- 바텀시트 -->
   <div id="mobile-toc-menu">
-    <div class="toc-handle"></div>
 
-    <div class="toc-header">
-      <span class="toc-header-title">목차</span>
-      <span class="toc-header-badge">16곡</span>
+    <!-- 데스크탑 목차와 동일한 초록 배너 헤더 -->
+    <div class="mtoc-banner">
+      <div>
+        <div class="mtoc-banner-sub">2026 AGAPAO 코나예프 선교팀</div>
+        <div class="mtoc-banner-title">현지찬양가사<br>가이드북</div>
+        <div class="mtoc-banner-ru">Сборник Песен Поклонения</div>
+      </div>
+      <div class="mtoc-banner-right">
+        <div class="mtoc-banner-count">총 16곡</div>
+        <div class="mtoc-banner-desc">러시아어 · 한글 발음</div>
+      </div>
     </div>
 
-    <div class="toc-body">
+    <!-- 목차 본문 (데스크탑과 동일 구조) -->
+    <div class="mtoc-body">
 
-      <!-- 단어장 -->
-      <p class="toc-label">단어장</p>
-      <button class="toc-row toc-row-word" onclick="goToPage('page-vocab');closeMobileToc()">
-        <span class="toc-badge toc-badge-gold">★</span>
-        <span class="toc-row-ko">러시아어 핵심 단어 30</span>
-        <span class="toc-row-ru">Ключевые слова</span>
-      </button>
+      <!-- 목차 헤더 -->
+      <div class="mtoc-section-hdr">
+        <span class="mtoc-section-title">목 차</span>
+        <div class="mtoc-section-line"></div>
+        <span class="mtoc-section-en">Contents</span>
+      </div>
 
-      <!-- 찬양 곡 -->
-      <p class="toc-label">찬양 곡</p>
-      <button class="toc-row " onclick="goToPage('page-song-01');closeMobileToc()">
-        <span class="toc-badge ">1</span>
-        <span class="toc-row-ko">기뻐하고 또 기뻐하라</span>
-        <span class="toc-row-ru">Радуйтесь и ликуйте</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-01');closeMobileToc()">
-        <span class="toc-badge ">2</span>
-        <span class="toc-row-ko">주님의 사랑 안에 영원히</span>
-        <span class="toc-row-ru">Буду жить в Твоей любви</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-03');closeMobileToc()">
-        <span class="toc-badge ">3</span>
-        <span class="toc-row-ko">사랑해요 주님 (카자흐어)</span>
-        <span class="toc-row-ru">Сені сүйемін Құдай</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-03');closeMobileToc()">
-        <span class="toc-badge ">4</span>
-        <span class="toc-row-ko">송축해 내 영혼</span>
-        <span class="toc-row-ru">Славь, душа, Господа</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-05');closeMobileToc()">
-        <span class="toc-badge ">5</span>
-        <span class="toc-row-ko">주 품에 (Still)</span>
-        <span class="toc-row-ru">Скрой меня Своим крылом</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-05');closeMobileToc()">
-        <span class="toc-badge ">6</span>
-        <span class="toc-row-ko">온 땅들아 여호와를 찬양하라</span>
-        <span class="toc-row-ru">Славьте Господа все народы</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-07');closeMobileToc()">
-        <span class="toc-badge ">7</span>
-        <span class="toc-row-ko">What A Beautiful Name</span>
-        <span class="toc-row-ru">Святый</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-07');closeMobileToc()">
-        <span class="toc-badge ">8</span>
-        <span class="toc-row-ko">내 모든 삶의 행동 주안에</span>
-        <span class="toc-row-ru">Всей своей жизнью</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-09');closeMobileToc()">
-        <span class="toc-badge ">9</span>
-        <span class="toc-row-ko">야훼</span>
-        <span class="toc-row-ru">Яхве</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-10');closeMobileToc()">
-        <span class="toc-badge ">10</span>
-        <span class="toc-row-ko">내 맘의 눈을 여소서</span>
-        <span class="toc-row-ru">Open the Eyes of My Heart</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-11');closeMobileToc()">
-        <span class="toc-badge ">11</span>
-        <span class="toc-row-ko">Deep Down in My Heart</span>
-        <span class="toc-row-ru">В глубине моего сердца</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-11');closeMobileToc()">
-        <span class="toc-badge ">12</span>
-        <span class="toc-row-ko">이 날은 주가 지으신 날</span>
-        <span class="toc-row-ru">Это день, который создал Господь</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-13');closeMobileToc()">
-        <span class="toc-badge ">13</span>
-        <span class="toc-row-ko">주 사랑합니다 + Beautiful Day</span>
-        <span class="toc-row-ru">Господь, я люблю Тебя</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-13');closeMobileToc()">
-        <span class="toc-badge ">14</span>
-        <span class="toc-row-ko">Surrounded</span>
-        <span class="toc-row-ru">Окружён</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-15');closeMobileToc()">
-        <span class="toc-badge ">15</span>
-        <span class="toc-row-ko">Sing Sing Sing</span>
-        <span class="toc-row-ru">Пой, пой, пой</span>
-      </button>
-      <button class="toc-row " onclick="goToPage('page-song-15');closeMobileToc()">
-        <span class="toc-badge ">16</span>
-        <span class="toc-row-ko">좋으신 하나님 (You are Good)</span>
-        <span class="toc-row-ru">Бог, Ты благ</span>
-      </button>
+      <!-- 곡 목록 -->
+      <div class="mtoc-grid">
+      <div class="mtoc-row mtoc-row-special" onclick="goToPage('page-vocab');closeMobileToc()">
+        <span class="mtoc-pnum">p.1</span>
+        <span class="mtoc-snum">★</span>
+        <span class="mtoc-title">러시아어 핵심 단어 30</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-01');closeMobileToc()">
+        <span class="mtoc-pnum">p.2</span>
+        <span class="mtoc-snum">01</span>
+        <span class="mtoc-title">기뻐하고 또 기뻐하라</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-01');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">02</span>
+        <span class="mtoc-title">주님의 사랑 안에 영원히</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-03');closeMobileToc()">
+        <span class="mtoc-pnum">p.3</span>
+        <span class="mtoc-snum">03</span>
+        <span class="mtoc-title">사랑해요 주님 (카자흐어)</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-03');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">04</span>
+        <span class="mtoc-title">송축해 내 영혼</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-05');closeMobileToc()">
+        <span class="mtoc-pnum">p.4</span>
+        <span class="mtoc-snum">05</span>
+        <span class="mtoc-title">주 품에 (Still)</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-05');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">06</span>
+        <span class="mtoc-title">온 땅들아 여호와를 찬양하라</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-07');closeMobileToc()">
+        <span class="mtoc-pnum">p.5</span>
+        <span class="mtoc-snum">07</span>
+        <span class="mtoc-title">What A Beautiful Name</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-07');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">08</span>
+        <span class="mtoc-title">내 모든 삶의 행동 주안에</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-09');closeMobileToc()">
+        <span class="mtoc-pnum">p.6</span>
+        <span class="mtoc-snum">09</span>
+        <span class="mtoc-title">야훼</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-10');closeMobileToc()">
+        <span class="mtoc-pnum">p.7</span>
+        <span class="mtoc-snum">10</span>
+        <span class="mtoc-title">내 맘의 눈을 여소서</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-11');closeMobileToc()">
+        <span class="mtoc-pnum">p.8</span>
+        <span class="mtoc-snum">11</span>
+        <span class="mtoc-title">Deep Down in My Heart</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-11');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">12</span>
+        <span class="mtoc-title">이 날은 주가 지으신 날</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-13');closeMobileToc()">
+        <span class="mtoc-pnum">p.9</span>
+        <span class="mtoc-snum">13</span>
+        <span class="mtoc-title">주 사랑합니다 + Beautiful Day</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-13');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">14</span>
+        <span class="mtoc-title">Surrounded</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-15');closeMobileToc()">
+        <span class="mtoc-pnum">p.10</span>
+        <span class="mtoc-snum">15</span>
+        <span class="mtoc-title">Sing Sing Sing</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('page-song-15');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">16</span>
+        <span class="mtoc-title">좋으신 하나님 (You are Good)</span>
+      </div>
+
+      </div>
 
       <!-- 발음 관리 -->
-      <p class="toc-label">발음 관리</p>
-      <button id="restore-pron-btn" class="toc-row toc-row-restore" onclick="restorePronBackup()" style="display:none">
-        <span class="toc-badge toc-badge-teal">↩</span>
-        <span class="toc-row-ko" style="color:#1a5e4e">이전 발음으로 복원</span>
-        <span class="toc-row-ru">백업된 발음 불러오기</span>
-      </button>
-      <button id="reset-pron-btn" class="toc-row toc-row-danger" onclick="resetPronEdits()">
-        <span class="toc-badge toc-badge-red">↺</span>
-        <span class="toc-row-ko" style="color:#c0392b">발음 편집 초기화</span>
-        <span class="toc-row-ru">현재 편집 내용 지우기</span>
-      </button>
+      <div class="mtoc-tools">
+        <button id="restore-pron-btn" class="mtoc-tool-btn mtoc-tool-restore" onclick="restorePronBackup()" style="display:none">
+          <span class="mtoc-tool-icon">↩</span>이전 발음으로 복원
+        </button>
+        <button id="reset-pron-btn" class="mtoc-tool-btn mtoc-tool-reset" onclick="resetPronEdits()">
+          <span class="mtoc-tool-icon">↺</span>발음 편집 초기화
+        </button>
+      </div>
 
-      <div style="height:env(safe-area-inset-bottom,20px);min-height:16px"></div>
+      <div style="height:max(20px,env(safe-area-inset-bottom))"></div>
     </div>
   </div>
 
@@ -2880,9 +2881,9 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 2.5mm;
+      padding-bottom: 2.8mm;
       border-bottom: 2px solid #1a5e4e;
-      margin-bottom: 3mm;
+      margin-bottom: 3.5mm;
       gap: 2mm;
     }
     .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
@@ -2897,7 +2898,7 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     }
     .slot-titles { min-width: 0; }
     .slot-title-ru {
-      font-size: 11pt; font-weight: 900; color: #111;
+      font-size: 11.5pt; font-weight: 900; color: #111;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       line-height: 1.2;
     }
@@ -2920,17 +2921,18 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 2.5mm;
+      gap: 3mm;
     }
 
     /* 섹션 블록 */
-    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; }
+    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; gap: 0; }
 
     .section-tag {
       display: inline-block;
-      font-size: 6.5pt; font-weight: 800;
-      padding: 0.6mm 2.5mm; border-radius: 1.5mm;
-      margin-bottom: 1.8mm; flex-shrink: 0;
+      font-size: 7pt; font-weight: 800;
+      padding: 0.8mm 3mm; border-radius: 1.5mm;
+      margin-bottom: 2mm; flex-shrink: 0;
+      letter-spacing: 0.2px;
     }
     .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
     .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
@@ -2940,37 +2942,37 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     /* 가사 라인 */
     .lyric-line {
-      padding: 1.8mm 2.5mm;
+      padding: 2mm 3mm;
       border-radius: 1.5mm;
-      margin-bottom: 1.2mm;
-      border-left: 2.5px solid transparent;
+      margin-bottom: 1.5mm;
+      border-left: 3px solid transparent;
       background: #fafafa;
       cursor: pointer;
       transition: filter 0.12s;
     }
     .lyric-line:hover { filter: brightness(0.97); }
-    .verse-line  { border-left-color: #1a5e4e; background: #f6fbf8; }
-    .chorus-line { border-left-color: #2255aa; background: #f5f8ff; }
+    .verse-line  { border-left-color: #1a5e4e; background: #f4fbf7; }
+    .chorus-line { border-left-color: #2255aa; background: #f3f7ff; }
     .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
     .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
 
     /* ─── 텍스트 3단계 ─── */
     .ru {
-      font-size: 7pt; color: #999;
-      font-weight: 400; line-height: 1.4;
-      font-style: italic;
-    }
-    .pron {
-      font-size: 10.5pt; color: #1a5e4e;
-      font-weight: 800; line-height: 1.45;
+      font-size: 8.5pt; color: #555;
+      font-weight: 600; line-height: 1.45;
       letter-spacing: 0.1px;
     }
+    .pron {
+      font-size: 11pt; color: #1a5e4e;
+      font-weight: 800; line-height: 1.5;
+      letter-spacing: 0.15px;
+    }
     .ko {
-      font-size: 7.5pt; color: #333;
-      font-weight: 500; line-height: 1.4;
-      border-left: 1.5px solid rgba(26,94,78,0.12);
-      padding-left: 1.5mm;
-      margin-top: 0.3mm;
+      font-size: 8pt; color: #555;
+      font-weight: 500; line-height: 1.45;
+      border-left: 2px solid rgba(26,94,78,0.15);
+      padding-left: 2mm;
+      margin-top: 0.5mm;
     }
 
     /* 세로 구분선 */
@@ -3005,9 +3007,9 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
       border: 1px solid #e8e4e0;
       border-radius: 2.5mm; padding: 3mm;
     }
-    .vc-ru   { font-size:8.5pt; font-weight:900; color:#111; margin-bottom:1mm; line-height:1.3; }
-    .vc-pron { font-size:9pt;   font-weight:700; color:#1a5e4e; margin-bottom:1mm; line-height:1.3; }
-    .vc-ko   { font-size:8pt;   font-weight:600; color:#333; margin-bottom:0.8mm; line-height:1.3; }
+    .vc-ru   { font-size:9pt;   font-weight:900; color:#111; margin-bottom:1.2mm; line-height:1.3; }
+    .vc-pron { font-size:9.5pt; font-weight:700; color:#1a5e4e; margin-bottom:1.2mm; line-height:1.3; }
+    .vc-ko   { font-size:8.5pt; font-weight:600; color:#444; margin-bottom:1mm;   line-height:1.3; }
     .vc-en   { font-size:6pt;   color:#aaa; line-height:1.4; }
     .cat-lbl {
       font-size:7pt; font-weight:700; padding:1.5mm 3mm;
@@ -3028,15 +3030,7 @@ t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
       text-decoration-color: rgba(26,94,78,0.35);
       text-underline-offset: 2px;
     }
-    .slot-hdr::after {
-      content: "🔊 클릭 시 발음 재생";
-      font-size: 5.5pt;
-      color: rgba(26,94,78,0.35);
-      font-weight: 500;
-      align-self: flex-end;
-      padding-bottom: 1mm;
-      flex-shrink: 0;
-    }
+    /* slot-hdr::after 제거 — 발음 재생 안내 제거 */
 
     /* ── TTS 상태바 ── */
     #tts-status-bar {
