@@ -234,6 +234,77 @@
     }
 
     /* 인쇄 설정 */
+
+    /* ── 발음 편집 기능 ── */
+    .pron {
+      cursor: text;
+      border-radius: 3px;
+      transition: background 0.15s;
+      outline: none;
+      min-width: 20px;
+      display: inline-block;
+    }
+    .pron:hover {
+      background: rgba(26,94,78,0.07);
+    }
+    .pron:focus {
+      background: rgba(26,94,78,0.13);
+      box-shadow: 0 0 0 2px rgba(26,94,78,0.25);
+    }
+    .pron.edited {
+      color: #0d4030;
+      font-weight: 900;
+    }
+    .pron.edited::after {
+      content: " ✏";
+      font-size: 7pt;
+      opacity: 0.4;
+      font-weight: 400;
+    }
+
+    /* 편집 안내 툴팁 */
+    #edit-guide {
+      position: fixed;
+      bottom: 12mm;
+      right: 8mm;
+      background: #1a5e4e;
+      color: white;
+      font-size: 7pt;
+      padding: 2.5mm 4mm;
+      border-radius: 3mm;
+      font-family: "Noto Sans KR", sans-serif;
+      opacity: 0.85;
+      z-index: 999;
+      line-height: 1.6;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    #edit-guide:hover { opacity: 1; }
+
+    /* 저장 완료 토스트 */
+    #save-toast {
+      position: fixed;
+      bottom: 12mm;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a5e4e;
+      color: white;
+      padding: 2mm 5mm;
+      border-radius: 3mm;
+      font-size: 8pt;
+      font-family: "Noto Sans KR", sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 9999;
+    }
+    #save-toast.show { opacity: 1; }
+
+    @media print {
+      #edit-guide, #save-toast { display: none !important; }
+      .pron.edited::after { display: none !important; }
+      .pron:focus { background: none; box-shadow: none; }
+    }
     @media print {
       body { background: white; gap: 0; padding: 0; align-items: stretch; }
       .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
@@ -1626,6 +1697,126 @@
       setTimeout(initPron, 800);
     }
   })();
+
+    // ── 발음 직접 편집 기능 (localStorage 저장) ──
+    (function() {
+      const STORAGE_KEY = 'konaev_pron_edits_v1';
+
+      function loadEdits() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+        catch(e) { return {}; }
+      }
+
+      function saveEdits(edits) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(edits)); }
+        catch(e) {}
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById('save-toast');
+        if (!t) return;
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1800);
+      }
+
+      function initEditablePron() {
+        const edits = loadEdits();
+        const prons = document.querySelectorAll('.pron');
+
+        prons.forEach((el, idx) => {
+          const key = 'pron_' + idx;
+
+          // 저장된 편집 내용 복원
+          if (edits[key] !== undefined) {
+            el.textContent = edits[key];
+            el.classList.add('edited');
+          }
+
+          // contenteditable 설정
+          el.contentEditable = 'true';
+          el.spellcheck = false;
+          el.title = '클릭하여 내 발음으로 수정 (자동 저장)';
+
+          // 포커스 시 전체 선택
+          el.addEventListener('focus', function() {
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          });
+
+          // 엔터키 → blur (저장 트리거)
+          el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              this.blur();
+            }
+          });
+
+          // blur 시 저장
+          el.addEventListener('blur', function() {
+            const current = loadEdits();
+            const original = this.dataset.origPron;
+            const val = this.textContent.trim();
+
+            if (val === original) {
+              // 원본으로 복원 → 저장 항목 삭제
+              delete current[key];
+              this.classList.remove('edited');
+            } else {
+              current[key] = val;
+              this.classList.add('edited');
+            }
+            saveEdits(current);
+            showToast('✅ 발음 저장됨');
+          });
+
+          // 원본 발음 저장
+          if (!el.dataset.origPron) {
+            el.dataset.origPron = el.textContent.trim();
+          }
+        });
+      }
+
+      // 편집 안내 버튼
+      const guide = document.createElement('div');
+      guide.id = 'edit-guide';
+      guide.innerHTML = '✏️ 발음 클릭 → 내 발음으로 수정<br>Enter 또는 클릭 밖 → 자동 저장';
+      guide.title = '클릭하면 모든 편집 내용을 초기화합니다';
+      let guideClickCount = 0;
+      guide.addEventListener('click', function() {
+        guideClickCount++;
+        if (guideClickCount >= 3) {
+          if (confirm('모든 발음 편집 내용을 초기화할까요?')) {
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.pron').forEach(el => {
+              if (el.dataset.origPron) {
+                el.textContent = el.dataset.origPron;
+                el.classList.remove('edited');
+              }
+            });
+            showToast('🔄 발음이 초기화되었습니다');
+          }
+          guideClickCount = 0;
+        }
+      });
+      document.body.appendChild(guide);
+
+      // 저장 토스트
+      const toast = document.createElement('div');
+      toast.id = 'save-toast';
+      document.body.appendChild(toast);
+
+      // DOM 준비 후 실행
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initEditablePron);
+      } else {
+        initEditablePron();
+      }
+    })();
+
   </script>
 
 </body>
