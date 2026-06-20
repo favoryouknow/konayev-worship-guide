@@ -488,6 +488,9 @@
         justify-content: center !important;
       }
 
+
+      /* ── 모바일: 목차 섹션 숨기기 (네비바 드롭다운으로 대체) ── */
+      #toc-section { display: none !important; }
       /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
       .slot-key { display: none !important; }
 
@@ -707,7 +710,7 @@
     </div>
 
     <!-- 목차 본문 -->
-    <div style="flex:1;padding:7mm 12mm 2mm 12mm;display:flex;flex-direction:column;">
+    <div id="toc-section" style="flex:1;padding:7mm 12mm 2mm 12mm;display:flex;flex-direction:column;">
 
       <div style="display:flex;align-items:center;gap:3mm;margin-bottom:5mm;padding-bottom:3mm;border-bottom:2px solid #1a5e4e;">
         <span style="font-size:10pt;color:#1a5e4e;font-weight:900;letter-spacing:1px;">📋 목 차</span>
@@ -1118,7 +1121,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Радуйтесь и ликуйте,</div>
             <div class="pron">라두이쩨 이 리꾸이쩨</div>
@@ -1177,7 +1180,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Я буду жить всегда в Твоей любви</div>
             <div class="pron">야 부두 짓 브셰그다 브 뜨바예이 류브비</div>
@@ -1230,7 +1233,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-kazakh">🎵 본절</span>
+          <span class="section-tag tag-kazakh">🎵 1절</span>
           <div class="lyric-line kazakh-line">
             <div class="ru">Мені бірінші сүйдің</div>
             <div class="pron">메느브른쉬 - 샤크르든</div>
@@ -1289,7 +1292,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Слaвь, душa, Гocпoдa, Слaвь, душa,</div>
             <div class="pron">슬라브 두샤 고스빠다 슬라브 두샤</div>
@@ -1337,7 +1340,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Скрой меня Своим крылом</div>
             <div class="pron">스크로이 몌냐 스바임 크륄롬</div>
@@ -1396,7 +1399,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Славьте Господа, вся земля!</div>
             <div class="pron">슬라브쩨 고스파다 브샤 제믈랴</div>
@@ -1449,7 +1452,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Иса, в начале Ты был Словом,</div>
             <div class="pron">이사, 브 나찰레 뜨이 븰 슬로봄</div>
@@ -1508,7 +1511,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Каждое движение в Тебе</div>
             <div class="pron">까쥐다 예-딥줴니 예f-찌볘 띠달 므녜씰루 이싸</div>
@@ -1568,7 +1571,7 @@
     </div>
     <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
         <div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Рядом мы чувствуем, Бог, Тебя</div>
             <div class="pron">트랴담 므.추st부-옘 복- 찌뱌</div>
@@ -1654,7 +1657,7 @@
     </div>
     <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
         <div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Oчи cepдцa oткpoй, Бoг.</div>
             <div class="pron">어치 세르차 아뜨크로이, 복.</div>
@@ -1735,7 +1738,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Да, да, Масиха я люблю</div>
             <div class="pron">다 다 마시하 야 류블류</div>
@@ -1792,7 +1795,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Этот день сотворил Господь</div>
             <div class="pron">에땃 덴 사트바릴 가스포드</div>
@@ -1841,7 +1844,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Бог Я Тебя люблю</div>
             <div class="pron">보흐 야 찌뱌 류블류</div>
@@ -1900,7 +1903,7 @@
     <div class="slot-key"></div>
   </div>
   <div class="slot-body"><div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Я верю, что Ты победил</div>
             <div class="pron">들랴민냐띠 쁘리가또 븰스또 / 나-베두 세흐그마히 브라고</div>
@@ -1977,7 +1980,7 @@
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절 1</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Великий и прекрасный, народы все и царства</div>
             <div class="pron">빌리끼 이-쁠리 끄라스늬 / 나로-듸 세이 잘-쓰바</div>
@@ -1995,7 +1998,7 @@
           </div>
         </div>
         <div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절 2</span>
+          <span class="section-tag tag-verse">🎵 2절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Ты нас освобождаешь, любовью наполняешь</div>
             <div class="pron">띠나쉬 아스Vㅏ바(SH)다 예쉬 / 쓸뵤뷰-나플라 Vㅑ 예쉬</div>
@@ -2023,7 +2026,7 @@
   </div>
   <div class="slot-body">
         <div class="lyrics-section">
-          <span class="section-tag tag-verse">🎵 본절</span>
+          <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Благ наш Господь ибо милость Его вовеки</div>
             <div class="pron">블라나SH 가스 보쥐-바 / 밀라ST이보 / 바베끼</div>
