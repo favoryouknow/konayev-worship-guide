@@ -488,6 +488,117 @@
         justify-content: center !important;
       }
 
+      /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
+      .slot-key { display: none !important; }
+
+      /* ── 텍스트 배치 정돈 ── */
+
+      /* 가사 한 줄: 블록 구조로 명확하게 */
+      .lyric-line {
+        display: block !important;
+        padding: 10px 12px !important;
+        margin-bottom: 5px !important;
+        border-radius: 8px !important;
+        border-left-width: 3px !important;
+        background: #fafaf8 !important;
+        cursor: default !important;
+      }
+
+      .verse-line  { background: #f5fbf8 !important; border-left-color: #1a5e4e !important; }
+      .chorus-line { background: #f4f7ff !important; border-left-color: #2255aa !important; }
+
+      /* 러시아어 원문 — 굵고 크게 */
+      .ru {
+        font-size: 12pt !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+        line-height: 1.5 !important;
+        margin-bottom: 4px !important;
+        display: block !important;
+      }
+
+      /* 발음 — 터치 영역 넓게, 배경 강조 */
+      .pron {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #1a5e4e !important;
+        line-height: 1.5 !important;
+        display: block !important;
+        padding: 4px 8px !important;
+        margin: 3px 0 !important;
+        background: rgba(26,94,78,0.08) !important;
+        border-radius: 5px !important;
+        min-height: 34px !important;
+      }
+
+      /* 한국어 의미 — 작고 회색 */
+      .ko {
+        font-size: 8.5pt !important;
+        color: #999 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+        margin-top: 2px !important;
+        font-weight: 400 !important;
+      }
+
+      /* 섹션 태그 간격 */
+      .section-tag {
+        margin-bottom: 6px !important;
+        margin-top: 2px !important;
+      }
+
+      .lyrics-section {
+        margin-bottom: 16px !important;
+      }
+
+      /* 슬롯 헤더 정돈 */
+      .slot-hdr {
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom: 2px solid #1a5e4e !important;
+        align-items: flex-start !important;
+      }
+
+      .slot-hdr-left {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        flex: 1 !important;
+      }
+
+      /* 곡 번호 원 */
+      .slot-num {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        margin-top: 2px !important;
+      }
+
+      /* 곡 제목 */
+      .slot-title-ru {
+        font-size: 12.5pt !important;
+        font-weight: 900 !important;
+        line-height: 1.3 !important;
+        color: #111 !important;
+      }
+
+      .slot-title-ko {
+        font-size: 9pt !important;
+        color: #666 !important;
+        margin-top: 3px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* 단어집 헤더 뱃지 숨기기 */
+      div[style*="러시아어 · 한글 발음"] {
+        display: none !important;
+      }
+
+      /* 단어집 페이지 서브타이틀 */
+      div[style*="클릭하면 발음을"] {
+        font-size: 9pt !important;
+      }
     } /* end @media 768px */
 
     /* ── 데스크탑에서 모바일 전용 요소 숨기기 ── */
