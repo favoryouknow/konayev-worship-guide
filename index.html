@@ -609,7 +609,143 @@
       #mobile-nav, #mobile-toc-menu { display: none !important; }
     }
 
-  </style>
+  
+    /* ═══════════════════════════════════════
+       모바일 네비바 + 바텀시트 목차
+       (데스크탑 목차 디자인과 통일)
+    ═══════════════════════════════════════ */
+
+    /* 네비바 */
+    #mobile-nav {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; height: 52px;
+      background: #1a5e4e;
+      padding: 0 16px;
+      align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    @media screen and (max-width: 768px) {
+      #mobile-nav { display: flex !important; }
+    }
+    .mnav-left  { display: flex; align-items: center; gap: 10px; }
+    .mnav-cross { font-size: 20pt; color: rgba(255,255,255,0.65); font-weight: 200; }
+    .mnav-title { font-size: 10.5pt; font-weight: 800; color: #fff; line-height: 1.25; }
+    .mnav-sub   { font-size: 7pt; color: rgba(255,255,255,0.5); }
+    #mobile-toc-btn {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.28);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14pt; color: #fff; cursor: pointer; padding: 0;
+      font-family: "Noto Sans KR", sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.12s;
+    }
+    #mobile-toc-btn:active { background: rgba(255,255,255,0.25); }
+
+    /* 오버레이 */
+    #toc-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4); z-index: 1001;
+      backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+    }
+    #toc-overlay.show { display: block; }
+
+    /* 바텀시트 */
+    #mobile-toc-menu {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 1002; background: #fff;
+      border-radius: 20px 20px 0 0;
+      max-height: 85vh;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+      box-shadow: 0 -4px 30px rgba(0,0,0,0.15);
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    #mobile-toc-menu.open { transform: translateY(0); }
+
+    /* 배너 */
+    .mtoc-banner {
+      background: #1a5e4e; padding: 16px 20px 14px;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-shrink: 0; border-radius: 20px 20px 0 0;
+    }
+    .mtoc-banner-sub   { font-size: 7pt; color: rgba(255,255,255,0.5); letter-spacing: 1px; margin-bottom: 4px; }
+    .mtoc-banner-title { font-size: 17pt; font-weight: 900; color: #fff; line-height: 1.15; }
+    .mtoc-banner-ru    { margin-top: 4px; font-size: 7.5pt; color: rgba(255,255,255,0.45); }
+    .mtoc-banner-right { text-align: right; padding-bottom: 2px; }
+    .mtoc-banner-count { font-size: 10pt; font-weight: 900; color: rgba(255,255,255,0.85); }
+    .mtoc-banner-desc  { font-size: 7pt; color: rgba(255,255,255,0.4); margin-top: 3px; }
+
+    /* 본문 */
+    .mtoc-body { overflow-y: auto; -webkit-overflow-scrolling: touch; flex: 1; padding: 14px 18px 0; }
+
+    /* 섹션 헤더 */
+    .mtoc-section-hdr {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px; padding-bottom: 8px;
+      border-bottom: 2px solid #1a5e4e;
+    }
+    .mtoc-section-title { font-size: 10pt; font-weight: 900; color: #1a5e4e; letter-spacing: 1px; }
+    .mtoc-section-line  { flex: 1; height: 1px; background: #e8e4e0; }
+    .mtoc-section-en    { font-size: 7pt; color: #bbb; }
+
+    /* 2열 그리드 */
+    .mtoc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; margin-bottom: 14px; }
+
+    /* 목차 행 */
+    .mtoc-row {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 4px;
+      cursor: pointer; border-bottom: 1px solid #f4f4f0;
+      -webkit-tap-highlight-color: rgba(26,94,78,0.06);
+      transition: background 0.1s;
+      background: none; border-top: none; border-left: none; border-right: none;
+      text-align: left; width: 100%;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    .mtoc-row:active { background: #eaf5ef; border-radius: 6px; }
+    .mtoc-row-special {
+      grid-column: 1 / -1;
+      background: #eaf5ef; border-radius: 6px;
+      border-left: 3px solid #1a5e4e; padding-left: 8px;
+      margin-bottom: 6px;
+    }
+    .mtoc-row-special:active { background: #d6eddf; }
+
+    /* p.N 페이지 번호 */
+    .mtoc-pnum       { font-size: 8pt; font-weight: 900; color: #1a5e4e; min-width: 28px; flex-shrink: 0; }
+    .mtoc-pnum-empty { min-width: 28px; flex-shrink: 0; display: inline-block; }
+    .mtoc-snum       { font-size: 7.5pt; font-weight: 700; color: #ccc; min-width: 18px; flex-shrink: 0; }
+    .mtoc-title      { font-size: 9pt; font-weight: 700; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+    .mtoc-row-special .mtoc-title { color: #1a5e4e; font-size: 9.5pt; }
+    .mtoc-row-special .mtoc-snum  { color: #1a5e4e; font-size: 11pt; }
+
+    /* 발음 관리 버튼 */
+    .mtoc-tools { display: flex; gap: 8px; padding: 12px 0; border-top: 1px solid #f0f0ec; }
+    .mtoc-tool-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px;
+      padding: 9px 10px; border: none; border-radius: 8px;
+      font-size: 8.5pt; font-weight: 700;
+      font-family: "Noto Sans KR", sans-serif;
+      cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .mtoc-tool-icon    { font-size: 11pt; }
+    .mtoc-tool-restore { background: #eaf5ef; color: #1a5e4e; }
+    .mtoc-tool-restore:active { background: #d0eadb; }
+    .mtoc-tool-reset   { background: #fff0ef; color: #c0392b; }
+    .mtoc-tool-reset:active   { background: #ffd8d5; }
+
+    /* 데스크탑에서 모바일 요소 숨기기 */
+    @media screen and (min-width: 769px) {
+      #mobile-nav, #mobile-toc-menu, #toc-overlay { display: none !important; }
+    }
+</style>
 </head>
 <body>
 
@@ -2490,954 +2626,5 @@
 
   </script>
 
-</body>
-</html    /* ════════════════════════════════════
-       모바일 네비바 + 바텀시트 목차 (가이드북 디자인 통일)
-    ════════════════════════════════════ */
-
-    /* 네비바 */
-    #mobile-nav {
-      display: none;
-      position: fixed; top:0; left:0; right:0;
-      z-index: 1000;
-      height: 52px;
-      background: #1a5e4e;
-      padding: 0 16px;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-      font-family: "Noto Sans KR", sans-serif;
-    }
-    @media screen and (max-width:768px) { #mobile-nav { display:flex !important; } }
-
-    .mnav-left { display:flex; align-items:center; gap:10px; }
-    .mnav-cross { font-size:20pt; color:rgba(255,255,255,0.7); font-weight:200; line-height:1; }
-    .mnav-title { font-size:10.5pt; font-weight:800; color:#fff; line-height:1.25; }
-    .mnav-sub   { font-size:7pt;   color:rgba(255,255,255,0.5); }
-
-    #mobile-toc-btn {
-      width:38px; height:38px;
-      background:rgba(255,255,255,0.13);
-      border:1.5px solid rgba(255,255,255,0.28);
-      border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:13pt; color:#fff;
-      cursor:pointer;
-      font-family:"Noto Sans KR",sans-serif;
-      -webkit-tap-highlight-color:transparent;
-      transition:background 0.13s;
-      padding:0;
-    }
-    #mobile-toc-btn:active { background:rgba(255,255,255,0.26); }
-
-    /* 오버레이 */
-    #toc-overlay {
-      display:none;
-      position:fixed; inset:0;
-      background:rgba(0,0,0,0.42);
-      z-index:1001;
-      backdrop-filter:blur(2px);
-      -webkit-backdrop-filter:blur(2px);
-    }
-    #toc-overlay.show { display:block; }
-
-    /* 바텀시트 */
-    #mobile-toc-menu {
-      position:fixed; bottom:0; left:0; right:0;
-      z-index:1002;
-      background:#fff;
-      border-radius:18px 18px 0 0;
-      max-height:80vh;
-      display:flex; flex-direction:column;
-      overflow:hidden;
-      transform:translateY(100%);
-      transition:transform 0.3s cubic-bezier(0.32,0.72,0,1);
-      box-shadow:0 -6px 32px rgba(0,0,0,0.15);
-      font-family:"Noto Sans KR",sans-serif;
-    }
-    #mobile-toc-menu.open { transform:translateY(0); }
-
-    /* 드래그 핸들 */
-    .toc-handle {
-      width:36px; height:4px;
-      background:#e0e0da; border-radius:2px;
-      margin:10px auto 0; flex-shrink:0;
-    }
-
-    /* 헤더 — 가사 슬롯 헤더와 동일한 border-bottom 스타일 */
-    .toc-header {
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 18px 11px;
-      border-bottom:2px solid #1a5e4e;  /* ← 가사 슬롯 헤더와 동일 */
-      flex-shrink:0;
-    }
-    .toc-header-title {
-      font-size:13pt; font-weight:900; color:#111; letter-spacing:-0.3px;
-    }
-    .toc-header-badge {
-      font-size:8.5pt; font-weight:700; color:#1a5e4e;
-      background:#eaf5ef;
-      padding:3px 10px; border-radius:20px;
-    }
-
-    /* 스크롤 바디 */
-    .toc-body {
-      overflow-y:auto; flex:1;
-      -webkit-overflow-scrolling:touch;
-      background:#fafaf8;  /* ← 가사 배경색과 동일 */
-    }
-
-    /* 섹션 레이블 — 가사 section-tag 스타일 참고 */
-    .toc-label {
-      margin:0; padding:9px 18px 6px;
-      font-size:7.5pt; font-weight:800; color:#aaa;
-      letter-spacing:1.2px; text-transform:uppercase;
-      background:#f0f0ec;
-      border-bottom:1px solid #e8e8e4;
-    }
-
-    /* 목차 행 — 가사 lyric-line 스타일 참고 */
-    .toc-row {
-      width:100%;
-      display:grid;
-      grid-template-columns:30px 1fr;
-      grid-template-rows:auto auto;
-      column-gap:12px;
-      row-gap:2px;
-      align-items:center;
-      padding:11px 18px;
-      background:#fff;
-      border:none;
-      border-left:2.5px solid transparent;  /* ← 가사 lyric-line과 동일 */
-      border-bottom:1px solid #f0f0ec;
-      text-align:left;
-      cursor:pointer;
-      -webkit-tap-highlight-color:rgba(26,94,78,0.04);
-      transition:background 0.1s;
-      font-family:"Noto Sans KR",sans-serif;
-    }
-    .toc-row:active           { background:#f0f8f4; }
-    .toc-row-word             { border-left-color:#9a6d00; background:#fffdf5; }
-    .toc-row-word:active      { background:#fff5d6; }
-
-    /* 번호 뱃지 — 가사 slot-num과 동일 */
-    .toc-badge {
-      grid-row:1 / 3;
-      width:28px; height:28px;
-      background:#1a5e4e; color:#fff;
-      border-radius:50%;
-      font-size:8.5pt; font-weight:900;
-      display:flex; align-items:center; justify-content:center;
-      flex-shrink:0;
-    }
-    .toc-badge-gold { background:#9a6d00; }
-    .toc-badge-teal { background:#1a5e4e; font-size:12pt; }
-    .toc-badge-red  { background:#c0392b; font-size:12pt; }
-
-    /* 한국어 제목 — ru 스타일 참고 */
-    .toc-row-ko {
-      font-size:10.5pt; font-weight:700; color:#111; line-height:1.3;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      display:block;
-    }
-
-    /* 러시아어 부제 — pron 스타일 참고 */
-    .toc-row-ru {
-      font-size:7.5pt; font-weight:400; color:#aaa; line-height:1.3;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      display:block;
-    }
-
-    .toc-row-restore { border-left-color:#1a5e4e; background:#f5fbf8; }
-    .toc-row-danger  { border-left-color:#c0392b; background:#fff8f7; }
-
-
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-cross {
-      font-size: 18pt;
-      color: rgba(255,255,255,0.85);
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-    .nav-title {
-      font-size: 10.5pt;
-      font-weight: 800;
-      color: white;
-      letter-spacing: -0.2px;
-    }
-
-    .nav-sub {
-      font-size: 7.5pt;
-      color: rgba(255,255,255,0.55);
-      margin-top: 1px;
-      font-weight: 400;
-    }
-
-    #mobile-toc-btn {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(255,255,255,0.14);
-      border: 1.5px solid rgba(255,255,255,0.35);
-      color: white;
-      border-radius: 20px;
-      padding: 6px 13px;
-      font-size: 9pt;
-      font-weight: 700;
-      font-family: "Noto Sans KR", sans-serif;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-      transition: background 0.15s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    #mobile-toc-btn:active { background: rgba(255,255,255,0.26); }
-
-    /* ══ 목차 드롭다운 ══ */
-    #mobile-toc-menu {
-      display: none;
-      position: fixed;
-      top: 54px;
-      left: 0; right: 0; bottom: 0;
-      background: #fafaf8;
-      z-index: 9998;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      font-family: "Noto Sans KR", sans-serif;
-    }
-    #mobile-toc-menu.open { display: block; }
-
-    /* 목차 헤더 */
-    .toc-menu-header {
-      position: sticky;
-      top: 0;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 18px 13px;
-      border-bottom: 2px solid #1a5e4e;
-      z-index: 10;
-    }
-
-    .toc-menu-title {
-      font-size: 12pt;
-      font-weight: 900;
-      color: #1a5e4e;
-      letter-spacing: 0.5px;
-    }
-
-    .toc-close-btn {
-      background: #f0f0ec;
-      border: none;
-      border-radius: 50%;
-      width: 30px; height: 30px;
-      font-size: 12pt;
-      color: #666;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .toc-close-btn:active { background: #e0e0dc; }
-
-    /* 섹션 레이블 */
-    .toc-section-label {
-      padding: 10px 18px 6px;
-      font-size: 7.5pt;
-      font-weight: 800;
-      color: #aaa;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      background: #f5f5f0;
-      border-bottom: 1px solid #ebebeb;
-    }
-
-    /* 목차 항목 */
-    .mobile-toc-item {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 12px 18px;
-      background: white;
-      border-bottom: 1px solid #f0f0ec;
-      cursor: pointer;
-      transition: background 0.1s;
-      -webkit-tap-highlight-color: rgba(26,94,78,0.06);
-    }
-    .mobile-toc-item:active { background: #f0f8f4; }
-
-    /* 곡 번호 원 */
-    .toc-num {
-      width: 30px; height: 30px;
-      background: #1a5e4e;
-      color: white;
-      border-radius: 50%;
-      font-size: 9pt;
-      font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-family: "Noto Sans KR", sans-serif;
-    }
-    .toc-num-vocab   { background: #b8860b; font-size: 11pt; }
-    .toc-num-restore { background: #2d7a5f; font-size: 11pt; }
-    .toc-num-reset   { background: #c0392b; font-size: 11pt; }
-
-    /* 텍스트 */
-    .toc-info {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .toc-name {
-      font-size: 10pt;
-      font-weight: 700;
-      color: #1a1a1a;
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .toc-sub {
-      font-size: 7.5pt;
-      color: #aaa;
-      font-weight: 400;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    /* 화살표 */
-    .toc-arrow {
-      color: #ccc;
-      font-size: 14pt;
-      font-weight: 300;
-      flex-shrink: 0;
-    }
-
-    /* 단어장 항목 강조 */
-    .toc-vocab { background: #fdfbf4; }
-    .toc-vocab .toc-name { color: #8a6200; }
-
-    /* 도구 항목 */
-    .toc-tool-item { background: #fafaf8; }
-t="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
-    @page { size: A4 portrait; margin: 0; }
-    html { scroll-behavior: smooth; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: "Noto Sans KR", sans-serif;
-      background: #f0ede8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6mm;
-      padding: 6mm;
-    }
-
-    /* ══ A4 세로 페이지 ══ */
-    .page {
-      width: 210mm;
-      height: 297mm;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.08);
-      border-radius: 1.5mm;
-    }
-
-    /* ══ 표지/목차 페이지 ══ */
-    .index-page { background: #ffffff; }
-
-    /* ══ 곡 2단 레이아웃 ══ */
-    .song-row {
-      flex: 1;
-      display: flex;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    /* 각 곡 슬롯 */
-    .song-slot {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      padding: 5mm 5.5mm 2mm 5.5mm;
-      overflow: hidden;
-    }
-
-    /* 슬롯 헤더 */
-    .slot-hdr {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 2.8mm;
-      border-bottom: 2px solid #1a5e4e;
-      margin-bottom: 3.5mm;
-      gap: 2mm;
-    }
-    .slot-hdr-left { display:flex; align-items:center; min-width:0; gap:2.5mm; }
-    .slot-num {
-      flex-shrink: 0;
-      width: 9mm; height: 9mm;
-      background: #1a5e4e; color: white;
-      border-radius: 50%;
-      font-size: 9.5pt; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 8px rgba(26,94,78,0.25);
-    }
-    .slot-titles { min-width: 0; }
-    .slot-title-ru {
-      font-size: 11.5pt; font-weight: 900; color: #111;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      line-height: 1.2;
-    }
-    .slot-title-ko {
-      font-size: 7.5pt; color: #1a5e4e; font-weight: 700;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      line-height: 1.35; margin-top: 0.8mm;
-    }
-    .slot-key {
-      flex-shrink: 0;
-      font-size: 6.5pt; color: #1a5e4e; background: #eaf5ef;
-      padding: 1.2mm 2.5mm; border-radius: 2mm; font-weight: 700;
-      white-space: nowrap; border: 1px solid #b8d8c8;
-    }
-
-    /* 가사 바디 */
-    .slot-body {
-      flex: 1;
-      min-height: 0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 3mm;
-    }
-
-    /* 섹션 블록 */
-    .lyrics-section { display: flex; flex-direction: column; flex-shrink: 0; gap: 0; }
-
-    .section-tag {
-      display: inline-block;
-      font-size: 7pt; font-weight: 800;
-      padding: 0.8mm 3mm; border-radius: 1.5mm;
-      margin-bottom: 2mm; flex-shrink: 0;
-      letter-spacing: 0.2px;
-    }
-    .tag-verse  { background: #e8f5ee; color: #1a5e4e; border: 1px solid #c0ddd0; }
-    .tag-chorus { background: #f0f7ff; color: #1a4a8a; border: 1px solid #c0d4ee; }
-    .tag-bridge { background: #f7f0fc; color: #6a3a90; border: 1px solid #d8c8ee; }
-    .tag-kazakh { background: #fff8e8; color: #7a5800; border: 1px solid #e8d898; }
-    .tag-repeat { background: #f4f4f4; color: #666; border: 1px solid #ddd; }
-
-    /* 가사 라인 */
-    .lyric-line {
-      padding: 2mm 3mm;
-      border-radius: 1.5mm;
-      margin-bottom: 1.5mm;
-      border-left: 3px solid transparent;
-      background: #fafafa;
-      cursor: pointer;
-      transition: filter 0.12s;
-    }
-    .lyric-line:hover { filter: brightness(0.97); }
-    .verse-line  { border-left-color: #1a5e4e; background: #f4fbf7; }
-    .chorus-line { border-left-color: #2255aa; background: #f3f7ff; }
-    .bridge-line { border-left-color: #7a40b0; background: #f9f5fd; }
-    .kazakh-line { border-left-color: #c8960a; background: #fdfaf0; }
-
-    /* ─── 텍스트 3단계 ─── */
-    .ru {
-      font-size: 8.5pt; color: #555;
-      font-weight: 600; line-height: 1.45;
-      letter-spacing: 0.1px;
-    }
-    .pron {
-      font-size: 11pt; color: #1a5e4e;
-      font-weight: 800; line-height: 1.5;
-      letter-spacing: 0.15px;
-    }
-    .ko {
-      font-size: 8pt; color: #555;
-      font-weight: 500; line-height: 1.45;
-      border-left: 2px solid rgba(26,94,78,0.15);
-      padding-left: 2mm;
-      margin-top: 0.5mm;
-    }
-
-    /* 세로 구분선 */
-    .v-div {
-      flex-shrink: 0;
-      width: 0.5px;
-      background: linear-gradient(to bottom,
-        transparent 0%, #d0ccc8 10%, #d0ccc8 90%, transparent 100%);
-    }
-
-    /* ── 풋터 ── */
-    .page-footer {
-      flex-shrink: 0;
-      height: 8mm;
-      background: #1a5e4e;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10mm;
-    }
-    .ft-left  { color: rgba(255,255,255,0.7); font-size: 6.5pt; }
-    .ft-right { color: #f0d070; font-size: 7.5pt; font-weight: 700; }
-
-    /* ── 단어 페이지 ── */
-    .vocab-grid {
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 2mm; margin-bottom: 2.5mm;
-    }
-    .vocab-card {
-      background: #fafafa;
-      border: 1px solid #e8e4e0;
-      border-radius: 2.5mm; padding: 3mm 2.5mm;
-    }
-    /* 핵심 단어 카드 텍스트 — 가사 카드 계층과 동일 */
-    .vocab-ru   { font-size:8.5pt; font-weight:600; color:#555; margin-bottom:1.5mm; line-height:1.35; }
-    .vocab-pron { font-size:10pt;  font-weight:800; color:#1a5e4e; margin-bottom:1mm; line-height:1.35; letter-spacing:0.1px; }
-    .vocab-ko   { font-size:8pt;   font-weight:500; color:#666; margin-bottom:0.8mm; line-height:1.35;
-                  border-left:2px solid rgba(26,94,78,0.15); padding-left:2mm; margin-top:0.5mm; }
-    .vocab-en   { font-size:6.5pt; color:#bbb; line-height:1.4; }
-    /* 호환 — 기존 vc-* 클래스 유지 */
-    .vc-ru   { font-size:8.5pt; font-weight:600; color:#555; }
-    .vc-pron { font-size:11pt;  font-weight:800; color:#1a5e4e; }
-    .vc-ko   { font-size:8pt;   font-weight:500; color:#666; }
-    .vc-en   { font-size:6.5pt; color:#bbb; }
-    .cat-lbl {
-      font-size:7pt; font-weight:700; padding:1.5mm 3mm;
-      border-radius:2mm; display:inline-block; margin-bottom:2mm;
-    }
-
-    /* ── 발음 클릭 기능 ── */
-    .pron-highlight {
-      background: rgba(26,94,78,0.12) !important;
-      border-radius: 3px;
-      font-weight: 900 !important;
-      color: #0d4030 !important;
-      padding: 0.5mm 1mm;
-      transition: all 0.2s;
-    }
-    .lyric-line .ru:hover {
-      text-decoration: underline;
-      text-decoration-color: rgba(26,94,78,0.35);
-      text-underline-offset: 2px;
-    }
-    /* slot-hdr::after 제거 — 발음 재생 안내 제거 */
-
-    /* ── TTS 상태바 ── */
-    #tts-status-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-      background: #1a5e4e; color: white;
-      padding: 3mm 8mm; font-size: 8pt; font-weight: 600;
-      display: none; align-items: center; justify-content: space-between;
-      font-family: "Noto Sans KR", sans-serif;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
-    }
-    #tts-status-bar.visible { display: flex; }
-    #tts-stop-btn {
-      background: white; border: none; color: #1a5e4e;
-      padding: 1.5mm 4mm; border-radius: 2mm; cursor: pointer;
-      font-size: 7.5pt; font-weight: 700; font-family: inherit;
-    }
-
-    /* 인쇄 설정 */
-
-    /* ── 발음 편집 기능 ── */
-    .pron {
-      cursor: text;
-      border-radius: 3px;
-      transition: background 0.15s;
-      outline: none;
-      min-width: 20px;
-      display: inline-block;
-    }
-    .pron:hover {
-      background: rgba(26,94,78,0.07);
-    }
-    .pron:focus {
-      background: rgba(26,94,78,0.13);
-      box-shadow: 0 0 0 2px rgba(26,94,78,0.25);
-    }
-    .pron.edited {
-      color: #0d4030;
-      font-weight: 900;
-    }
-    .pron.edited::after {
-      content: " ✏";
-      font-size: 7pt;
-      opacity: 0.4;
-      font-weight: 400;
-    }
-
-    /* 저장 완료 토스트 */
-    #save-toast {
-      position: fixed;
-      bottom: 12mm;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1a5e4e;
-      color: white;
-      padding: 2mm 5mm;
-      border-radius: 3mm;
-      font-size: 8pt;
-      font-family: "Noto Sans KR", sans-serif;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-      z-index: 9999;
-    }
-    #save-toast.show { opacity: 1; }
-
-    @media print {
-            #save-toast { display: none !important; }
-      .pron.edited::after { display: none !important; }
-      .pron:focus { background: none; box-shadow: none; }
-    }
-    @media print {
-      body { background: white; gap: 0; padding: 0; align-items: stretch; }
-      .page { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
-      .slot-hdr::after { display: none !important; }
-      #tts-status-bar { display: none !important; }
-      .lyric-line { cursor: default; }
-    }
-
-    /* ══════════════════════════════════════
-       모바일 반응형 스타일 (완전 재정비)
-    ══════════════════════════════════════ */
-
-    /* ── 모바일 공통 기반 ── */
-    @media screen and (max-width: 768px) {
-
-      html, body {
-        background: #f0f0ec;
-        margin: 0; padding: 0;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      /* 페이지 블록: A4 고정 → 완전 자동 높이 */
-      .page {
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        border-bottom: 8px solid #e0e0d8 !important;
-        margin: 0 !important;
-        display: block !important;
-      }
-
-      /* 페이지 내부 wrapper */
-      .page > div {
-        overflow: visible !important;
-        height: auto !important;
-        min-height: 0 !important;
-        padding: 14px 16px !important;
-      }
-
-      /* ── 곡 레이아웃 ── */
-      .song-row {
-        display: block !important;
-        overflow: visible !important;
-        height: auto !important;
-      }
-
-      /* 곡 슬롯 */
-      .song-slot {
-        display: block !important;
-        overflow: visible !important;
-        height: auto !important;
-        padding: 0 0 20px 0 !important;
-        border-right: none !important;
-        border-bottom: 2px dashed #d0d0c8 !important;
-        margin-bottom: 20px !important;
-      }
-
-      .song-slot:last-child {
-        border-bottom: none !important;
-        margin-bottom: 0 !important;
-        padding-bottom: 4px !important;
-      }
-
-      /* 세로 구분선 숨기기 */
-      .v-div { display: none !important; }
-
-      /* ── 곡 헤더 ── */
-      .slot-hdr {
-        padding-bottom: 10px !important;
-        margin-bottom: 10px !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-      }
-
-      .slot-num {
-        width: 32px !important; height: 32px !important;
-        font-size: 13px !important;
-        flex-shrink: 0 !important;
-      }
-
-      .slot-title-ru {
-        font-size: 13pt !important;
-        line-height: 1.3 !important;
-      }
-
-      .slot-title-ko {
-        font-size: 9pt !important;
-        line-height: 1.4 !important;
-        margin-top: 2px !important;
-      }
-
-      /* ── 가사 body ── */
-      .slot-body {
-        overflow: visible !important;
-        height: auto !important;
-      }
-
-      /* 섹션 (본절/후렴) */
-      .lyrics-section {
-        margin-bottom: 14px !important;
-        overflow: visible !important;
-      }
-
-      .section-tag {
-        font-size: 8pt !important;
-        padding: 2px 7px !important;
-        margin-bottom: 8px !important;
-        display: inline-block !important;
-      }
-
-      /* ── 가사 한 줄 (ru + pron + ko) ── */
-      .lyric-line {
-        display: block !important;
-        padding: 8px 0 !important;
-        border-bottom: 1px solid #f0f0ec !important;
-        gap: 0 !important;
-      }
-
-      .lyric-line:last-child {
-        border-bottom: none !important;
-      }
-
-      /* 러시아어 원문 */
-      .ru {
-        font-size: 11pt !important;
-        font-weight: 700 !important;
-        line-height: 1.5 !important;
-        color: #111 !important;
-        margin-bottom: 2px !important;
-        display: block !important;
-      }
-
-      /* 한글 발음 */
-      .pron {
-        font-size: 10.5pt !important;
-        font-weight: 800 !important;
-        line-height: 1.5 !important;
-        color: #1a5e4e !important;
-        margin-bottom: 2px !important;
-        display: block !important;
-        padding: 3px 6px !important;
-        background: rgba(26,94,78,0.06) !important;
-        border-radius: 4px !important;
-        min-height: 36px !important;
-      }
-
-      /* 한국어 의미 */
-      .ko {
-        font-size: 8.5pt !important;
-        color: #888 !important;
-        line-height: 1.4 !important;
-        display: block !important;
-        margin-top: 1px !important;
-      }
-
-      /* ── 단어집 ── */
-      .vocab-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px !important;
-      }
-
-      .vocab-card {
-        padding: 10px 8px !important;
-        border-radius: 6px !important;
-        cursor: pointer !important;
-        -webkit-tap-highlight-color: rgba(26,94,78,0.1);
-      }
-
-      .vocab-card:active {
-        transform: scale(0.97) !important;
-        background: #eaf5ef !important;
-      }
-
-      .vocab-ru   { font-size: 8.5pt !important; font-weight: 600 !important; color: #555 !important; margin-bottom: 4px !important; }
-      .vocab-pron { font-size: 12pt   !important; font-weight: 800 !important; color: #1a5e4e !important; margin-bottom: 3px !important; line-height:1.4 !important; }
-      .vocab-ko   { font-size: 8.5pt  !important; font-weight: 500 !important; color: #666 !important; border-left:2px solid rgba(26,94,78,0.15) !important; padding-left:5px !important; margin-top:2px !important; }
-
-      /* ── 목차 ── */
-      div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-        gap: 5px !important;
-      }
-
-      /* ── 페이지 푸터 숨기기 ── */
-      .page-footer { display: none !important; }
-
-      /* ── 표지 페이지 ── */
-      .page[style*="background:#1a5e4e"],
-      .page[style*="background: #1a5e4e"] {
-        padding: 30px 20px !important;
-        min-height: 60vh !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-
-
-      /* ── 모바일: 목차 섹션 숨기기 (네비바 드롭다운으로 대체) ── */
-      #toc-section { display: none !important; }
-      /* ── slot-key (빈 둥근 박스) 모바일에서 숨기기 ── */
-      .slot-key { display: none !important; }
-
-      /* ── 텍스트 배치 정돈 ── */
-
-      /* 가사 한 줄: 블록 구조로 명확하게 */
-      .lyric-line {
-        display: block !important;
-        padding: 10px 12px !important;
-        margin-bottom: 5px !important;
-        border-radius: 8px !important;
-        border-left-width: 3px !important;
-        background: #fafaf8 !important;
-        cursor: default !important;
-      }
-
-      .verse-line  { background: #f5fbf8 !important; border-left-color: #1a5e4e !important; }
-      .chorus-line { background: #f4f7ff !important; border-left-color: #2255aa !important; }
-
-      /* 러시아어 원문 — 굵고 크게 */
-      .ru {
-        font-size: 12pt !important;
-        font-weight: 700 !important;
-        color: #1a1a1a !important;
-        line-height: 1.5 !important;
-        margin-bottom: 4px !important;
-        display: block !important;
-      }
-
-      /* 발음 — 터치 영역 넓게, 배경 강조 */
-      .pron {
-        font-size: 11pt !important;
-        font-weight: 800 !important;
-        color: #1a5e4e !important;
-        line-height: 1.5 !important;
-        display: block !important;
-        padding: 4px 8px !important;
-        margin: 3px 0 !important;
-        background: rgba(26,94,78,0.08) !important;
-        border-radius: 5px !important;
-        min-height: 34px !important;
-      }
-
-      /* 한국어 의미 — 작고 회색 */
-      .ko {
-        font-size: 8.5pt !important;
-        color: #999 !important;
-        line-height: 1.4 !important;
-        display: block !important;
-        margin-top: 2px !important;
-        font-weight: 400 !important;
-      }
-
-      /* 섹션 태그 간격 */
-      .section-tag {
-        margin-bottom: 6px !important;
-        margin-top: 2px !important;
-      }
-
-      .lyrics-section {
-        margin-bottom: 16px !important;
-      }
-
-      /* 슬롯 헤더 정돈 */
-      .slot-hdr {
-        padding-bottom: 10px !important;
-        margin-bottom: 12px !important;
-        border-bottom: 2px solid #1a5e4e !important;
-        align-items: flex-start !important;
-      }
-
-      .slot-hdr-left {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 10px !important;
-        flex: 1 !important;
-      }
-
-      /* 곡 번호 원 */
-      .slot-num {
-        width: 34px !important;
-        height: 34px !important;
-        font-size: 12px !important;
-        flex-shrink: 0 !important;
-        margin-top: 2px !important;
-      }
-
-      /* 곡 제목 */
-      .slot-title-ru {
-        font-size: 12.5pt !important;
-        font-weight: 900 !important;
-        line-height: 1.3 !important;
-        color: #111 !important;
-      }
-
-      .slot-title-ko {
-        font-size: 9pt !important;
-        color: #666 !important;
-        margin-top: 3px !important;
-        line-height: 1.3 !important;
-      }
-
-      /* 단어집 헤더 뱃지 숨기기 */
-      div[style*="러시아어 · 한글 발음"] {
-        display: none !important;
-      }
-
-      /* 단어집 페이지 서브타이틀 */
-      div[style*="클릭하면 발음을"] {
-        font-size: 9pt !important;
-      }
-    } /* end @media 768px */
-
-    /* ── 데스크탑에서 모바일 전용 요소 숨기기 ── */
-    @media screen and (min-width: 769px) {
-      #mobile-nav, #mobile-toc-menu { display: none !important; }
-    }
-
-  </style>
-</head>
-<body>
 </body>
 </html>
