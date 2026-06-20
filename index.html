@@ -2475,6 +2475,11 @@
       }
     })();
 
+    // 페이지 로드 시 복원 버튼 상태 반영
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(updateRestoreBtn, 100);
+    });
+
 
 
     // ── 발음 초기화 + 되돌리기 기능 ──
@@ -2484,12 +2489,14 @@
     let undoCountdownInterval = null;
 
     function resetPronEdits() {
-      // 1. 현재 편집 내용 백업
-      const current = localStorage.getItem(STORAGE_KEY_MAIN_MAIN);
+      const current = localStorage.getItem(STORAGE_KEY_MAIN);
       if (!current || Object.keys(JSON.parse(current || '{}')).length === 0) {
-        showUndoToast('수정된 발음이 없습니다', false);
+        showToast('수정된 발음이 없습니다');
         return;
       }
+      if (!confirm('발음 편집 내용을 초기화할까요?\n초기화 후에도 목차에서 복원할 수 있습니다.')) return;
+
+      // 1. 현재 편집 백업
       localStorage.setItem(STORAGE_KEY_BACKUP, current);
 
       // 2. 초기화 실행
@@ -2502,21 +2509,17 @@
       });
 
       // 3. 목차 닫기
-      document.getElementById('mobile-toc-menu').classList.remove('open');
+      closeMobileToc();
 
-      // 4. 되돌리기 토스트 표시 (10초)
-      showUndoToast('발음이 초기화되었습니다', true);
+      // 4. 복원 버튼 표시 + 토스트
+      updateRestoreBtn();
+      showToast('발음이 초기화됐습니다. 목차 → 이전 발음으로 복원 가능');
     }
 
     function undoPronReset() {
-      const backup = localStorage.getItem(STORAGE_KEY_MAIN_BACKUP);
+      const backup = localStorage.getItem(STORAGE_KEY_BACKUP);
       if (!backup) return;
-
-      // 백업 복원
       localStorage.setItem(STORAGE_KEY_MAIN, backup);
-      localStorage.removeItem(STORAGE_KEY_BACKUP);
-
-      // DOM에도 복원
       const edits = JSON.parse(backup);
       document.querySelectorAll('.pron').forEach((el, idx) => {
         const key = 'pron_' + idx;
@@ -2525,56 +2528,39 @@
           el.classList.add('edited');
         }
       });
-
-      hideUndoToast();
+      updateRestoreBtn();
       showToast('✅ 발음이 복원되었습니다');
     }
 
-    function showUndoToast(msg, showUndo) {
-      const toast = document.getElementById('undo-toast');
-      const msgEl = document.getElementById('undo-toast-msg');
-      const btn   = toast.querySelector('button');
-      const cd    = document.getElementById('undo-countdown');
-
-      msgEl.textContent = msg;
-      btn.style.display = showUndo ? 'inline-block' : 'none';
-      toast.style.display = 'flex';
-      toast.style.pointerEvents = 'auto';
-      setTimeout(() => toast.style.opacity = '1', 10);
-
-      // 기존 타이머 정리
-      if (undoTimer) clearTimeout(undoTimer);
-      if (undoCountdownInterval) clearInterval(undoCountdownInterval);
-
-      if (showUndo) {
-        let remaining = 10;
-        cd.textContent = remaining + 's';
-        undoCountdownInterval = setInterval(() => {
-          remaining--;
-          cd.textContent = remaining > 0 ? remaining + 's' : '';
-          if (remaining <= 0) clearInterval(undoCountdownInterval);
-        }, 1000);
-        undoTimer = setTimeout(() => {
-          hideUndoToast();
-          localStorage.removeItem(STORAGE_KEY_BACKUP);
-        }, 10000);
-      } else {
-        cd.textContent = '';
-        undoTimer = setTimeout(hideUndoToast, 2500);
+    function restorePronBackup() {
+      const backup = localStorage.getItem(STORAGE_KEY_BACKUP);
+      if (!backup) {
+        showToast('복원할 백업이 없습니다');
+        return;
       }
+      if (!confirm('초기화 이전 발음으로 복원할까요?')) return;
+      localStorage.setItem(STORAGE_KEY_MAIN, backup);
+      const edits = JSON.parse(backup);
+      document.querySelectorAll('.pron').forEach((el, idx) => {
+        const key = 'pron_' + idx;
+        if (edits[key] !== undefined) {
+          el.textContent = edits[key];
+          el.classList.add('edited');
+        }
+      });
+      closeMobileToc();
+      updateRestoreBtn();
+      showToast('✅ 이전 발음이 복원되었습니다');
     }
 
-    function hideUndoToast() {
-      const toast = document.getElementById('undo-toast');
-      toast.style.opacity = '0';
-      toast.style.pointerEvents = 'none';
-      setTimeout(() => toast.style.display = 'none', 300);
-      if (undoTimer) { clearTimeout(undoTimer); undoTimer = null; }
-      if (undoCountdownInterval) { clearInterval(undoCountdownInterval); undoCountdownInterval = null; }
+    function updateRestoreBtn() {
+      const btn = document.getElementById('restore-pron-btn');
+      if (!btn) return;
+      const hasBackup = !!localStorage.getItem(STORAGE_KEY_BACKUP);
+      btn.style.display = hasBackup ? 'flex' : 'none';
     }
 
-    // ── 모바일 목차 네비게이션 ──
-    function openMobileToc() {
+        function openMobileToc() {
       document.getElementById('mobile-toc-menu').classList.add('open');
       document.getElementById('toc-overlay').classList.add('show');
       document.getElementById('toc-icon-open').style.display  = 'none';
