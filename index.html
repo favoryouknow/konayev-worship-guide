@@ -2,11 +2,13 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>2026 코나예프 현지찬양 가사가이드북 — AGAPAO</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
     @page { size: A4 portrait; margin: 0; }
+    html { scroll-behavior: smooth; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -262,25 +264,6 @@
       font-weight: 400;
     }
 
-    /* 편집 안내 툴팁 */
-    #edit-guide {
-      position: fixed;
-      bottom: 12mm;
-      right: 8mm;
-      background: #1a5e4e;
-      color: white;
-      font-size: 7pt;
-      padding: 2.5mm 4mm;
-      border-radius: 3mm;
-      font-family: "Noto Sans KR", sans-serif;
-      opacity: 0.85;
-      z-index: 999;
-      line-height: 1.6;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      cursor: pointer;
-    }
-    #edit-guide:hover { opacity: 1; }
-
     /* 저장 완료 토스트 */
     #save-toast {
       position: fixed;
@@ -301,7 +284,7 @@
     #save-toast.show { opacity: 1; }
 
     @media print {
-      #edit-guide, #save-toast { display: none !important; }
+            #save-toast { display: none !important; }
       .pron.edited::after { display: none !important; }
       .pron:focus { background: none; box-shadow: none; }
     }
@@ -312,12 +295,293 @@
       #tts-status-bar { display: none !important; }
       .lyric-line { cursor: default; }
     }
+
+    /* ══════════════════════════════════════
+       모바일 반응형 스타일
+    ══════════════════════════════════════ */
+    @media screen and (max-width: 768px) {
+
+      body {
+        background: #f4f4f0;
+        padding: 0;
+      }
+
+      /* 페이지 컨테이너 */
+      #book-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        padding: 0;
+      }
+
+      /* A4 고정 → 모바일 자동 높이 */
+      .page {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 6px solid #e8e8e4 !important;
+        margin: 0 !important;
+      }
+
+      /* 내부 컨텐츠 영역 */
+      .page > div[style] {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 4vw !important;
+      }
+
+      /* 곡 row 세로 쌓기 */
+      .song-row {
+        flex-direction: column !important;
+        gap: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+
+      /* 곡 구분선 (2열→1열) */
+      .song-row > .slot {
+        border-right: none !important;
+        border-bottom: 2px dashed #e0e0d8 !important;
+        padding-bottom: 5vw !important;
+        margin-bottom: 5vw !important;
+        overflow: visible !important;
+        height: auto !important;
+        flex: none !important;
+      }
+
+      .song-row > .slot:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      /* 가사 영역 자동 높이 */
+      .lyrics-area {
+        overflow: visible !important;
+        height: auto !important;
+        flex: none !important;
+      }
+
+      /* 폰트 사이즈 모바일 최적화 */
+      .slot-title-ru { font-size: 12pt !important; }
+      .slot-title-ko { font-size: 9pt !important; }
+      .slot-num { width: 8vw !important; height: 8vw !important; font-size: 4vw !important; }
+      .ru   { font-size: 10pt !important; line-height: 1.8 !important; }
+      .pron { font-size: 10pt !important; line-height: 1.8 !important; }
+      .ko   { font-size: 8.5pt !important; line-height: 1.8 !important; }
+
+      /* 가사 줄 간격 */
+      .lyric-line {
+        padding: 1.5vw 0 !important;
+        gap: 1vw !important;
+      }
+
+      /* 발음 버튼 터치 영역 확대 */
+      .pron {
+        padding: 1.5vw 2vw !important;
+        min-height: 8vw !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      /* 헤더 */
+      .page-footer { display: none !important; }
+
+      /* 목차 2열 → 1열 */
+      div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* 표지 폰트 조정 */
+      div[style*="font-size:22pt"] { font-size: 6vw !important; }
+      div[style*="font-size:18pt"] { font-size: 5vw !important; }
+
+      /* 단어집 그리드 2열로 */
+      .vocab-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2vw !important;
+      }
+
+      /* 단어 카드 */
+      .vocab-card {
+        padding: 2.5vw !important;
+      }
+
+      /* 스크롤 부드럽게 */
+      html { scroll-behavior: smooth; }
+
+      /* 상단 고정 네비 (모바일 전용) */
+      #mobile-nav {
+        display: flex !important;
+      }
+    }
+
+    /* 모바일 상단 고정 목차 버튼 */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1a5e4e;
+      color: white;
+      padding: 3vw 4vw;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    #mobile-nav .nav-title {
+      font-size: 10pt;
+      letter-spacing: 0.5px;
+    }
+
+    #mobile-toc-btn {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      border-radius: 5px;
+      padding: 1.5vw 3vw;
+      font-size: 8.5pt;
+      font-family: "Noto Sans KR", sans-serif;
+      cursor: pointer;
+    }
+
+    /* 모바일 목차 드롭다운 */
+    #mobile-toc-menu {
+      display: none;
+      position: fixed;
+      top: 12vw;
+      left: 0; right: 0;
+      background: white;
+      z-index: 9998;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      max-height: 70vh;
+      overflow-y: auto;
+      border-bottom: 3px solid #1a5e4e;
+    }
+
+    #mobile-toc-menu.open { display: block; }
+
+    .mobile-toc-item {
+      display: flex;
+      align-items: center;
+      gap: 3vw;
+      padding: 3.5vw 4vw;
+      border-bottom: 1px solid #f0f0ec;
+      font-family: "Noto Sans KR", sans-serif;
+      cursor: pointer;
+      font-size: 9.5pt;
+    }
+
+    .mobile-toc-item:active { background: #eaf5ef; }
+
+    .mobile-toc-item .toc-num {
+      background: #1a5e4e;
+      color: white;
+      border-radius: 50%;
+      width: 6vw; height: 6vw;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7pt; font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .mobile-toc-item .toc-name { color: #111; font-weight: 600; }
+
+    @media screen and (min-width: 769px) {
+      #mobile-nav, #mobile-toc-menu { display: none !important; }
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- 모바일 상단 네비게이션 -->
+  <div id="mobile-nav">
+    <span class="nav-title">✝️ 코나예프 찬양가이드북</span>
+    <button id="mobile-toc-btn" onclick="toggleMobileToc()">목차 ☰</button>
+  </div>
+  <div id="mobile-toc-menu">
+    <div class="mobile-toc-item" onclick="goToPage('page-vocab');toggleMobileToc()">
+      <span class="toc-num" style="background:#b8860b;">★</span>
+      <span class="toc-name">러시아어 핵심 단어 30</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">1</span>
+      <span class="toc-name">기뻐하고 또 기뻐하라</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-01');toggleMobileToc()">
+      <span class="toc-num">2</span>
+      <span class="toc-name">주의 사랑 안에 영원히</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">3</span>
+      <span class="toc-name">사랑해요 주님 (카자흐어)</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-03');toggleMobileToc()">
+      <span class="toc-num">4</span>
+      <span class="toc-name">송축해 내 영혼</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">5</span>
+      <span class="toc-name">주 품에 (Still)</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-05');toggleMobileToc()">
+      <span class="toc-num">6</span>
+      <span class="toc-name">온 땅들아 여호와를 찬양하라</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">7</span>
+      <span class="toc-name">What A Beautiful Name</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-07');toggleMobileToc()">
+      <span class="toc-num">8</span>
+      <span class="toc-name">내 모든 삶의 행동 주안에</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-09');toggleMobileToc()">
+      <span class="toc-num">9</span>
+      <span class="toc-name">야훼</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-10');toggleMobileToc()">
+      <span class="toc-num">10</span>
+      <span class="toc-name">내 맘의 눈을 여소서</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">11</span>
+      <span class="toc-name">Deep Down in My Heart</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-11');toggleMobileToc()">
+      <span class="toc-num">12</span>
+      <span class="toc-name">이 날은 주가 지으신 날</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">13</span>
+      <span class="toc-name">주 사랑합니다 + Beautiful Day</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-13');toggleMobileToc()">
+      <span class="toc-num">14</span>
+      <span class="toc-name">Surrounded</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">15</span>
+      <span class="toc-name">Sing Sing Sing</span>
+    </div>
+    <div class="mobile-toc-item" onclick="goToPage('page-song-15');toggleMobileToc()">
+      <span class="toc-num">16</span>
+      <span class="toc-name">좋으신 하나님 (You are Good)</span>
+    </div>
+  </div>
 
-<div class="page index-page">
+
+
+<div id="page-vocab" class="page index-page">
   <div style="display:flex;flex-direction:column;height:100%;">
 
     <!-- 상단 배너 -->
@@ -348,87 +612,87 @@
       <div style="display:flex;align-items:center;gap:3mm;padding:2.5mm 4mm;background:#eaf5ef;border-radius:2mm;border-left:3px solid #1a5e4e;margin-bottom:3mm;">
         <span style="color:#1a5e4e;font-size:8pt;font-weight:900;min-width:10mm;">p.1</span>
         <span style="font-size:9pt;">📖</span>
-        <span style="color:#1a5e4e;font-size:9pt;font-weight:800;">러시아어 핵심 단어 30개</span>
+        <span style="color:#1a5e4e;font-size:9pt;font-weight:800;cursor:pointer;" onclick="document.getElementById('page-vocab').scrollIntoView({behavior:'smooth'})">러시아어 핵심 단어 30개</span>
       </div>
 
       <!-- 2열 곡 목록 -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 8mm;">
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-01').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.2</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">01</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">기뻐하고 또 기뻐하라</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-01').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">02</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">주의 사랑 안에 영원히</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-03').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.3</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">03</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">사랑해요 주님 (카자흐어)</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-03').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">04</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">송축해 내 영혼 (10,000 Reasons)</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-05').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.4</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">05</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">주 품에 (Hillsong — Still)</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-05').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">06</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">온 땅들아 여호와를 찬양하라</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-07').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.5</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">07</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">What A Beautiful Name</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-07').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">08</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">내 모든 삶의 행동 주안에</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-09').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.6</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">09</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">야훼</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-10').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.7</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">10</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">내 맘의 눈을 여소서</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-11').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.8</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">11</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">Deep Down in My Heart</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-11').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">12</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">이 날은 주가 지으신 날</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-13').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.9</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">13</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">주 사랑합니다 + Beautiful Day</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-13').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">14</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">Surrounded</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
+        <div onclick="document.getElementById('page-song-15').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;border-left:2px solid #1a5e4e;">
           <span style="color:#1a5e4e;font-size:7.5pt;font-weight:900;min-width:10mm;">p.10</span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">15</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">Sing Sing Sing</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
+        <div onclick="document.getElementById('page-song-15').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;" style="display:flex;align-items:baseline;gap:2mm;padding:2mm 3mm;background:#f8f8f6;border-radius:1.5mm;">
           <span style="min-width:10mm;"></span>
           <span style="color:#ccc;font-size:7pt;min-width:5mm;font-weight:600;">16</span>
           <span style="color:#111;font-size:8pt;font-weight:700;">좋으신 하나님 (You are Good)</span>
@@ -633,7 +897,7 @@
   </div>
 </div>
 
-<div class="page">
+<div id="page-song-01" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -745,7 +1009,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 01 + 02</span></div>
 </div>
-<div class="page">
+<div id="page-song-03" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -852,7 +1116,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 03 + 04</span></div>
 </div>
-<div class="page">
+<div id="page-song-05" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -964,7 +1228,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 05 + 06</span></div>
 </div>
-<div class="page">
+<div id="page-song-07" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -1086,7 +1350,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 07 + 08</span></div>
 </div>
-<div class="page">
+<div id="page-song-09" class="page">
   <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
     <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
       <div class="slot-num">09</div>
@@ -1172,7 +1436,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 09</span></div>
 </div>
-<div class="page">
+<div id="page-song-10" class="page">
   <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
     <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
       <div class="slot-num">10</div>
@@ -1250,7 +1514,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 10</span></div>
 </div>
-<div class="page">
+<div id="page-song-11" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -1356,7 +1620,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 11 + 12</span></div>
 </div>
-<div class="page">
+<div id="page-song-13" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -1473,7 +1737,7 @@
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 13 + 14</span></div>
 </div>
-<div class="page">
+<div id="page-song-15" class="page">
   <div class="song-row">
     <div class="song-slot">
   <div class="slot-hdr">
@@ -1780,29 +2044,7 @@
         });
       }
 
-      // 편집 안내 버튼
-      const guide = document.createElement('div');
-      guide.id = 'edit-guide';
-      guide.innerHTML = '✏️ 발음 클릭 → 내 발음으로 수정<br>Enter 또는 클릭 밖 → 자동 저장';
-      guide.title = '클릭하면 모든 편집 내용을 초기화합니다';
-      let guideClickCount = 0;
-      guide.addEventListener('click', function() {
-        guideClickCount++;
-        if (guideClickCount >= 3) {
-          if (confirm('모든 발음 편집 내용을 초기화할까요?')) {
-            localStorage.removeItem(STORAGE_KEY);
-            document.querySelectorAll('.pron').forEach(el => {
-              if (el.dataset.origPron) {
-                el.textContent = el.dataset.origPron;
-                el.classList.remove('edited');
-              }
-            });
-            showToast('🔄 발음이 초기화되었습니다');
-          }
-          guideClickCount = 0;
-        }
-      });
-      document.body.appendChild(guide);
+
 
       // 저장 토스트
       const toast = document.createElement('div');
@@ -1816,6 +2058,41 @@
         initEditablePron();
       }
     })();
+
+
+    // ── 모바일 목차 네비게이션 ──
+    function toggleMobileToc() {
+      const menu = document.getElementById('mobile-toc-menu');
+      menu.classList.toggle('open');
+    }
+    function goToPage(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const navH = document.getElementById('mobile-nav');
+      const offset = navH ? navH.offsetHeight + 8 : 0;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    // 바깥 클릭 시 목차 닫기
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobile-toc-menu');
+      const btn = document.getElementById('mobile-toc-btn');
+      if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+    // 모바일에서 상단 패딩 (네비 높이만큼)
+    function adjustTopPadding() {
+      if (window.innerWidth <= 768) {
+        const nav = document.getElementById('mobile-nav');
+        if (nav) document.body.style.paddingTop = nav.offsetHeight + 'px';
+      } else {
+        document.body.style.paddingTop = '';
+      }
+    }
+    window.addEventListener('resize', adjustTopPadding);
+    window.addEventListener('load', adjustTopPadding);
+    document.addEventListener('DOMContentLoaded', adjustTopPadding);
 
   </script>
 
