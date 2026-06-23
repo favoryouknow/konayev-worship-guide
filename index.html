@@ -283,6 +283,16 @@
     }
     #save-toast.show { opacity: 1; }
 
+
+    /* 오버플로우 허용 페이지 (긴 곡) */
+    @media screen {
+      #page-song-11,
+      #page-song-15 {
+        height: auto !important;
+        min-height: 270mm;
+        overflow: visible !important;
+      }
+    }
     @media print {
             #save-toast { display: none !important; }
       .pron.edited::after { display: none !important; }
@@ -939,12 +949,12 @@
         <span class="mtoc-snum">08</span>
         <span class="mtoc-title">내 모든 삶의 행동 주안에</span>
       </div>
-      <div class="mtoc-row" onclick="goToPage('page-song-09');closeMobileToc()">
+      <div class="mtoc-row" onclick="goToPage('song-09');closeMobileToc()">
         <span class="mtoc-pnum">p.6</span>
         <span class="mtoc-snum">09</span>
         <span class="mtoc-title">야훼</span>
       </div>
-      <div class="mtoc-row" onclick="goToPage('page-song-10');closeMobileToc()">
+      <div class="mtoc-row" onclick="goToPage('song-10');closeMobileToc()">
         <span class="mtoc-pnum">p.7</span>
         <span class="mtoc-snum">10</span>
         <span class="mtoc-title">내 맘의 눈을 여소서</span>
@@ -954,29 +964,49 @@
         <span class="mtoc-snum">11</span>
         <span class="mtoc-title">Deep Down in My Heart</span>
       </div>
-      <div class="mtoc-row" onclick="goToPage('song-12');closeMobileToc()">
+            <div class="mtoc-row" onclick="goToPage('song-12');closeMobileToc()">
         <span class="mtoc-pnum-empty"></span>
         <span class="mtoc-snum">12</span>
-        <span class="mtoc-title">이 날은 주가 지으신 날</span>
+        <span class="mtoc-title">성령의 불 주소서</span>
       </div>
       <div class="mtoc-row" onclick="goToPage('song-13');closeMobileToc()">
         <span class="mtoc-pnum">p.9</span>
         <span class="mtoc-snum">13</span>
-        <span class="mtoc-title">주 사랑합니다 + Beautiful Day</span>
+        <span class="mtoc-title">성령의 비가 내리네</span>
       </div>
       <div class="mtoc-row" onclick="goToPage('song-14');closeMobileToc()">
         <span class="mtoc-pnum-empty"></span>
         <span class="mtoc-snum">14</span>
-        <span class="mtoc-title">Surrounded</span>
+        <span class="mtoc-title">Our God is an awesome God</span>
       </div>
       <div class="mtoc-row" onclick="goToPage('song-15');closeMobileToc()">
         <span class="mtoc-pnum">p.10</span>
         <span class="mtoc-snum">15</span>
-        <span class="mtoc-title">Sing Sing Sing</span>
+        <span class="mtoc-title">배드로의 고백</span>
       </div>
       <div class="mtoc-row" onclick="goToPage('song-16');closeMobileToc()">
-        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-pnum">p.11</span>
         <span class="mtoc-snum">16</span>
+        <span class="mtoc-title">이 날은 주가 지으신 날</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('song-17');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">17</span>
+        <span class="mtoc-title">주 사랑합니다 + Beautiful Day</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('song-18');closeMobileToc()">
+        <span class="mtoc-pnum">p.12</span>
+        <span class="mtoc-snum">18</span>
+        <span class="mtoc-title">Surrounded</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('song-19');closeMobileToc()">
+        <span class="mtoc-pnum-empty"></span>
+        <span class="mtoc-snum">19</span>
+        <span class="mtoc-title">Sing Sing Sing</span>
+      </div>
+      <div class="mtoc-row" onclick="goToPage('song-20');closeMobileToc()">
+        <span class="mtoc-pnum">p.13</span>
+        <span class="mtoc-snum">20</span>
         <span class="mtoc-title">좋으신 하나님</span>
       </div>
 
@@ -2101,11 +2131,289 @@
           </div>
         </div></div>
 </div>
+    
     <div class="v-div"></div>
-    <div class="song-slot" id="song-12">
+        <div class="song-slot" id="song-12">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
       <div class="slot-num">12</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Зажги в душе моей огонь</div>
+        <div class="slot-title-ko">성령의 불 주소서</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Зажги в душе моей огонь</div>
+            <div class="pron">자즈기 브 두셰 마예이 아곤</div>
+            <div class="ko">내 영혼에 불을 붙여주세요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Отдаю себя под Твой контроль</div>
+            <div class="pron">아트다유 세뱌 빳 트보이 콘트롤</div>
+            <div class="ko">주님의 뜻대로 나를 다스려주세요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жажду больше я Тебя</div>
+            <div class="pron">자즈두 볼셰 야 테뱌</div>
+            <div class="ko">주님이 더욱 간절해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жажду больше я Тебя</div>
+            <div class="pron">자즈두 볼셰 야 테뱌</div>
+            <div class="ko">주님이 더욱 간절해요</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Нет лучшего места</div>
+            <div class="pron">넷 루체바 메스타</div>
+            <div class="ko">이보다 더 좋은 곳은 없어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Где я бы хотел быть</div>
+            <div class="pron">그데 야 브이 하텔 브이치</div>
+            <div class="ko">내가 있고 싶은 곳이에요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Нет лучшего места</div>
+            <div class="pron">넷 루체바 메스타</div>
+            <div class="ko">이보다 더 좋은 곳은 없어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Чем Божья любовь Божья любовь</div>
+            <div class="pron">쳄 보지야 류보프 보지야 류보프</div>
+            <div class="ko">하나님의 사랑 그 사랑 안에</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 브릿지</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жажду я Жажду я</div>
+            <div class="pron">자즈두 야 자즈두 야</div>
+            <div class="ko">주님을 원해요 원해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жажду я Жажду я</div>
+            <div class="pron">자즈두 야 자즈두 야</div>
+            <div class="ko">주님을 원해요 원해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Жажду больше я Тебя</div>
+            <div class="pron">자즈두 볼셰 야 테뱌</div>
+            <div class="ko">주님이 더욱 간절해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Наполняй</div>
+            <div class="pron">나팔냐이</div>
+            <div class="ko">채워주세요</div>
+          </div>
+        </div>
+</div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 11 + 12</span></div>
+</div>
+<div id="page-song-13" class="page">
+  <div class="song-row">
+        <div class="song-slot" id="song-13">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">13</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Дождь излей</div>
+        <div class="slot-title-ko">성령의 비가 내리네</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Дождь излей дождь излей</div>
+            <div class="pron">도쉬 이즐레이 도쉬 이즐레이</div>
+            <div class="ko">성령의 비를 부어 주세요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Двери небес ты открой нам</div>
+            <div class="pron">드베리 네베스 띠 아트크로이 남</div>
+            <div class="ko">하늘의 문을 우리에게 열어 주세요</div>
+          </div>
+        </div>
+</div>
+</div>
+    
+    <div class="v-div"></div>
+        <div class="song-slot" id="song-14">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">14</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">Наш Бог Всемогущий Бог</div>
+        <div class="slot-title-ko">Our God is an awesome God</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Наш Бог Всемогущий Бог</div>
+            <div class="pron">나쉬 보그 브세모구쉬 보그</div>
+            <div class="ko">우리 하나님은 위대한 하나님</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Он Царь над всей землей</div>
+            <div class="pron">온 짜리 나드 브세이 젬료이</div>
+            <div class="ko">온 땅의 왕이신 그분</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Он правит миром в силе</div>
+            <div class="pron">온 프라빗 미롬 브 실레</div>
+            <div class="ko">능력으로 세상을 다스리시네</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Мудрости и любви</div>
+            <div class="pron">무드로스찌 이 류브비</div>
+            <div class="ko">지혜와 사랑으로</div>
+          </div>
+        </div>
+</div>
+</div>
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 13 + 14</span></div>
+</div>
+<div id="page-song-15" class="page">
+  <div class="song-row">
+        <div class="song-slot" id="song-15">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">15</div>
+      <div class="slot-titles">
+        <div class="slot-title-ru">То, о чем не пожалею никогда</div>
+        <div class="slot-title-ko">배드로의 고백</div>
+      </div>
+    </div>
+    <div class="slot-key"></div>
+  </div>
+  <div class="slot-body">        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 1절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">То, о чем не пожалею никогда</div>
+            <div class="pron">토 아 촘 네 파잘레유 니까그다</div>
+            <div class="ko">절대 후회하지 않을 것</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Что следую за Тобой</div>
+            <div class="pron">쉬토 슬레두유 자 따보이</div>
+            <div class="ko">주님을 따르는 것</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Отбросив свою сеть мечты и все что я любил</div>
+            <div class="pron">아트브로시브 스바유 셋 메치트 이 브쇼 쉬토 야 류빌</div>
+            <div class="ko">내 꿈과 내가 사랑한 모든 것을 버리고</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Теперь за Тобою буду идти мой Бог всегда</div>
+            <div class="pron">티페르 자 따보유 부두 이티 모이 보그 브세그다</div>
+            <div class="ko">이제 내 하나님 당신을 따라 걷겠습니다</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-verse">🎵 2절</span>
+          <div class="lyric-line verse-line">
+            <div class="ru">Лишь одно о чем желаю жадно я</div>
+            <div class="pron">리쉬 아드노 아 촘 젤라유 자드나 야</div>
+            <div class="ko">내가 간절히 원하는 한 가지</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Мне быть подобным Тебе</div>
+            <div class="pron">므네 브이치 빠도브님 치베</div>
+            <div class="ko">주님처럼 되고 싶어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ты сердце твердое забрав научил меня любить</div>
+            <div class="pron">티 세르쩨 트뵤르도예 자브랍 나우칠 메냐 류비치</div>
+            <div class="ko">굳은 마음 가져가시고 사랑하는 법 가르쳐주셨어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Любить как Ты Иса то что желаю я</div>
+            <div class="pron">류비치 칵 티 이사 토 쉬토 젤라유 야</div>
+            <div class="ko">이사처럼 사랑하는 것 그것이 내가 원해요</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 후렴</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Спасибо что Ты позвал</div>
+            <div class="pron">스파시바 쉬토 티 파즈발</div>
+            <div class="ko">불러주셔서 감사해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Что не оставил Ты хвалю</div>
+            <div class="pron">쉬토 네 아스타빌 티 흐발류</div>
+            <div class="ko">버리지 않으셔서 찬양해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Оставив трон небес пришел и</div>
+            <div class="pron">아스타빌 트론 네베스 프리숄 이</div>
+            <div class="ko">하늘 보좌 떠나 오셨어요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">За любовь благодарю</div>
+            <div class="pron">자 류보프 블라고다류</div>
+            <div class="ko">그 사랑 감사드립니다</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Отдам Тебе всю жизнь и оставшиеся дни</div>
+            <div class="pron">아트담 치베 브슈 지즌 이 아스타브쉬에샤 드니</div>
+            <div class="ko">내 생애와 남은 날들 모두 드릴게요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Чтоб следовать я мог только за Тобой</div>
+            <div class="pron">숩 슬레다바치 야 목 톨카 자 따보이</div>
+            <div class="ko">오직 주님만을 따를 수 있도록</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
+          <span class="section-tag tag-chorus">🎵 브릿지</span>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Скажи дитя любишь ли Меня (3번)</div>
+            <div class="pron">스카지 디챠 류비쉬 리 메냐 (3번)</div>
+            <div class="ko">나를 사랑하니 아가야 (3번)</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Вот то о чем спросишь Ты меня</div>
+            <div class="pron">봇 토 아 촘 스프로시쉬 티 메냐</div>
+            <div class="ko">이것이 주님이 내게 물으시는 것</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Отвечу лишь Я люблю Тебя (3번)</div>
+            <div class="pron">아트베추 리쉬 야 류블류 치베 (3번)</div>
+            <div class="ko">주님 사랑해요 (3번)</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ты знаешь Бог как люблю Тебя</div>
+            <div class="pron">티 즈나예쉬 보그 칵 류블류 치베</div>
+            <div class="ko">주님 알잖아요 얼마나 사랑하는지</div>
+          </div>
+        </div>
+</div>
+</div>
+    
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15</span></div>
+</div>
+<div id="page-song-16" class="page">
+  <div class="song-row">
+    <div class="song-slot" id="song-16">
+  <div class="slot-hdr">
+    <div class="slot-hdr-left">
+      <div class="slot-num">16</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Этот день сотворил Господь</div>
         <div class="slot-title-ko">이 날은 주가 지으신 날</div>
@@ -2149,15 +2457,12 @@
           </div>
         </div></div>
 </div>
-  </div>
-  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 11 + 12</span></div>
-</div>
-<div id="page-song-13" class="page">
-  <div class="song-row">
-    <div class="song-slot" id="song-13">
+    
+    <div class="v-div"></div>
+    <div class="song-slot" id="song-17">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
-      <div class="slot-num">13</div>
+      <div class="slot-num">17</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Бог Я Тебя люблю</div>
         <div class="slot-title-ko">주 사랑합니다 — Beautiful Day</div>
@@ -2227,11 +2532,15 @@
           </div>
         </div></div>
 </div>
-    <div class="v-div"></div>
-    <div class="song-slot" id="song-14">
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 16 + 17</span></div>
+</div>
+<div id="page-song-18" class="page">
+  <div class="song-row">
+    <div class="song-slot" id="song-18">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
-      <div class="slot-num">14</div>
+      <div class="slot-num">18</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Surrounded — Я верю, что Ты победил</div>
         <div class="slot-title-ko">Surrounded</div>
@@ -2281,15 +2590,12 @@
           </div>
         </div></div>
 </div>
-  </div>
-  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 13 + 14</span></div>
-</div>
-<div id="page-song-15" class="page">
-  <div class="song-row">
-    <div class="song-slot" id="song-15">
+    
+    <div class="v-div"></div>
+    <div class="song-slot" id="song-19">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
-      <div class="slot-num">15</div>
+      <div class="slot-num">19</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Будем петь, петь, петь</div>
         <div class="slot-title-ko">Sing Sing Sing</div>
@@ -2349,11 +2655,15 @@
         </div>
       </div>
 </div>
-    <div class="v-div"></div>
-    <div class="song-slot" id="song-16">
+  </div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 18 + 19</span></div>
+</div>
+<div id="page-song-20" class="page">
+  <div class="song-row">
+    <div class="song-slot" id="song-20">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
-      <div class="slot-num">16</div>
+      <div class="slot-num">20</div>
       <div class="slot-titles">
         <div class="slot-title-ru">Благ наш Господь</div>
         <div class="slot-title-ko">좋으신 하나님</div>
@@ -2401,9 +2711,11 @@
         </div>
       </div>
 </div>
+    
   </div>
-  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15 + 16</span></div>
+  <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 20</span></div>
 </div>
+
 
   <script>
   // ── 발음 기능: 러시아어 줄 클릭 시 TTS로 읽어주기 ──
