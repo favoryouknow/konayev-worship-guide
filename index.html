@@ -286,7 +286,8 @@
 
     /* 오버플로우 허용 페이지 (긴 곡) */
     @media screen {
-      #page-song-11 {
+      #page-song-11,
+      #page-song-15 {
         height: auto !important;
         min-height: 270mm;
         overflow: visible !important;
@@ -398,6 +399,10 @@
     }
     .det-hint strong { color: #1a5e4e; }
     @media (max-width: 768px) {
+      /* 베드로의 고백 모바일: 2컬럼→1컬럼 */
+      #page-song-15 [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
       #det-toggle, #desktop-edit-toolbar { display: none !important; }
     }
     @media print {
@@ -981,7 +986,7 @@
       <div class="mtoc-row" onclick="goToPage('song-15');closeMobileToc()">
         <span class="mtoc-pnum">p.10</span>
         <span class="mtoc-snum">15</span>
-        <span class="mtoc-title">배드로의 고백</span>
+        <span class="mtoc-title">베드로의 고백</span>
       </div>
       <div class="mtoc-row" onclick="goToPage('song-16');closeMobileToc()">
         <span class="mtoc-pnum">p.11</span>
@@ -2288,42 +2293,116 @@
 </div>
 <div id="page-song-15" class="page">
   <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:5mm 7mm 2mm 7mm;overflow:hidden;">
-    <div style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
+    <div id="song-15" style="flex-shrink:0;display:flex;align-items:center;gap:2.5mm;padding-bottom:2.5mm;border-bottom:2.5px solid #c96a3a;margin-bottom:4mm;">
       <div class="slot-num">15</div>
       <div class="slot-titles">
         <div class="slot-title-ru">То, о чем не пожалею никогда</div>
-        <div class="slot-title-ko">배드로의 고백</div>
+        <div class="slot-title-ko">베드로의 고백</div>
       </div>
     </div>
     <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:4mm 12mm;align-content:start;">
-<div class="lyrics-section">
+        <div class="lyrics-section">
           <span class="section-tag tag-verse">🎵 1절</span>
           <div class="lyric-line verse-line">
             <div class="ru">То, о чем не пожалею никогда</div>
             <div class="pron">토 아 촘 네 파잘레유 니까그다</div>
             <div class="ko">절대 후회하지 않을 거예요</div>
           </div>
-<div class="lyrics-section">
+          <div class="lyric-line verse-line">
+            <div class="ru">Что следую за Тобой</div>
+            <div class="pron">쉬토 슬레두유 자 따보이</div>
+            <div class="ko">주님을 따르는 거예요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Отбросив свою сеть мечты и все что я любил</div>
+            <div class="pron">아트브로시브 스바유 셋 메치트 이 브쇼 쉬토 야 류빌</div>
+            <div class="ko">내 꿈과 사랑했던 모든 것 내려놓고</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Теперь за Тобою буду идти мой Бог всегда</div>
+            <div class="pron">티페르 자 따보유 부두 이티 모이 보그 브세그다</div>
+            <div class="ko">이제 내 하나님 당신을 따라 걷겠어요</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
           <span class="section-tag tag-verse">🎵 2절</span>
           <div class="lyric-line verse-line">
             <div class="ru">Лишь одно о чем желаю жадно я</div>
             <div class="pron">리쉬 아드노 아 촘 젤라유 자드나 야</div>
             <div class="ko">내가 간절히 원하는 한 가지예요</div>
           </div>
-<div class="lyrics-section">
+          <div class="lyric-line verse-line">
+            <div class="ru">Мне быть подобным Тебе</div>
+            <div class="pron">므네 브이치 빠도브님 치베</div>
+            <div class="ko">주님처럼 되고 싶어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Ты сердце твердое забрав научил меня любить</div>
+            <div class="pron">티 세르쩨 트뵤르도예 자브랍 나우칠 메냐 류비치</div>
+            <div class="ko">굳은 마음 가져가시고 사랑하는 법 가르쳐주셨어요</div>
+          </div>
+          <div class="lyric-line verse-line">
+            <div class="ru">Любить как Ты Иса то что желаю я</div>
+            <div class="pron">류비치 칵 티 이사 토 쉬토 젤라유 야</div>
+            <div class="ko">이사처럼 사랑하는 것이 내 소원이에요</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
           <span class="section-tag tag-chorus">🎵 후렴</span>
           <div class="lyric-line chorus-line">
             <div class="ru">Спасибо что Ты позвал</div>
             <div class="pron">스파시바 쉬토 티 파즈발</div>
             <div class="ko">불러주셔서 감사해요</div>
           </div>
-<div class="lyrics-section">
+          <div class="lyric-line chorus-line">
+            <div class="ru">Что не оставил Ты хвалю</div>
+            <div class="pron">쉬토 네 아스타빌 티 흐발류</div>
+            <div class="ko">버리지 않으셔서 찬양해요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Оставив трон небес пришел и</div>
+            <div class="pron">아스타빌 트론 네베스 프리숄 이</div>
+            <div class="ko">하늘 보좌 떠나 오셨어요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">За любовь благодарю</div>
+            <div class="pron">자 류보프 블라고다류</div>
+            <div class="ko">그 사랑에 감사드려요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Отдам Тебе всю жизнь и оставшиеся дни</div>
+            <div class="pron">아트담 치베 브슈 지즌 이 아스타브쉬에샤 드니</div>
+            <div class="ko">내 생애와 남은 날들 모두 드릴게요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Чтоб следовать я мог только за Тобой</div>
+            <div class="pron">숩 슬레다바치 야 목 톨카 자 따보이</div>
+            <div class="ko">오직 주님만을 따를 수 있도록</div>
+          </div>
+        </div>
+        <div class="lyrics-section">
           <span class="section-tag tag-chorus">🎵 브릿지</span>
           <div class="lyric-line chorus-line">
             <div class="ru">Скажи дитя любишь ли Меня (3번)</div>
             <div class="pron">스카지 디챠 류비쉬 리 메냐 (3번)</div>
             <div class="ko">나를 사랑하니 아가야 (3번)</div>
           </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Вот то о чем спросишь Ты меня</div>
+            <div class="pron">봇 토 아 촘 스프로시쉬 티 메냐</div>
+            <div class="ko">이것이 주님이 내게 물으시는 말씀이에요</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Отвечу лишь Я люблю Тебя (3번)</div>
+            <div class="pron">아트베추 리쉬 야 류블류 치베 (3번)</div>
+            <div class="ko">주님 사랑해요 (3번)</div>
+          </div>
+          <div class="lyric-line chorus-line">
+            <div class="ru">Ты знаешь Бог как люблю Тебя</div>
+            <div class="pron">티 즈나예쉬 보그 칵 류블류 치베</div>
+            <div class="ko">주님 알잖아요 얼마나 사랑하는지</div>
+          </div>
+        </div>
     </div>
   </div>
   <div class="page-footer" style="background:#1e6b58;"><span class="ft-left">✝️ 2026 AGAPAO 코나예프 선교팀 현지찬양 가사가이드북</span><span class="ft-right" style="color:#f0c080;">🎵 Song 15</span></div>
