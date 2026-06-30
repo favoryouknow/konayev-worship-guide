@@ -286,9 +286,9 @@
 
     /* 오버플로우 허용 페이지 (긴 곡) */
     @media screen {
-      #page-song-07,
       #page-song-11,
-      #page-song-15 {
+      #page-song-15,
+      #page-song-16 {
         height: auto !important;
         min-height: 270mm;
         overflow: visible !important;
@@ -1814,7 +1814,7 @@
 </div>
 <div id="page-song-07" class="page">
   <div class="song-row">
-    <div class="song-slot" id="song-07" style="overflow:visible;">
+    <div class="song-slot" id="song-07">
   <div class="slot-hdr">
     <div class="slot-hdr-left">
       <div class="slot-num">07</div>
@@ -1825,7 +1825,8 @@
     </div>
     <div class="slot-key">Key: G</div>
   </div>
-  <div class="slot-body"><div class="lyrics-section">
+  <div class="slot-body" style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;overflow:visible;">
+<div class="lyrics-section">
           <span class="section-tag tag-bridge">🎵 Bridge</span>
           <div class="lyric-line bridge-line">
             <div class="ru">Из мёртвых воскрес Ты, нет больше завесы!</div>
@@ -1868,7 +1869,7 @@
             <div class="ko">그 이름 강력해요</div>
           </div>
         </div>
-        <div class="lyrics-section">
+<div class="lyrics-section">
           <span class="section-tag tag-chorus">🎵 Chorus</span>
           <div class="lyric-line chorus-line">
             <div class="ru">В Твоём Имени сила, Бог!</div>
@@ -1878,7 +1879,7 @@
           <div class="lyric-line chorus-line">
             <div class="ru">В Твоём Имени сила, Бог!</div>
             <div class="pron">브 뜨바욤 이미니 실라, 복!</div>
-            <div class="ko">나의 왕 예수 그리스도</div>
+            <div class="ko">그 이름 강력해요</div>
           </div>
           <div class="lyric-line chorus-line">
             <div class="ru">Ты Царь мой, Иса Господь!</div>
@@ -1905,7 +1906,8 @@
             <div class="pron">이사 — 가스뽀지 모이!</div>
             <div class="ko">예수의 이름, 맞설 자 없어요</div>
           </div>
-        </div></div>
+        </div>
+        </div>
 </div>
 </div>
 </div>
